@@ -1,0 +1,320 @@
+a:active,
+a:focus {
+  text-decoration: none;
+  color: var(--accent);
+}
+.cs_slider_navigation .cs_swiper_button_prev,
+.cs_slider_navigation .cs_swiper_button_next,
+.cs_left_arrow,
+.cs_right_arrow,
+.cs_play_btn_3,
+.cs_video_block.cs_style_1,
+.cs_gallery_item.cs_style_3 {
+  cursor: pointer;
+}
+
+.rs-picker-popup {
+  z-index: 11;
+  margin-top: 4px;
+  color: var(--secondary);
+}
+
+.rs-picker-daterange-header {
+  display: none;
+}
+.rs-input-group > .rs-input {
+  z-index: 1;
+  cursor: pointer;
+  height: 100%;
+}
+.rs-input-group.rs-input-group-inside {
+  height: 100%;
+}
+span.rs-input-group-addon {
+  display: none;
+}
+.rs-picker-toolbar-ranges {
+  .rs-stack-item {
+    &:nth-child(2),
+    &:nth-child(3) {
+      display: none;
+    }
+  }
+}
+.rs-picker-popup .rs-calendar:first-child,
+.rs-picker-toolbar {
+  border-color: var(--border);
+}
+.rs-calendar-table-cell-un-same-month .rs-calendar-table-cell-content {
+  color: rgba(126, 124, 124, 0.5);
+}
+.rs-btn-primary {
+  background-color: var(--accent);
+}
+.rs-btn-primary:disabled,
+.rs-btn-primary.rs-btn-disabled {
+  background-color: var(--accent);
+  opacity: 0.3;
+}
+.rs-btn-link {
+  color: var(--accent);
+  font-weight: 500;
+}
+.rs-calendar-table-cell-is-today .rs-calendar-table-cell-content {
+  box-shadow: inset 0 0 0 1px var(--accent);
+  color: var(--accent);
+}
+.rs-calendar-table-header-cell-content,
+.rs-btn-xs {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--primary);
+}
+.rs-picker-popup
+  .rs-calendar
+  .rs-calendar-table-cell:hover
+  .rs-calendar-table-cell-content {
+  background-color: rgba(170, 132, 83, 0.25);
+  color: var(--accent);
+}
+.rs-calendar-table-cell-selected .rs-calendar-table-cell-content,
+.rs-picker-popup
+  .rs-calendar
+  .rs-calendar-table-cell.rs-calendar-table-cell-selected:hover
+  .rs-calendar-table-cell-content {
+  background-color: var(--accent);
+  color: #fff;
+}
+.rs-calendar-table-cell-in-range::before {
+  background-color: rgba(170, 132, 83, 0.25);
+}
+.rs-calendar-table-cell-disabled .rs-calendar-table-cell-content {
+  opacity: 0.45;
+}
+.rs-picker-popup
+  .rs-calendar
+  .rs-calendar-table-cell.rs-calendar-table-cell-disabled:hover
+  .rs-calendar-table-cell-content {
+  background-color: transparent;
+  color: var(--secondary);
+}
+.rs-calendar-table-cell-selected::before,
+.rs-calendar-table-cell-in-range::before {
+  margin-top: 2px;
+  height: 30px;
+}
+.rs-btn-subtle:hover,
+.rs-btn-subtle:focus {
+  background-color: var(--border);
+}
+.rs-btn-icon.rs-btn-xs {
+  font-size: 12px;
+  padding: 8px;
+  > .rs-icon {
+    font-size: 14px;
+  }
+}
+
+.slick-slide {
+  .cs_hero.cs_style_1 {
+    .cs_hero_text {
+      position: relative;
+      top: 10px;
+      opacity: 0;
+      transition: all 0.9s ease;
+      user-select: none;
+    }
+  }
+
+  &.slick-current {
+    .cs_hero.cs_style_1 {
+      .cs_hero_text {
+        top: 0;
+        opacity: 1;
+        transition: all 0.9s ease 0.9s;
+      }
+    }
+  }
+}
+.cs_form.cs_style_4.cs_type_1 {
+  .cs_btn.cs_style_1.cs_color_1 {
+    background-color: var(--accent);
+    &:hover {
+      background-color: #fff;
+      color: var(--accent);
+    }
+  }
+}
+.cs_form.cs_style_4.cs_type_3 {
+  .cs_btn.cs_style_1.cs_color_1 {
+    background-color: transparent;
+    border: 1px solid #fff;
+    padding: 10px 25px;
+    &:hover {
+      background-color: var(--accent);
+      border-color: var(--accent);
+      color: #fff;
+    }
+  }
+}
+.cs_form.cs_style_4.cs_type_5 {
+  .cs_btn.cs_style_1.cs_color_1 {
+    background-color: var(--accent);
+    &:hover {
+      background-color: var(--primary);
+      color: #fff;
+    }
+  }
+}
+.cs_hero.cs_style_3 {
+  .cs_slider.cs_style_1 {
+    .slick-list,
+    .slick-track,
+    .slick-slide div {
+      height: 100%;
+    }
+  }
+}
+.cs_video_bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  > * {
+    height: 100%;
+    width: 100%;
+    > iframe {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      height: 56.25vw;
+      width: 100vw;
+      @media (max-width: 1500px) {
+        height: 100%;
+        width: calc(100% + 200px);
+      }
+      @media (max-width: 1199px) {
+        width: 250vh;
+      }
+    }
+  }
+}
+.cs_accordian_body_wrap {
+  overflow: hidden;
+  transition: height 0.3s ease;
+}
+.cs_facility_wrap_1 {
+  > * {
+    &:not(:last-child) {
+      margin-bottom: 150px;
+      @media (max-width: 991px) {
+        margin-bottom: 80px;
+      }
+    }
+    &:nth-child(even) {
+      .row {
+        flex-direction: row-reverse;
+      }
+      .cs_pr_110 {
+        padding-left: 110px;
+        padding-right: 0;
+        @media (max-width: 1400px) {
+          padding-left: 55px;
+        }
+        @media (max-width: 991px) {
+          padding-left: 0px;
+        }
+      }
+    }
+  }
+}
+.cs_custom_pointer_wrap {
+  height: 100%;
+}
+.rs-btn-primary:hover,
+.rs-btn-primary:focus {
+  background-color: var(--primary);
+}
+.rs-btn-link:hover,
+.rs-btn-link:focus {
+  color: var(--accent);
+}
+.cs_gallery_slider_thumb {
+  .slick-prev,
+  .slick-next {
+    width: 50px;
+    height: 50px;
+    background-color: var(--primary);
+    border-radius: 50%;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: 2;
+    transition: all 0.3s ease;
+    &::before {
+      display: none;
+    }
+    &:hover {
+      background-color: var(--accent);
+    }
+  }
+  .slick-prev {
+    left: 25px;
+    background-image: url('data:image/svg+xml;utf8,<svg width="21" height="16" viewBox="0 0 21 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0.292892 7.29289C-0.0976315 7.68342 -0.0976315 8.31658 0.292892 8.70711L6.65685 15.0711C7.04738 15.4616 7.68054 15.4616 8.07107 15.0711C8.46159 14.6805 8.46159 14.0474 8.07107 13.6569L2.41421 8L8.07107 2.34315C8.46159 1.95262 8.46159 1.31946 8.07107 0.928932C7.68054 0.538408 7.04738 0.538408 6.65685 0.928932L0.292892 7.29289ZM21 7L1 7V9L21 9V7Z" fill="white"></path></svg>');
+  }
+  .slick-next {
+    right: 25px;
+    background-image: url('data:image/svg+xml;utf8,<svg width="21" height="16" viewBox="0 0 21 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M20.7071 8.70711C21.0976 8.31658 21.0976 7.68342 20.7071 7.2929L14.3431 0.928933C13.9526 0.538409 13.3195 0.538409 12.9289 0.928933C12.5384 1.31946 12.5384 1.95262 12.9289 2.34315L18.5858 8L12.9289 13.6569C12.5384 14.0474 12.5384 14.6805 12.9289 15.0711C13.3195 15.4616 13.9526 15.4616 14.3431 15.0711L20.7071 8.70711ZM-8.74228e-08 9L20 9L20 7L8.74228e-08 7L-8.74228e-08 9Z" fill="white"></path></svg>');
+  }
+}
+
+.cs_gallery_slider_thumb_2 {
+  .slick-prev,
+  .slick-next {
+    width: 56px;
+    height: 16px;
+    background-color: transparent;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: 2;
+    transition: all 0.3s ease;
+    @media (max-width: 991px) {
+      display: none;
+    }
+    &::before {
+      display: none;
+    }
+  }
+  .slick-prev {
+    left: 5%;
+    background-image: url('data:image/svg+xml;utf8,<svg width="56" height="16" viewBox="0 0 56 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0.292893 7.29289C-0.0976311 7.68342 -0.0976311 8.31658 0.292893 8.70711L6.65685 15.0711C7.04738 15.4616 7.68054 15.4616 8.07107 15.0711C8.46159 14.6805 8.46159 14.0474 8.07107 13.6569L2.41421 8L8.07107 2.34315C8.46159 1.95262 8.46159 1.31946 8.07107 0.928932C7.68054 0.538408 7.04738 0.538408 6.65685 0.928932L0.292893 7.29289ZM56 7L1 7V9L56 9V7Z" fill="white"></path></svg>');
+  }
+  .slick-next {
+    right: 5%;
+    background-image: url('data:image/svg+xml;utf8,<svg width="56" height="16" viewBox="0 0 56 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M55.7071 8.70711C56.0976 8.31659 56.0976 7.68342 55.7071 7.2929L49.3431 0.928937C48.9526 0.538412 48.3195 0.538412 47.9289 0.928936C47.5384 1.31946 47.5384 1.95263 47.9289 2.34315L53.5858 8L47.9289 13.6569C47.5384 14.0474 47.5384 14.6805 47.9289 15.0711C48.3195 15.4616 48.9526 15.4616 49.3431 15.0711L55.7071 8.70711ZM-8.74228e-08 9L55 9L55 7L8.74228e-08 7L-8.74228e-08 9Z" fill="white"></path></svg>');
+  }
+}
+
+.cs_gallery_hover_show_nav {
+  .slick-prev,
+  .slick-next {
+    opacity: 0;
+  }
+  &:hover {
+    .slick-prev,
+    .slick-next {
+      opacity: 1;
+    }
+  }
+}
+.cs_disabled_room_btn {
+  pointer-events: none;
+  background-color: #760f0f !important;
+}
+.cs_nothing_found {
+  border: 1px solid var(--border);
+  height: 200px;
+}
+.cs_nav .cs_nav_list .cs_menu_dropdown_toggle.active + ul {
+  display: block;
+}

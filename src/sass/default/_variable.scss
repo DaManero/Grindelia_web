@@ -1,0 +1,27 @@
+/*--------------------------------------------------------------
+## All Color Variable
+----------------------------------------------------------------*/
+:root {
+  --web-wash: #F5F4F1; /* Fondo claro / Base */
+  --primary: #2E2F2B; /* Texto principal */
+  --secondary: #C7C2B8; /* Secundario 1 */
+  --ternary: #A4978E; /* Secundario 2 */
+  --gray: #7B8775; /* Principal (Logo / Identidad) */
+  --border: #A4978E; /* Secundario 2 (líneas) */
+  --accent: #C5A46D; /* Acento de lujo */
+  --natural-accent: #5F7260; /* Acento natural */
+  --primary-font: 'Libre Caslon Display', serif;
+  --secondary-font: 'Poppins', sans-serif;
+}
+
+.cs_dark {
+  --web-wash: #1b1b1b;
+  --primary: #fff;
+  --secondary: #d8d8d7;
+  --gray: #181818;
+  --border: #3c3c3c;
+}
+
+/*--------------------------------------------------------------
+## All Font Variable
+----------------------------------------------------------------*/

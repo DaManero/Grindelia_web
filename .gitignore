@@ -1,0 +1,60 @@
+# Node
+node_modules/
+
+# Build
+/dist/
+/build/
+
+# Vite
+.vite/
+
+# Logs
+*.log
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+
+# Env
+.env
+.env.*
+
+# Others
+*.zip
+*.tar.gz
+*.rar
+
+# Coverage
+coverage/
+
+# Misc
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# SASS cache
+.sass-cache/
+
+# Webpack
+webpack-stats.json
+
+# Test
+*.test.js
+*.spec.js
+
+# Backup
+*.bak
+
+# Python
+__pycache__/
+*.pyc
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Windows
+*.lnk
