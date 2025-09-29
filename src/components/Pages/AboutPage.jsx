@@ -1,133 +1,134 @@
-import { useEffect } from 'react';
-import PageHeadingSection from '../Section/PageHeadingSection';
-import AboutSection4 from '../Section/AboutSection/AboutSection4';
-import Section from '../Section';
-import FeatureSection6 from '../Section/FeatureSection/FeatureSection6';
-import VideoBlock from '../VideoBlock';
-import ServiceSection4 from '../Section/ServiceSection/ServiceSection4';
-import TestimonialSection from '../Section/TestimonialSection';
-import NewsletterSection from '../Section/NewsletterSection';
-import { pageTitle } from '../../helpers/PageTitle';
+import { useEffect } from "react";
+import PageHeadingSection from "../Section/PageHeadingSection";
+import AboutSection4 from "../Section/AboutSection/AboutSection4";
+import Section from "../Section";
+import FeatureSection6 from "../Section/FeatureSection/FeatureSection6";
+import VideoBlock from "../VideoBlock";
+import ServiceSection4 from "../Section/ServiceSection/ServiceSection4";
+import TestimonialSection from "../Section/TestimonialSection";
+import NewsletterSection from "../Section/NewsletterSection";
+import { pageTitle } from "../../helpers/PageTitle";
 
 const aboutData = {
   title:
-    'Curated to match your preferences and desires, our selection includes luxury resorts, exclusive tours, and transfers for an unparalleled experience',
-  subTitle: 'ABOUT US',
-  imgUrl: '/images/about_us_1.jpeg',
+    "Curated to match your preferences and desires, our selection includes luxury resorts, exclusive tours, and transfers for an unparalleled experience",
+  subTitle: "ABOUT US",
+  imgUrl: "/images/about_us_1.jpeg",
   featureList: [
     {
-      title: 'Client Satisfaction',
-      value: '100%',
+      title: "Client Satisfaction",
+      value: "100%",
     },
     {
-      title: 'Wining Awards',
-      value: '03+',
+      title: "Wining Awards",
+      value: "03+",
     },
     {
-      title: 'Pro Team Members',
-      value: '25+',
+      title: "Pro Team Members",
+      value: "25+",
     },
   ],
 };
 
 const featureData = [
   {
-    itemNumber: '01',
-    title: 'Unmatched Coastal Beauty',
+    itemNumber: "01",
+    title: "Belleza costera inigualable",
     subTitle:
-      'Located in a picturesque setting, Seapearl offers breathtaking views and direct beach access, providing guests with a serene and rejuvenating escape.',
+      "Ubicado en un entorno pintoresco, Seapearl ofrece vistas impresionantes y acceso directo a la playa, brindando a los huéspedes una escapada serena y rejuvenecedora.",
   },
   {
-    itemNumber: '02',
-    title: 'Luxurious Accommodations',
+    itemNumber: "02",
+    title: "Alojamientos de lujo",
     subTitle:
-      'Our resort boasts opulent rooms and suites, meticulously designed to provide comfort, style, and relaxation, ensuring a memorable stay for every guest.',
+      "Nuestro resort cuenta con habitaciones y suites opulentas, diseñadas meticulosamente para ofrecer confort, estilo y relajación, asegurando una estadía memorable para cada huésped.",
   },
   {
-    itemNumber: '03',
-    title: 'World-Class Amenities',
+    itemNumber: "03",
+    title: "Amenidades de primer nivel",
     subTitle:
-      'Seapearl offers a range of amenities for every guest, including a spa, fitness center, infinity pool, and conference facilities, ensuring a well-rounded experience.',
+      "Seapearl ofrece una variedad de amenidades para cada huésped, incluyendo spa, gimnasio, piscina infinita y salas de conferencias, garantizando una experiencia integral.",
   },
   {
-    itemNumber: '04',
-    title: 'Impeccable Service',
+    itemNumber: "04",
+    title: "Servicio impecable",
     subTitle:
-      'Our dedicated staff is committed to providing personalized service and ensuring that every aspect of your stay exceeds expectations, from check-in to check-out.',
+      "Nuestro personal dedicado está comprometido a brindar un servicio personalizado y asegurar que cada aspecto de tu estadía supere las expectativas, desde el check-in hasta el check-out.",
   },
   {
-    itemNumber: '05',
-    title: 'Seamless Event Planning',
-    subTitle: `Whether you're hosting a corporate event, wedding, or special celebration, our experienced event planning team will work closely with you to create a flawless and unforgettable experience.`,
+    itemNumber: "05",
+    title: "Organización de eventos sin complicaciones",
+    subTitle:
+      "Ya sea que organices un evento corporativo, boda o celebración especial, nuestro equipo de planificación trabajará contigo para crear una experiencia impecable e inolvidable.",
   },
   {
-    itemNumber: '06',
-    title: 'Exceptional Value',
+    itemNumber: "06",
+    title: "Valor excepcional",
     subTitle:
-      'With competitive rates and special packages, Seapearl provides exceptional value for guests seeking luxury accommodations and unparalleled experiences.',
+      "Con tarifas competitivas y paquetes especiales, Seapearl ofrece un valor excepcional para quienes buscan alojamiento de lujo y experiencias incomparables.",
   },
 ];
 
 const serviceData = [
   {
-    title: 'Luxury Accommodations',
-    imgUrl: '/images/service_img_6.jpeg',
-    href: '',
+    title: "Luxury Accommodations",
+    imgUrl: "/images/service_img_6.jpeg",
+    href: "",
   },
   {
-    title: 'Casabalina Restaurant',
-    imgUrl: '/images/service_img_7.jpeg',
-    href: '',
+    title: "Casabalina Restaurant",
+    imgUrl: "/images/service_img_7.jpeg",
+    href: "",
   },
   {
-    title: 'Business and Event Facilities',
-    imgUrl: '/images/service_img_8.jpeg',
-    href: '',
+    title: "Business and Event Facilities",
+    imgUrl: "/images/service_img_8.jpeg",
+    href: "",
   },
   {
-    title: 'SeaPearl Spa and Wellness',
-    imgUrl: '/images/service_img_9.jpeg',
-    href: '',
+    title: "SeaPearl Spa and Wellness",
+    imgUrl: "/images/service_img_9.jpeg",
+    href: "",
   },
-  { title: 'Infinity Pool', imgUrl: '/images/service_img_10.jpeg', href: '' },
+  { title: "Infinity Pool", imgUrl: "/images/service_img_10.jpeg", href: "" },
   {
-    title: '24-Hour Reception and Security',
-    imgUrl: '/images/service_img_9.jpeg',
-    href: '',
+    title: "24-Hour Reception and Security",
+    imgUrl: "/images/service_img_9.jpeg",
+    href: "",
   },
 ];
 
 const testimonialData = [
   {
-    avatarImgUrl: '/images/avatar_1.png',
-    avatarName: 'Angrew Bolar',
-    avatarDesignation: 'Hotel Guest',
+    avatarImgUrl: "/images/avatar_1.png",
+    avatarName: "Angrew Bolar",
+    avatarDesignation: "Hotel Guest",
     avatarText:
-      'Exceptional resort! From the exquisite dining to the serene spa and the  captivating infinity pool, every moment was pure bliss. Impeccable  service and breathtaking views – a perfect escape!',
+      "Exceptional resort! From the exquisite dining to the serene spa and the  captivating infinity pool, every moment was pure bliss. Impeccable  service and breathtaking views – a perfect escape!",
     avatarReview: 5,
   },
   {
-    avatarImgUrl: '/images/avatar_2.png',
-    avatarName: 'Cecilia Brooks',
-    avatarDesignation: 'Hotel Guest',
+    avatarImgUrl: "/images/avatar_2.png",
+    avatarName: "Cecilia Brooks",
+    avatarDesignation: "Hotel Guest",
     avatarText:
-      'Exceptional resort! From the exquisite dining to the serene spa and the  captivating infinity pool, every moment was pure bliss. Impeccable  service and breathtaking views – a perfect escape!',
+      "Exceptional resort! From the exquisite dining to the serene spa and the  captivating infinity pool, every moment was pure bliss. Impeccable  service and breathtaking views – a perfect escape!",
     avatarReview: 4.5,
   },
   {
-    avatarImgUrl: '/images/avatar_3.png',
-    avatarName: 'Carlo Basile',
-    avatarDesignation: 'VIP Guest',
+    avatarImgUrl: "/images/avatar_3.png",
+    avatarName: "Carlo Basile",
+    avatarDesignation: "VIP Guest",
     avatarText:
-      'Exceptional resort! From the exquisite dining to the serene spa and the  captivating infinity pool, every moment was pure bliss. Impeccable  service and breathtaking views – a perfect escape!',
+      "Exceptional resort! From the exquisite dining to the serene spa and the  captivating infinity pool, every moment was pure bliss. Impeccable  service and breathtaking views – a perfect escape!",
     avatarReview: 5,
   },
 ];
 
 export default function AboutPage() {
-  pageTitle('About Us');
+  pageTitle("About Us");
   useEffect(() => {
-    document.body.classList.remove('cs_dark');
+    document.body.classList.remove("cs_dark");
   }, []);
   return (
     <>
@@ -151,8 +152,8 @@ export default function AboutPage() {
         bottomSpaceMd="75"
       >
         <FeatureSection6
-          sectionTitle="Unveiling Unmatched Coastal Luxury and Hospitality"
-          sectionSubTitle="Why CHOOSE SEAPEARL"
+          sectionTitle="Descubre el lujo y el conford en un ambiente natural"
+          sectionSubTitle="Por qué elegir Seapearl"
           data={featureData}
         />
       </Section>

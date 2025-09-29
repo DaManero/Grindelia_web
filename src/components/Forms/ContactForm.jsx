@@ -1,24 +1,24 @@
-import React from 'react';
+import React from "react";
 
 export default function ContactForm() {
   return (
     <form action="/contact" className="cs_form cs_style_2">
-      <label>Full Name*</label>
+      <label>Nombre y Apellido*</label>
       <input type="text" className="cs_form_field_2 cs_radius_20" />
       <div className="cs_height_16 cs_height_lg_16" />
       <label>Email*</label>
       <input type="text" className="cs_form_field_2 cs_radius_20" />
       <div className="cs_height_16 cs_height_lg_16" />
-      <label>Write Your Comment*</label>
+      <label>Comentarios*</label>
       <textarea
         cols={30}
         rows={6}
         className="cs_form_field_2 cs_radius_20"
-        defaultValue={''}
+        defaultValue={""}
       />
       <div className="cs_height_25 cs_height_lg_25" />
       <button className="cs_btn cs_style_2 cs_accent_btn cs_medium cs_radius_20 cs_fs_15">
-        <b>Send Message</b>
+        <b>Enviar Mensaje</b>
         <span>
           <i>
             <svg
