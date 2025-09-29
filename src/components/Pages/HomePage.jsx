@@ -147,26 +147,40 @@ const testimonialData = [
 ];
 
 const serviceData = {
-  imgUrl1: "/images/service_img_1.jpeg",
-  imgUrl2: "/images/service_img_2.jpeg",
-  title: "Your Every Hotel Need, Met with Our Diverse Services.",
-  subTitle: "PREMIUM SERVICES",
+  imgUrl1: "/images/Service_img_1.webp",
+  imgStyle1: {
+    position: "relative",
+    filter: "contrast(1.15) brightness(1.08) saturate(1.12)",
+    boxShadow: "0 8px 32px rgba(197,164,109,0.25)",
+    borderRadius: "18px",
+    overflow: "hidden",
+  },
+  imgUrl2: "/images/Service_img_2.webp",
+  imgStyle2: {
+    position: "relative",
+    filter: "contrast(1.15) brightness(1.08) saturate(1.12)",
+    boxShadow: "0 8px 32px rgba(197,164,109,0.25)",
+    borderRadius: "18px",
+    overflow: "hidden",
+  },
+  title:
+    "Apart Hotel & Spa nivel Oro en sustentabilidad, lujo y confort responsable.",
+  subTitle: "APART ECOLÓGICO",
   features: [
-    "Transportation Services",
-    "Pet-Friendly Accommodations",
-    "Private Beach Access",
-    "24/7 Room Service",
-    "Free Wi-Fi Connectivity",
+    "Paneles solares",
+    "Recuperación de agua",
+    "Separación de residuos",
+    "Conservación de la biodiversidad",
   ],
-  btnText: "Ver más...",
+  btnText: "Ver servicios...",
   btnUrl: "/services",
 };
 
 const galleryData = [
-  { imgUrl: "/images/gallery_1.jpeg", title: "Beach View" },
-  { imgUrl: "/images/gallery_2.jpeg", title: "Restaurant View" },
-  { imgUrl: "/images/gallery_3.jpeg", title: "Relax View" },
-  { imgUrl: "/images/gallery_4.jpeg", title: "Hotel View" },
+  { imgUrl: "/images/Gallery_1.webp", title: "Pileta" },
+  { imgUrl: "/images/Gallery_2.webp", title: "Niños" },
+  { imgUrl: "/images/Gallery_3.webp", title: "Modo Relax" },
+  { imgUrl: "/images/Gallery_4.webp", title: "Modo Work" },
 ];
 
 const blogData = [
@@ -273,31 +287,10 @@ export default function HomePage() {
         bottomSpaceMd="0"
       >
         <GallerySection
-          sectionTitle="Explore Unforgettable Experiences"
-          sectionSubTitle="EXCITING GALLERY"
+          sectionTitle="Explora experiencias inolvidables"
+          sectionSubTitle="GALERÍA DESTACADA"
           data={galleryData}
         />
-      </Section>
-      <Section
-        topSpaceLg="141"
-        topSpaceMd="75"
-        bottomSpaceLg="150"
-        bottomSpaceMd="80"
-        className="cs_gray_bg"
-      >
-        <BlogSection
-          sectionTitle="Explore Our Latest Updates"
-          sectionSubTitle="NEWS & MEDIA"
-          data={blogData}
-        />
-      </Section>
-      <Section
-        topSpaceLg="150"
-        topSpaceMd="80"
-        bottomSpaceLg="150"
-        bottomSpaceMd="80"
-      >
-        <NewsletterSection title="For Exclusive Offers and Updates Subscribe Our SeaPearl Newsletter!" />
       </Section>
     </>
   );

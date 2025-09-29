@@ -44,7 +44,7 @@ Usa esta paleta para mantener la identidad visual:
 | -------------------------- | ---------------------- | ------- |
 | Principal (Logo/Identidad) | Verde grisáceo natural | #7B8775 |
 | Fondo claro / Base         | Marfil cálido          | #F5F4F1 |
-| Texto principal            | Gris carbón            | #2E2F2B |
+| Texto principal            | Gris carbón            | #7B8775 |
 | Secundario 1               | Arena suave            | #C7C2B8 |
 | Secundario 2               | Taupe cálido           | #A4978E |
 | Acento de lujo             | Dorado suave           | #C5A46D |
