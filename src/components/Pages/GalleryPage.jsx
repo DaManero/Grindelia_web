@@ -1,25 +1,25 @@
-import { useEffect } from 'react';
-import PageHeadingSection from '../Section/PageHeadingSection';
-import GallerySection4 from '../Section/GallerySection/GallerySection4';
-import Section from '../Section';
-import Spacing from '../Spacing';
-import { pageTitle } from '../../helpers/PageTitle';
+import { useEffect } from "react";
+import PageHeadingSection from "../Section/PageHeadingSection";
+import GallerySection4 from "../Section/GallerySection/GallerySection4";
+import Section from "../Section";
+import Spacing from "../Spacing";
+import { pageTitle } from "../../helpers/PageTitle";
 
 const galleryData = [
-  { imgUrl: '/images/gallery_9.jpeg', title: 'Beach View' },
-  { imgUrl: '/images/gallery_10.jpeg', title: 'Restaurant View' },
-  { imgUrl: '/images/gallery_11.jpeg', title: 'Relax View' },
-  { imgUrl: '/images/gallery_12.jpeg', title: 'Hotel View' },
-  { imgUrl: '/images/gallery_13.jpeg', title: 'Beach View' },
-  { imgUrl: '/images/gallery_14.jpeg', title: 'Beach View' },
-  { imgUrl: '/images/gallery_15.jpeg', title: 'Restaurant View' },
-  { imgUrl: '/images/gallery_16.jpeg', title: 'Relax View' },
+  { imgUrl: "/images/gallery_9.jpeg", title: "Beach View" },
+  { imgUrl: "/images/gallery_10.jpeg", title: "Cowork View" },
+  { imgUrl: "/images/gallery_11.jpeg", title: "Relax View" },
+  { imgUrl: "/images/gallery_12.jpeg", title: "Hotel View" },
+  { imgUrl: "/images/gallery_13.jpeg", title: "Beach View" },
+  { imgUrl: "/images/gallery_14.jpeg", title: "Beach View" },
+  { imgUrl: "/images/gallery_15.jpeg", title: "Cowork View" },
+  { imgUrl: "/images/gallery_16.jpeg", title: "Relax View" },
 ];
 
 export default function GalleryPage() {
-  pageTitle('Gallery');
+  pageTitle("Gallery");
   useEffect(() => {
-    document.body.classList.remove('cs_dark');
+    document.body.classList.remove("cs_dark");
   }, []);
   return (
     <>

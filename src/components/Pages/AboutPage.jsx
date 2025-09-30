@@ -33,9 +33,9 @@ const aboutData = {
 const featureData = [
   {
     itemNumber: "01",
-    title: "Belleza costera inigualable",
+    title: "Belleza inigualable",
     subTitle:
-      "Ubicado en un entorno pintoresco, Seapearl ofrece vistas impresionantes y acceso directo a la playa, brindando a los huéspedes una escapada serena y rejuvenecedora.",
+      "Ubicado en un entorno pintoresco, Grindelia ofrece vistas impresionantes y acceso directo a la playa, brindando a los huéspedes una escapada serena y rejuvenecedora.",
   },
   {
     itemNumber: "02",

@@ -1,3 +1,18 @@
+.spa-facility-img-dark {
+  filter: brightness(0.55) contrast(1.1);
+  transition: filter 0.3s ease;
+}
+.spa-facility-img-dark:hover {
+  filter: none;
+}
+// Filtro para oscurecer imágenes de instalaciones del Spa
+.spa-facility-img-dark {
+  filter: brightness(0.55) contrast(1.1);
+}
+// Título blanco para sección Spa
+.spa-title-white {
+  color: #fff !important;
+}
 a:active,
 a:focus {
   text-decoration: none;

@@ -81,7 +81,7 @@ const facilityData = [
       subTitle:
         "Un espacio de coworking exclusivo, ideal para quienes desean trabajar con inspiración, combinando naturaleza y confort, en perfecto equilibrio entre productividad y descanso.",
       btnText: "Ver más...",
-      btnUrl: "/restaurant",
+      btnUrl: "/cowork",
     },
     {
       imgUrl: "/images/Feature_img_1.webp",

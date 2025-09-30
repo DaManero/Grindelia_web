@@ -1,11 +1,12 @@
-import React from 'react';
-import SectionHeading from '../../SectionHeading';
-import FacilitySliderStyle2 from '../../Slider/FacilitySliderStyle2';
+import React from "react";
+import SectionHeading from "../../SectionHeading";
+import FacilitySliderStyle2 from "../../Slider/FacilitySliderStyle2";
 
 export default function FacilitySection5({
   sectionTitle,
   sectionSubTitle,
   data,
+  sectionTitleClass,
 }) {
   return (
     <>
@@ -16,6 +17,7 @@ export default function FacilitySection5({
           bottomSpaceLg="80"
           bottomSpaceMd="50"
           variant="text-center"
+          lightColor={true}
         />
       </div>
       <div className="container-fluid p-0">

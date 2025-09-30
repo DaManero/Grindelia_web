@@ -12,7 +12,7 @@ import RoomDetailsPageV3 from "./components/Pages/RoomDetailsPageV3";
 import SearchResultPage from "./components/Pages/SearchResultPage";
 import CompleteReservationPage from "./components/Pages/CompleteReservationPage";
 import ServicesPage from "./components/Pages/ServicesPage";
-import RestaurantPage from "./components/Pages/RestaurantPage";
+import CoworkPage from "./components/Pages/cowork";
 import SpaWellnessPage from "./components/Pages/SpaWellnessPage";
 import InfinityPoolPage from "./components/Pages/InfinityPoolPage";
 import TeamPage from "./components/Pages/TeamPage";
@@ -60,7 +60,7 @@ export default function App() {
           element={<CompleteReservationPage />}
         />
         <Route path="/services" element={<ServicesPage />} />
-        <Route path="/restaurant" element={<RestaurantPage />} />
+        <Route path="/cowork" element={<CoworkPage />} />
         <Route path="/spa-wellness" element={<SpaWellnessPage />} />
         <Route path="/infinity-pool" element={<InfinityPoolPage />} />
         <Route path="/team" element={<TeamPage />} />

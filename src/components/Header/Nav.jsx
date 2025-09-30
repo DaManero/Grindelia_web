@@ -156,13 +156,19 @@ export default function Nav({ setMobileToggle, mobileToggle, variant }) {
       </span>
       <ul className={`cs_nav_list ${mobileToggle ? "cs_active" : ""}`}>
         <li>
-          <Link to="/" className="cs_white_color">Home</Link>
+          <Link to="/" className="cs_white_color">
+            Home
+          </Link>
         </li>
         <li>
-          <Link to="/about" className="cs_white_color">About Us</Link>
+          <Link to="/about" className="cs_white_color">
+            About Us
+          </Link>
         </li>
         <li className="menu-item-has-children">
-          <Link to="/rooms" className="cs_white_color">Rooms</Link>
+          <Link to="/rooms" className="cs_white_color">
+            Rooms
+          </Link>
           <DropDown>
             <ul>
               {roomPageMenu.map((item, index) => (
@@ -180,11 +186,15 @@ export default function Nav({ setMobileToggle, mobileToggle, variant }) {
           </DropDown>
         </li>
         <li>
-          <Link to="/services" className="cs_white_color">Services</Link>
+          <Link to="/services" className="cs_white_color">
+            Services
+          </Link>
         </li>
         {/* Botones Restaurant, Pages y Blog eliminados */}
         <li>
-          <Link to="/contact" className="cs_white_color">Contact</Link>
+          <Link to="/contact" className="cs_white_color">
+            Contact
+          </Link>
         </li>
       </ul>
     </nav>
