@@ -1,5 +1,5 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React from "react";
+import { Link } from "react-router-dom";
 
 export default function RoomCardStyle7({
   imgUrl,
@@ -14,7 +14,7 @@ export default function RoomCardStyle7({
   return (
     <div
       className={`cs_card cs_style_7 cs_radius_5 overflow-hidden ${
-        variant ? variant : ''
+        variant ? variant : ""
       }`}
     >
       <Link
@@ -63,7 +63,6 @@ export default function RoomCardStyle7({
           <Link to={href}>{title}</Link>
         </h2>
         <div className="cs_card_price cs_mb_17">
-          <span className="cs_primary_color">From</span>
           <span className="cs_accent_color cs_fs_38 cs_primary_font">
             {currency}
             {price}

@@ -8,8 +8,7 @@ import FacilitySection from "../Section/FacilitySection";
 import TestimonialSection from "../Section/TestimonialSection";
 import ServiceSection from "../Section/ServiceSection";
 import GallerySection from "../Section/GallerySection";
-import BlogSection from "../Section/BlogSection";
-import NewsletterSection from "../Section/NewsletterSection";
+
 import { pageTitle } from "../../helpers/PageTitle";
 
 const heroData = [

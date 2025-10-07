@@ -9,6 +9,8 @@ import RoomsListViewPage from "./components/Pages/RoomsListViewPage";
 import RoomDetailsPage from "./components/Pages/RoomDetailsPage";
 import RoomDetailsPageV2 from "./components/Pages/RoomDetailsPageV2";
 import RoomDetailsPageV3 from "./components/Pages/RoomDetailsPageV3";
+import Room3aPage from "./components/Pages/Room3aPage";
+import Room2aPage from "./components/Pages/Room2aPage";
 import SearchResultPage from "./components/Pages/SearchResultPage";
 import CompleteReservationPage from "./components/Pages/CompleteReservationPage";
 import ServicesPage from "./components/Pages/ServicesPage";
@@ -52,6 +54,8 @@ export default function App() {
         <Route path="/room/room-details" element={<RoomDetailsPage />} />
         <Route path="/room/room-details-v2" element={<RoomDetailsPageV2 />} />
         <Route path="/room/room-details-v3" element={<RoomDetailsPageV3 />} />
+        <Route path="/room/3a" element={<Room3aPage />} />
+        <Route path="/room/2a" element={<Room2aPage />} />
         <Route path="/room/not-available-room" element={<NotAvailableRoom />} />
         <Route path="/search-result" element={<SearchResultPage />} />
         <Route path="/not-found-any-room" element={<NoSearchResult />} />

@@ -1,3 +1,14 @@
+// Forzar que el mapa de Google no reciba filtros ni inversión de color
+.googlemap-no-filter {
+  filter: none !important;
+  background: #fff !important;
+  mix-blend-mode: normal !important;
+}
+.cs_dark .googlemap-no-filter {
+  filter: none !important;
+  background: #fff !important;
+  mix-blend-mode: normal !important;
+}
 .spa-facility-img-dark {
   filter: brightness(0.55) contrast(1.1);
   transition: filter 0.3s ease;

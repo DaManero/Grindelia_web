@@ -157,17 +157,17 @@ export default function Nav({ setMobileToggle, mobileToggle, variant }) {
       <ul className={`cs_nav_list ${mobileToggle ? "cs_active" : ""}`}>
         <li>
           <Link to="/" className="cs_white_color">
-            Home
+            Inicio
           </Link>
         </li>
         <li>
           <Link to="/about" className="cs_white_color">
-            About Us
+            Sobre Nosotros
           </Link>
         </li>
         <li className="menu-item-has-children">
           <Link to="/rooms" className="cs_white_color">
-            Rooms
+            Habitaciones
           </Link>
           <DropDown>
             <ul>
@@ -176,7 +176,6 @@ export default function Nav({ setMobileToggle, mobileToggle, variant }) {
                   <Link
                     to={item.linkUrl}
                     onClick={() => setMobileToggle(false)}
-                    className="cs_white_color"
                   >
                     {item.title}
                   </Link>
@@ -187,13 +186,12 @@ export default function Nav({ setMobileToggle, mobileToggle, variant }) {
         </li>
         <li>
           <Link to="/services" className="cs_white_color">
-            Services
+            Servicios
           </Link>
         </li>
-        {/* Botones Restaurant, Pages y Blog eliminados */}
         <li>
           <Link to="/contact" className="cs_white_color">
-            Contact
+            Contacto
           </Link>
         </li>
       </ul>

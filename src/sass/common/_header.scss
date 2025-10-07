@@ -1,3 +1,17 @@
+// Colores personalizados para el dropdown de Habitaciones (paleta README)
+.cs_nav_list > li.menu-item-has-children > .cs_white_color + div ul {
+  background: #fff !important;
+}
+.cs_nav_list > li.menu-item-has-children > .cs_white_color + div ul li a {
+  color: #232323 !important; /* Más oscuro */
+  background: transparent !important;
+  transition: color 0.2s, background 0.2s;
+}
+.cs_nav_list > li.menu-item-has-children > .cs_white_color + div ul li a:hover {
+  color: #5F7260 !important; /* Verde profundo */
+  background: #F5F4F1 !important; /* Marfil cálido */
+  border-left: 4px solid #C5A46D !important; /* Dorado suave */
+}
 /*--------------------------------------------------------------
 7. Header
 ----------------------------------------------------------------*/

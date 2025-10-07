@@ -19,7 +19,7 @@ const menuData2 = [{ title: "Privacy & Cookie Policy", href: "/" }];
 const contactInfoData = {
   address: "452 15h Street, Office 741, Ohio, De 47754, USA",
   mobile: 'Call : <a href="tel:+00(244)14-50-774">+00(244)14-50-774</a>',
-  email: 'Email : <a href="mailto:info@oceanpearl.com">info@oceanpearl.com</a>',
+  email: 'Email : <a href="mailto:info@grindela.com">info@grindela.com</a>',
 };
 export default function Footer({ fullWidth }) {
   return (

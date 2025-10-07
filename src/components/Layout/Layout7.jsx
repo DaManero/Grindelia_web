@@ -1,6 +1,6 @@
-import { Outlet } from 'react-router-dom';
-import Header from '../Header/Header';
-import Footer from '../Footer';
+import { Outlet } from "react-router-dom";
+import Header from "../Header/Header";
+import FooterStyle2 from "../Footer/FooterStyle2";
 
 export default function Layout7() {
   return (
@@ -11,7 +11,7 @@ export default function Layout7() {
         fullWidth
       />
       <Outlet />
-      <Footer />
+      <FooterStyle2 />
     </>
   );
 }

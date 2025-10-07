@@ -1,6 +1,6 @@
-import React from 'react';
-import AvailabilityForm2 from '../components/Forms/AvailabilityForm2';
-import Spacing from './Spacing';
+import React from "react";
+import AvailabilityForm2 from "../components/Forms/AvailabilityForm2";
+import Spacing from "./Spacing";
 
 export default function RoomDetails({ data, unavailable }) {
   const {
@@ -32,7 +32,7 @@ export default function RoomDetails({ data, unavailable }) {
 
       <div className="container">
         <div className="row cs_gap_y_40">
-          <div className="col-lg-6">
+          <div className="col-lg-12">
             <div className="cs_room_details">
               {title2 && (
                 <h3
@@ -60,29 +60,6 @@ export default function RoomDetails({ data, unavailable }) {
                   </li>
                 ))}
               </ul>
-            </div>
-          </div>
-          <div className="col-lg-6">
-            <div className="cs_pl_110">
-              <form
-                action="complete-reservation.html"
-                className="cs_book_now_card cs_accent_bg cs_radius_5"
-              >
-                <div className="cs_book_now_card_head cs_mb_30">
-                  <h2
-                    className="cs_book_now_card_title cs_fs_38 cs_white_color mb-0 text-center"
-                    dangerouslySetInnerHTML={{ __html: formTitle }}
-                  />
-                  <h2 className="cs_book_now_card_price cs_fs_38 cs_white_color mb-0 text-center">
-                    {currency}
-                    {price}
-                    <span className="cs_secondary_font cs_fs_21">
-                      {pricePer}
-                    </span>
-                  </h2>
-                </div>
-                <AvailabilityForm2 unavailable={unavailable} />
-              </form>
             </div>
           </div>
         </div>

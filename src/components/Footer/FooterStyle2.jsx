@@ -7,21 +7,23 @@ import { Link } from "react-router-dom";
 import ContactInfo from "../Widgets/ContactInfo";
 import GoogleMap from "../Widgets/GoogleMap";
 const menuData = [
-  { title: "Home", href: "/" },
-  { title: "About Us", href: "/about" },
-  { title: "Booking", href: "/rooms" },
-  { title: "SPA & Wellness", href: "/spa-wellness" },
-  { title: "Restaurant", href: "/restaurant" },
-  { title: "News & Media", href: "/blog" },
+  { title: "Inicio", href: "/" },
+  { title: "Sobre Nosotros", href: "/about" },
+  { title: "Habitaciones", href: "/rooms" },
+  { title: "SPA & Bienestar", href: "/spa-wellness" },
+  { title: "Coworking", href: "/cowork" },
+  { title: "Novedades", href: "/blog" },
 ];
-const menuData2 = [{ title: "Privacy & Cookie Policy", href: "/" }];
+const menuData2 = [{ title: "Política de Privacidad y Cookies", href: "/" }];
 const contactInfoData = {
-  mobile: 'Call : <a href="tel:+00(244)14-50-774">+00(244)14-50-774</a>',
-  email: 'Email : <a href="mailto:info@oceanpearl.com">info@oceanpearl.com</a>',
+  mobile: 'Call : <a href="tel:+00(244)14-50-774">+54 9 11 5698741</a>',
+  email:
+    'Email : <a href="mailto:info@grindela.com.ar">info@grindela.com.ar</a>',
   openingHour: "We are open 24/7",
 };
 const contactInfoData2 = {
-  address: "452 15h Street, Office 741, Ohio, De 47754, USA",
+  address:
+    "Calle 28 y Punta del Este, Mar de las Pampas, Buenos Aires, Argentina",
 };
 
 export default function FooterStyle2() {
@@ -30,17 +32,17 @@ export default function FooterStyle2() {
       <div className="cs_footer_main">
         <div className="container">
           <div className="cs_footer_grid_4">
-            <FooterItem title="Contact Us" titleVariant="cs_type_1">
+            <FooterItem title="Contacto" titleVariant="cs_type_1">
               <ContactInfo data={contactInfoData} />
               <SocialMedia />
             </FooterItem>
-            <FooterItem title="Address" titleVariant="cs_type_1">
+            <FooterItem title="Dirección" titleVariant="cs_type_1">
               <ContactInfo data={contactInfoData2} />
             </FooterItem>
             <FooterItem title="Links" titleVariant="cs_type_1">
               <FooterMenu data={menuData} variant="cs_menu_widget" />
             </FooterItem>
-            <FooterItem title="Map Location" titleVariant="cs_type_1">
+            <FooterItem title="Localización" titleVariant="cs_type_1">
               <GoogleMap variant="cs_footer_map cs_primary_bg" />
             </FooterItem>
           </div>
@@ -50,7 +52,7 @@ export default function FooterStyle2() {
         <div className="container">
           <div className="cs_bottom_footer position-relative">
             <div className="cs_copyright">
-              OceanPearl Copyright © 2025 <Link to="/">SeaPearl</Link>
+              Grindelia Copyright © 2025 <Link to="/">Grindelia</Link>
             </div>
             <ScrollUp />
             <div className="cs_bottom_footer_right">

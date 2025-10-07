@@ -1,6 +1,6 @@
-import React from 'react';
-import SectionHeading from '../../SectionHeading';
-import RoomCardStyle7 from '../../RoomCard/RoomCardStyle7';
+import React from "react";
+import SectionHeading from "../../SectionHeading";
+import RoomCardStyle7 from "../../RoomCard/RoomCardStyle7";
 
 export default function RoomSection9({ sectionTitle, sectionSubTitle, data }) {
   return (
@@ -15,12 +15,21 @@ export default function RoomSection9({ sectionTitle, sectionSubTitle, data }) {
         />
       </div>
       <div className="container">
-        <div className="row cs_gap_y_80">
-          {data?.map((item, index) => (
-            <div className="col-xl-4 col-md-6" key={index}>
-              <RoomCardStyle7 {...item} />
-            </div>
-          ))}
+        <div className="row cs_gap_y_80 justify-content-center">
+          {data?.length === 2
+            ? data.map((item, index) => (
+                <div
+                  className="col-xl-6 col-md-8 d-flex justify-content-center"
+                  key={index}
+                >
+                  <RoomCardStyle7 {...item} />
+                </div>
+              ))
+            : data?.map((item, index) => (
+                <div className="col-xl-4 col-md-6" key={index}>
+                  <RoomCardStyle7 {...item} />
+                </div>
+              ))}
         </div>
       </div>
     </>
