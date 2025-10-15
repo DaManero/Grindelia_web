@@ -84,7 +84,8 @@ const faqData = [
   },
   {
     title: "¿Hay estacionamiento disponible y tiene costo?",
-    content: "El estacionamiento está disponible para huéspedes sin costo adicional.",
+    content:
+      "El estacionamiento está disponible para huéspedes sin costo adicional.",
   },
   {
     title: "¿Se permiten mascotas?",
@@ -92,7 +93,8 @@ const faqData = [
   },
   {
     title: "¿Hay código de vestimenta para el restaurante?",
-    content: "No hay un código de vestimenta estricto, pero se recomienda vestimenta casual elegante.",
+    content:
+      "No hay un código de vestimenta estricto, pero se recomienda vestimenta casual elegante.",
   },
   {
     title: "¿El Wi-Fi está incluido y es gratuito?",
@@ -100,7 +102,8 @@ const faqData = [
   },
   {
     title: "¿Tienen instalaciones para reuniones o eventos?",
-    content: "Sí, contamos con salones equipados para reuniones y eventos empresariales.",
+    content:
+      "Sí, contamos con salones equipados para reuniones y eventos empresariales.",
   },
   {
     title: "¿Hay acceso directo a la playa desde el hotel?",
