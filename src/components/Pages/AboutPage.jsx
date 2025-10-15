@@ -149,3 +149,6 @@ export default function AboutPage() {
     </>
   );
 }
+
+// No se importa ni se utiliza ningún archivo de la carpeta Layout en esta página.
+// Solo se usan componentes de Section, PageHeadingSection, AboutSection4, FeatureSection6, VideoBlock y ServiceSection4.

@@ -1,5 +1,5 @@
 import React from "react";
-import AvailabilityForm2 from "../components/Forms/AvailabilityForm2";
+
 import Spacing from "./Spacing";
 
 export default function RoomDetails({ data, unavailable }) {

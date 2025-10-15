@@ -1,125 +1,96 @@
 import { useEffect } from "react";
-import RoomDetails from "../RoomDetails";
 import Section from "../Section";
-import FeatureSection2 from "../Section/FeatureSection/FeatureSection2";
-import RoomSection12 from "../Section/RoomSection/RoomSection12";
+
 import ProductBanner from "../Section/ProductBanner";
 import { pageTitle } from "../../helpers/PageTitle";
 
 const roomDetailsData = {
   title:
-    "Enjoy a cozy and well-appointed room, complete with breakfast and unlimited access to our thermal pools, Spa & Wellness facilities. Please note that extra beds are not available in this room category",
-  title2: "About Accommodation",
-  detailes: `Relax in our cozy, compact room featuring a 140cm bed, satellite TV, coffee and tea set, minibar, desk, air conditioning, and complimentary Wi-Fi. Unwind in the bathroom with a shower, and find bathrobe and slippers for added comfort. Our non-smoking rooms also include SeaPearl's inclusive service, ensuring a delightful stay. Your accommodation price covers breakfast and unrestricted entry to our thermal pools and Wellness & Spa.`,
-  roomFacilitiesTitle: "Facilities",
+    "Disfrutá de un departamento premium de 3 ambientes, completamente equipado, con desayuno y acceso ilimitado a la piscina y spa. No se permiten camas adicionales en esta categoría.",
+  title2: "Sobre el Alojamiento",
+  detailes: `Amplio, luminoso y con vista al mar. Cuenta con cama king size, TV satelital, set de café y té, minibar, escritorio, aire acondicionado y Wi-Fi gratis. Baño completo con ducha, batas y pantuflas. Servicio exclusivo Grindelia. El precio incluye desayuno y acceso libre a la piscina y spa.`,
+  roomFacilitiesTitle: "Comodidades",
   roomFacilities: [
-    { iconUrl: "/images/icons/facility_icon_1.svg", title: "King size bed" },
-    { iconUrl: "/images/icons/facility_icon_2.svg", title: "Personal Locker" },
-    { iconUrl: "/images/icons/facility_icon_3.svg", title: "Desk" },
-    { iconUrl: "/images/icons/facility_icon_4.svg", title: "Personal Locker" },
-    { iconUrl: "/images/icons/facility_icon_5.svg", title: "Air Condition" },
+    { iconUrl: "/images/icons/facility_icon_1.svg", title: "Cama king size" },
+    { iconUrl: "/images/icons/facility_icon_2.svg", title: "Locker personal" },
+    { iconUrl: "/images/icons/facility_icon_3.svg", title: "Escritorio" },
+    { iconUrl: "/images/icons/facility_icon_4.svg", title: "Locker personal" },
+    {
+      iconUrl: "/images/icons/facility_icon_5.svg",
+      title: "Aire acondicionado",
+    },
     { iconUrl: "/images/icons/facility_icon_6.svg", title: "Minibar" },
-    { iconUrl: "/images/icons/facility_icon_7.svg", title: "Coffee and tea" },
-    { iconUrl: "/images/icons/facility_icon_8.svg", title: "Television" },
-    { iconUrl: "/images/icons/facility_icon_9.svg", title: "Wi Fi" },
-    { iconUrl: "/images/icons/facility_icon_10.svg", title: "Bathtub" },
-    { iconUrl: "/images/icons/facility_icon_11.svg", title: "Breakfast" },
+    {
+      iconUrl: "/images/icons/facility_icon_7.svg",
+      title: "Cafetera y tetera",
+    },
+    { iconUrl: "/images/icons/facility_icon_8.svg", title: "Televisión" },
+    { iconUrl: "/images/icons/facility_icon_9.svg", title: "Wi-Fi" },
+    { iconUrl: "/images/icons/facility_icon_10.svg", title: "Bañera" },
+
     {
       iconUrl: "/images/icons/facility_icon_12.svg",
-      title: "24/7 Room service",
+      title: "Servicio a la habitación 24/7",
     },
   ],
-  formTitle: "Reservation",
-  currency: "$",
-  price: 450,
-  pricePer: "/Night",
+  roomCapacityTitle: "Capacidad",
+  roomCapacity: "Hasta 6 huéspedes",
 };
 
 const featureData = [
   {
     iconUrl: "/images/icons/restaurant.svg",
-    title: "Restaurant & Bar",
+    title: "Restaurante & Bar",
     subTitle:
-      "Exceptional dining awaits at our resort. Immerse yourself in exquisite flavors with view to match. Pure indulgence, effortlessly delivered.",
+      "Gastronomía de autor con vista al mar. Platos y tragos para todos los gustos.",
   },
   {
     iconUrl: "/images/icons/massage.svg",
-    title: "Spa & Wellness",
+    title: "Spa & Bienestar",
     subTitle:
-      "Discover serenity at our spa. Indulge in blissful treatments and unwind in a haven of relaxation. Your path to rejuvenation starts here",
+      "Relajate en nuestro spa con tratamientos exclusivos y zona de relax.",
   },
   {
     iconUrl: "/images/icons/gym.svg",
-    title: "Fitness Center",
-    subTitle:
-      "Exceptional dining awaits at our resort. Immerse yourself in exquisite flavors with view to match. Pure indulgence, effortlessly delivered.",
+    title: "Gimnasio",
+    subTitle: "Entrená con equipos de última generación y vista panorámica.",
   },
   {
     iconUrl: "/images/icons/swimmer.svg",
-    title: "Infinity Pool",
-    subTitle:
-      "Our Infinity Pool Escape. Surrender to breath taking views and pure relaxation as you soak in the serenity of our infinity pool.",
+    title: "Piscina Infinita",
+    subTitle: "Piscina climatizada con borde infinito y solárium.",
   },
   {
     iconUrl: "/images/icons/briefcase.svg",
-    title: "Conference Center",
-    subTitle:
-      "Stay productive with our well-equipped business event center, offering essential services for business travelers.",
+    title: "Centro de Negocios",
+    subTitle: "Salas de reuniones y espacios de coworking para tu comodidad.",
   },
   {
     iconUrl: "/images/icons/room-service.svg",
-    title: "24/7 Room Service",
-    subTitle:
-      "Delight in the convenience of round-the-clock room service, catering, Laundry everything to your needs at any hour.",
+    title: "Room Service 24/7",
+    subTitle: "Servicio a la habitación todo el día, todos los días.",
   },
 ];
 
 const roomData = [
   {
-    imgUrl: "/images/room_4.jpeg",
-    title: "Deluxe Room",
+    imgUrl: "/images/Room_5.webp",
+    title: "Premium 2 Ambientes",
     currency: "$",
-    price: 320,
-    pricePer: "/Night",
-    href: "/room/room-details",
-    features: ["110 Sq", "3-5 Guests", "Free Wi-Fi"],
-  },
-  {
-    imgUrl: "/images/room_5.jpeg",
-    title: "Standard Room",
-    currency: "$",
-    price: 450,
-    pricePer: "/Night",
-    href: "/room/room-details",
-    features: ["110 Sq", "3-5 Guests", "Free Wi-Fi"],
-  },
-  {
-    imgUrl: "/images/room_6.jpeg",
-    title: "Superior Room",
-    currency: "$",
-    price: 520,
-    pricePer: "/Night",
-    href: "/room/room-details",
-    features: ["110 Sq", "3-5 Guests", "Free Wi-Fi"],
-  },
-  {
-    imgUrl: "/images/room_5.jpeg",
-    title: "Standard Room",
-    currency: "$",
-    price: 450,
-    pricePer: "/Night",
-    href: "/room/room-details",
-    features: ["110 Sq", "3-5 Guests", "Free Wi-Fi"],
+    price: 350,
+    pricePer: "/Noche",
+    href: "/room/2a",
+    features: ["110 m²", "8 Huéspedes", "Wi-Fi"],
   },
 ];
 
 const galleryData = [
-  { imgUrlLg: "/images/room_lg_4.jpeg", imgUrlSm: "/images/room_sm_4.jpeg" },
-  { imgUrlLg: "/images/room_lg_5.jpeg", imgUrlSm: "/images/room_sm_5.jpeg" },
-  { imgUrlLg: "/images/room_lg_6.jpeg", imgUrlSm: "/images/room_sm_6.jpeg" },
-  { imgUrlLg: "/images/room_lg_4.jpeg", imgUrlSm: "/images/room_sm_4.jpeg" },
-  { imgUrlLg: "/images/room_lg_5.jpeg", imgUrlSm: "/images/room_sm_5.jpeg" },
-  { imgUrlLg: "/images/room_lg_6.jpeg", imgUrlSm: "/images/room_sm_6.jpeg" },
+  { imgUrlLg: "/images/room_lg_4.jpg", imgUrlSm: "/images/room_sm_4.jpg" },
+  { imgUrlLg: "/images/room_lg_5.jpg", imgUrlSm: "/images/room_sm_5.jpg" },
+  { imgUrlLg: "/images/room_lg_6.jpg", imgUrlSm: "/images/room_sm_6.jpg" },
+  { imgUrlLg: "/images/room_lg_4.jpg", imgUrlSm: "/images/room_sm_4.jpg" },
+  { imgUrlLg: "/images/room_lg_5.jpg", imgUrlSm: "/images/room_sm_5.jpg" },
+  { imgUrlLg: "/images/room_lg_6.jpg", imgUrlSm: "/images/room_sm_6.jpeg" },
 ];
 
 export default function RoomDetailsPageV2() {
@@ -136,10 +107,8 @@ export default function RoomDetailsPageV2() {
         bottomSpaceMd="0"
       >
         <ProductBanner
-          title="Deluxe Rooms"
-          currency="$"
-          price={320}
-          pricePer="/Night"
+          title="Departamento Premium"
+          currency="2 Ambientes"
           data={galleryData}
         />
       </Section>
@@ -149,32 +118,54 @@ export default function RoomDetailsPageV2() {
         bottomSpaceLg="0"
         bottomSpaceMd="0"
       >
-        <RoomDetails data={roomDetailsData} />
+        <div className="container">
+          <div className="row cs_gap_y_40 align-items-start">
+            <div className="col-lg-6">
+              <div className="cs_room_details">
+                <h3 className="cs_fs_38 cs_mb_29 cs_mb_lg_20">
+                  Sobre el Alojamiento
+                </h3>
+                <p className="cs_mb_49 cs_mb_lg_30">
+                  {roomDetailsData.detailes}
+                </p>
+              </div>
+            </div>
+            <div className="col-lg-6">
+              <div className="cs_room_details">
+                <h3 className="cs_fs_31 cs_mb_29 cs_mb_lg_20">Comodidades</h3>
+                <ul className="cs_list cs_style_3 cs_mp_0">
+                  {/* Icono y texto "hasta 8 huéspedes" como primer item, en línea */}
+                  <li style={{ display: "flex", alignItems: "center" }}>
+                    <img
+                      src="/images/icons/review.svg"
+                      alt="Huéspedes"
+                      style={{
+                        width: 24,
+                        height: 24,
+                        marginRight: 8,
+                        verticalAlign: "middle",
+                      }}
+                    />
+                    <span>hasta 8 huéspedes</span>
+                  </li>
+                  {roomDetailsData.roomFacilities?.map((item, index) => (
+                    <li key={index}>
+                      <img src={item.iconUrl} alt="Icon" />
+                      {item.title}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
       </Section>
       <Section
         topSpaceLg="141"
         topSpaceMd="75"
         bottomSpaceLg="0"
         bottomSpaceMd="0"
-      >
-        <FeatureSection2
-          sectionTitle="Unveiling Unmatched Coastal <br />Luxury and Hospitality"
-          sectionSubTitle="Why CHOOSE SEAPEARL"
-          data={featureData}
-        />
-      </Section>
-      <Section
-        topSpaceLg="140"
-        topSpaceMd="70"
-        bottomSpaceLg="150"
-        bottomSpaceMd="80"
-      >
-        <RoomSection12
-          sectionTitle="Other Rooms"
-          data={roomData}
-          lightColor={false}
-        />
-      </Section>
+      ></Section>
     </>
   );
 }

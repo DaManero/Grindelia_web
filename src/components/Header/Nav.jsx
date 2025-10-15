@@ -171,16 +171,16 @@ export default function Nav({ setMobileToggle, mobileToggle, variant }) {
           </Link>
           <DropDown>
             <ul>
-              {roomPageMenu.map((item, index) => (
-                <li key={index}>
-                  <Link
-                    to={item.linkUrl}
-                    onClick={() => setMobileToggle(false)}
-                  >
-                    {item.title}
-                  </Link>
-                </li>
-              ))}
+              <li>
+                <Link to="/room/2a" onClick={() => setMobileToggle(false)}>
+                  Premium 2 Ambientes
+                </Link>
+              </li>
+              <li>
+                <Link to="/room/3a" onClick={() => setMobileToggle(false)}>
+                  Premium 3 Ambientes
+                </Link>
+              </li>
             </ul>
           </DropDown>
         </li>

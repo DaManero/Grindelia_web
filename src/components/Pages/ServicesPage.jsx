@@ -1,132 +1,122 @@
-import { useEffect } from 'react';
-import PageHeadingSection from '../Section/PageHeadingSection';
-import FeatureSection2 from '../Section/FeatureSection/FeatureSection2';
-import Section from '../Section';
-import VideoBlock from '../VideoBlock';
-import NewsletterSection from '../Section/NewsletterSection';
-import FacilitySection4 from '../Section/FacilitySection/FacilitySection4';
-import FaqSection from '../Section/FaqSection';
-import { pageTitle } from '../../helpers/PageTitle';
+import { useEffect } from "react";
+import PageHeadingSection from "../Section/PageHeadingSection";
+import FeatureSection2 from "../Section/FeatureSection/FeatureSection2";
+import Section from "../Section";
+import VideoBlock from "../VideoBlock";
+import NewsletterSection from "../Section/NewsletterSection";
+import FacilitySection4 from "../Section/FacilitySection/FacilitySection4";
+import FaqSection from "../Section/FaqSection";
+import { pageTitle } from "../../helpers/PageTitle";
 
 const featureData = [
   {
-    iconUrl: '/images/icons/restaurant.svg',
-    title: 'Restaurant & Bar',
+    iconUrl: "/images/icons/restaurant.svg",
+    title: "Restaurante & Bar",
     subTitle:
-      'Exceptional dining awaits at our resort. Immerse yourself in exquisite flavors with view to match. Pure indulgence, effortlessly delivered.',
+      "Gastronomía de autor con vista al mar. Platos y tragos para todos los gustos. Disfrutá de un ambiente elegante y relajado, ideal para compartir en pareja, familia o amigos. Nuestro menú fusiona sabores locales e internacionales con productos frescos de estación.",
   },
   {
-    iconUrl: '/images/icons/massage.svg',
-    title: 'Spa & Wellness',
+    iconUrl: "/images/icons/massage.svg",
+    title: "Spa & Bienestar",
     subTitle:
-      'Discover serenity at our spa. Indulge in blissful treatments and unwind in a haven of relaxation. Your path to rejuvenation starts here',
+      "Relajate en nuestro spa con tratamientos exclusivos y zona de relax. Contamos con sauna seco y húmedo, masajes personalizados y circuitos de bienestar. Un espacio pensado para tu descanso y renovación física y mental.",
   },
   {
-    iconUrl: '/images/icons/gym.svg',
-    title: 'Fitness Center',
+    iconUrl: "/images/icons/gym.svg",
+    title: "Gimnasio",
     subTitle:
-      'Exceptional dining awaits at our resort. Immerse yourself in exquisite flavors with view to match. Pure indulgence, effortlessly delivered.',
+      "Entrená con equipos de última generación y vista panorámica. Nuestro gimnasio está abierto las 24 horas y ofrece rutinas para todos los niveles. Mantente activo durante tu estadía y disfrutá de un entorno saludable y moderno.",
   },
   {
-    iconUrl: '/images/icons/swimmer.svg',
-    title: 'Infinity Pool',
+    iconUrl: "/images/icons/swimmer.svg",
+    title: "Piscina Infinita",
     subTitle:
-      'Our Infinity Pool Escape. Surrender to breath taking views and pure relaxation as you soak in the serenity of our infinity pool.',
+      "Piscina climatizada con borde infinito y solárium. Disfrutá de vistas únicas al mar y espacios de relax al aire libre. Ideal para nadar, tomar sol o compartir momentos inolvidables en familia.",
   },
   {
-    iconUrl: '/images/icons/briefcase.svg',
-    title: 'Conference Center',
+    iconUrl: "/images/icons/briefcase.svg",
+    title: "Centro de Negocios",
     subTitle:
-      'Stay productive with our well-equipped business event center, offering essential services for business travelers.',
+      "Salas de reuniones y espacios de coworking para tu comodidad. Equipamiento audiovisual, Wi-Fi de alta velocidad y asistencia personalizada. Perfecto para eventos corporativos, workshops y encuentros profesionales.",
   },
   {
-    iconUrl: '/images/icons/router.svg',
-    title: 'Wifi & Internet',
+    iconUrl: "/images/icons/router.svg",
+    title: "Wifi & Internet",
     subTitle:
-      'Delight in the convenience of round-the-clock room service, catering, Laundry everything to your needs at any hour.',
+      "Wifi de alta velocidad en todo el complejo, incluido en tu estadía. Conexión estable para trabajar, estudiar o disfrutar de tus contenidos favoritos. Siempre conectado, estés donde estés en Grindelia.",
   },
   {
-    iconUrl: '/images/icons/taxi.svg',
-    title: 'Airport Pick-up',
+    iconUrl: "/images/icons/taxi.svg",
+    title: "Traslado al Aeropuerto",
     subTitle:
-      'Our Infinity Pool Escape. Surrender to breath taking views and pure relaxation as you soak in the serenity of our infinity pool.',
+      "Coordinamos tu traslado para que llegues y partas sin preocupaciones. Servicio seguro y puntual, disponible las 24 horas. Consultá por traslados privados o compartidos según tu preferencia.",
   },
   {
-    iconUrl: '/images/icons/dryer.svg',
-    title: 'Laundry Services',
+    iconUrl: "/images/icons/dryer.svg",
+    title: "Lavandería",
     subTitle:
-      'Delight in the convenience of round-the-clock room service, catering, Laundry everything to your needs at any hour.',
+      "Servicio de lavandería disponible para tu comodidad. Entrega rápida y cuidado profesional de tus prendas. Consultá por servicios exprés y planchado.",
   },
   {
-    iconUrl: '/images/icons/room-service.svg',
-    title: '24/7 Room Service',
+    iconUrl: "/images/icons/room-service.svg",
+    title: "Room Service 24/7",
     subTitle:
-      'Delight in the convenience of round-the-clock room service, catering, Laundry everything to your needs at any hour.',
+      "Servicio a la habitación todo el día, todos los días. Pedí tu desayuno, almuerzo, cena o snacks sin moverte de tu habitación. Atención personalizada y menú variado para cualquier momento.",
   },
 ];
 
 const facilityData = [
   {
-    title: 'Casabelia Elegance, Savory Indulgence at Our Cuisine & Bar',
-    subTitle: 'RESTAURANT & BAR',
-    description:
-      'Step into the refined world of Casabelia, where our restaurant and bar redefine the art of dining and socializing. Nestled within our luxurious resort, Casabelia offers a sophisticated culinary experience that transcends expectations.',
-    imgUrl: '/images/feature_img_9.jpeg',
-    videoUrl: 'https://www.youtube.com/embed/UJEUwEJ6gH4',
-    btnText: 'Learn More',
-    btnUrl: '/restaurant',
-  },
-  {
-    title: 'Seapearl Meeting Oasis: Where Ideas Flourish',
-    subTitle: 'CONFERENCE HALL',
-    description: `Discover a space designed for success at Seapearl's Conference Room. Tailored for productivity and sophistication, our venue offers modern amenities, professional service, and an atmosphere that fosters innovation.`,
-    imgUrl: '/images/feature_img_10.jpeg',
-    videoUrl: 'https://www.youtube.com/embed/UJEUwEJ6gH4',
-    btnText: 'Learn More',
-    btnUrl: '/restaurant',
+    title: "Seapearl: el oasis para tus reuniones y eventos",
+    subTitle: "SALÓN DE CONFERENCIAS",
+    description: `Descubrí un espacio pensado para el éxito en el Salón de Conferencias de Grindelia. Equipado para la productividad y la sofisticación, nuestro salón ofrece comodidades modernas, servicio profesional y un ambiente que fomenta la innovación.`,
+    imgUrl: "/images/feature_img_10.jpeg",
+    videoUrl: "https://www.youtube.com/embed/UJEUwEJ6gH4",
+    btnText: "Ver más",
+    btnUrl: "/restaurant",
   },
 ];
 
 const faqData = [
   {
-    title: 'What are the check-in and check-out times at Seapearl?',
-    content: 'Check-in time is at 3:00 PM, and check-out is at 11:00 AM.',
+    title: "¿Cuáles son los horarios de check-in y check-out?",
+    content: "El check-in es a las 15:00 hs y el check-out es a las 11:00 hs.",
   },
   {
-    title: 'Is parking available, and is there a fee?',
-    content: 'Check-in time is at 3:00 PM, and check-out is at 11:00 AM.',
+    title: "¿Hay estacionamiento disponible y tiene costo?",
+    content: "El estacionamiento está disponible para huéspedes sin costo adicional.",
   },
   {
-    title: 'Are pets allowed at Seapearl?',
-    content: 'Check-in time is at 3:00 PM, and check-out is at 11:00 AM.',
+    title: "¿Se permiten mascotas?",
+    content: "No se permiten mascotas en el establecimiento.",
   },
   {
-    title: 'Is there a dress code for the restaurant?',
-    content: 'Check-in time is at 3:00 PM, and check-out is at 11:00 AM.',
+    title: "¿Hay código de vestimenta para el restaurante?",
+    content: "No hay un código de vestimenta estricto, pero se recomienda vestimenta casual elegante.",
   },
   {
-    title: 'Is Wi-Fi provided, and is it complimentary?',
-    content: 'Check-in time is at 3:00 PM, and check-out is at 11:00 AM.',
+    title: "¿El Wi-Fi está incluido y es gratuito?",
+    content: "Sí, el Wi-Fi es gratuito y está disponible en todo el complejo.",
   },
   {
-    title: 'Do you have facilities for business meetings or events?',
-    content: 'Check-in time is at 3:00 PM, and check-out is at 11:00 AM.',
+    title: "¿Tienen instalaciones para reuniones o eventos?",
+    content: "Sí, contamos con salones equipados para reuniones y eventos empresariales.",
   },
   {
-    title: 'Is direct beach access available from the hotel?',
-    content: 'Check-in time is at 3:00 PM, and check-out is at 11:00 AM.',
+    title: "¿Hay acceso directo a la playa desde el hotel?",
+    content: "Sí, el hotel cuenta con acceso directo a la playa.",
   },
 ];
 
 export default function ServicesPage() {
-  pageTitle('Our Services');
+  pageTitle("Servicios");
   useEffect(() => {
-    document.body.classList.remove('cs_dark');
+    document.body.classList.remove("cs_dark");
   }, []);
   return (
     <>
       <PageHeadingSection
-        title="Services"
+        title="Servicios"
         bgImgUrl="/images/page_heading_bg_services.jpeg"
       />
       <Section
@@ -136,8 +126,8 @@ export default function ServicesPage() {
         bottomSpaceMd="75"
       >
         <FeatureSection2
-          sectionTitle="Unveiling Unmatched Coastal <br />Luxury and Hospitality"
-          sectionSubTitle="Why CHOOSE SEAPEARL"
+          sectionTitle="Descubrí el lujo y la hospitalidad costera sin igual"
+          sectionSubTitle="¿Por qué elegir Grindelia?"
           data={featureData}
         />
       </Section>
@@ -150,7 +140,7 @@ export default function ServicesPage() {
         <VideoBlock
           videoBgUrl="/images/video_bg_8.jpeg"
           videoUrl="https://www.youtube.com/embed/UJEUwEJ6gH4"
-          title="CASABALINA"
+          title="GRINDELIA"
           variant="cs_color_1"
           playerStyle1
         />
@@ -172,7 +162,7 @@ export default function ServicesPage() {
         style={{ backgroundImage: `url(/images/newsletter_bg.jpeg)` }}
       >
         <NewsletterSection
-          title="For Exclusive Offers and Updates Subscribe Our SeaPearl Newsletter!"
+          title="¡Suscribite a nuestro newsletter y recibí ofertas y novedades exclusivas de Grindelia!"
           variant="cs_color_2"
         />
       </Section>
@@ -184,7 +174,7 @@ export default function ServicesPage() {
         className="cs_gray_bg"
       >
         <FaqSection
-          sectionTitle="Explore Our Frequently Asked Questions"
+          sectionTitle="Preguntas frecuentes"
           sectionSubTitle="FAQ’S"
           thumbUrl="/images/faq_img.jpeg"
           data={faqData}
