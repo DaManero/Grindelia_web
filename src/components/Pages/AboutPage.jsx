@@ -4,7 +4,7 @@ import AboutSection4 from "../Section/AboutSection/AboutSection4";
 import Section from "../Section";
 import FeatureSection6 from "../Section/FeatureSection/FeatureSection6";
 import VideoBlock from "../VideoBlock";
-import ServiceSection4 from "../Section/ServiceSection/ServiceSection4";
+
 import { pageTitle } from "../../helpers/PageTitle";
 
 const aboutData = {
@@ -63,40 +63,25 @@ const featureData = [
     itemNumber: "06",
     title: "Valor excepcional",
     subTitle:
-      "Con tarifas competitivas y paquetes especiales, Grindelia ofrece un valor excepcional para quienes buscan alojamiento de lujo y experiencias incomparables.",
+      "Ofrecemos una propuesta de valor que combina calidad, diseño y sostenibilidad, entregando experiencias memorables y una inversión en bienestar a largo plazo.",
   },
 ];
 
-const serviceData = [
+const datanew = [
   {
-    title: "Alojamientos de lujo",
-    imgUrl: "/images/service_img_6.jpeg",
-    href: "",
-  },
-  {
-    title: "Restaurante Casabalina",
-    imgUrl: "/images/service_img_7.jpeg",
-    href: "",
-  },
-  {
-    title: "Salones para eventos y negocios",
-    imgUrl: "/images/service_img_8.jpeg",
-    href: "",
-  },
-  {
-    title: "Spa y Bienestar Grindelia",
-    imgUrl: "/images/service_img_9.jpeg",
-    href: "",
-  },
-  {
-    title: "Piscina infinita",
-    imgUrl: "/images/service_img_10.jpeg",
-    href: "",
-  },
-  {
-    title: "Recepción y seguridad 24 hs",
-    imgUrl: "/images/service_img_9.jpeg",
-    href: "",
+    subTitle: `Somos un equipo comprometido con crear espacios que respetan y abrazan la naturaleza de Las Gaviotas. Nuestro proyecto nace de la convicción de
+que es posible vivir con confort y elegancia sin comprometer el medio ambiente.
+Por eso, diseñamos edificios sustentables que aprovechan inteligentemente cada
+recurso: desde la recolección de agua de lluvia hasta el uso de energía solar,
+implementando tecnologías como piso radiante, aerotermia y construcción en seco
+Steel Framing que minimiza la huella de carbono.
+Creemos que el verdadero lujo está en despertar con vistas al verde, disfrutar
+de espacios luminosos con ventilación natural, y saber que tu hogar genera su
+propia energía. Cada decisión, desde la orientación del edificio hasta la
+elección de materiales de bajo mantenimiento, está pensada para ofrecerte
+calidad de vida a largo plazo con el menor impacto ambiental posible. No solo
+construimos departamentos; creamos un estilo de vida consciente donde el bienestar
+personal y el cuidado del entorno van de la mano.`,
   },
 ];
 
@@ -112,7 +97,7 @@ export default function AboutPage() {
         bgImgUrl="/images/Page_heading_bg_about.webp"
       />
       <Section
-        topSpaceLg="141"
+        topSpaceLg="10"
         topSpaceMd="75"
         bottomSpaceLg="150"
         bottomSpaceMd="80"
@@ -120,8 +105,33 @@ export default function AboutPage() {
       >
         <AboutSection4 data={aboutData} />
       </Section>
+
+      {/* Sección nueva: texto extendido sobre Nosotros (desde datanew) */}
       <Section
-        topSpaceLg="141"
+        topSpaceLg="60"
+        topSpaceMd="40"
+        bottomSpaceLg="60"
+        bottomSpaceMd="40"
+        className="cs_custom_bg"
+      >
+        <div className="container">
+          <div
+            className="cs_section_heading cs_align_left"
+            style={{ marginBottom: 24 }}
+          >
+            <h3 className="cs_fs_38 cs_mb_20">Nuestro compromiso</h3>
+            {/* renderizar el texto como párrafo continuo usando la clase de subtítulo */}
+            <div className="cs_text cs_two_columns">
+              <p className="cs_mb_12">
+                {datanew[0].subTitle.replace(/\n+/g, " ").trim()}
+              </p>
+            </div>
+          </div>
+        </div>
+      </Section>
+
+      <Section
+        topSpaceLg="20"
         topSpaceMd="75"
         bottomSpaceLg="140"
         bottomSpaceMd="75"

@@ -490,3 +490,136 @@ body.menu-open {
     color: #ffffff !important;
   }
 }
+
+/* Oculta el spacer específico solicitado */
+.cs_height_lg_141.cs_height_md_75 {
+  display: none !important;
+  height: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  visibility: hidden !important;
+}
+
+/* Sección personalizada: fondo oscuro / texto blanco (prioridad alta) */
+.cs_custom_bg {
+  background-color: #7b8775 !important;
+  color: #ffffff !important;
+}
+
+/* Asegurar que el contenedor interno no tenga fondo que oculte el color */
+.cs_custom_bg .container,
+.cs_custom_bg .container-fluid {
+  background: transparent !important;
+}
+
+/* Forzar color blanco en los elementos de texto dentro de la sección */
+.cs_custom_bg,
+.cs_custom_bg h1,
+.cs_custom_bg h2,
+.cs_custom_bg h3,
+.cs_custom_bg p,
+.cs_custom_bg a,
+.cs_custom_bg .cs_text,
+.cs_custom_bg .cs_section_heading,
+.cs_custom_bg .cs_section_heading * {
+  color: #ffffff !important;
+}
+
+/* Ajustes de contraste para enlaces y separadores */
+.cs_custom_bg a { text-decoration: underline; color: #ffffff !important; }
+.cs_custom_bg .cs_mb_12 + .cs_mb_12 { border-top: 1px solid rgba(255,255,255,0.04); }
+
+/* Si algún elemento interno aplica fondo blanco, forzarlo transparente */
+.cs_custom_bg *[style*="background"],
+.cs_custom_bg .cs_card,
+.cs_custom_bg .cs_box {
+  background: transparent !important;
+}
+
+/* Texto en dos columnas (usado en About - Nuestro compromiso) */
+.cs_two_columns {
+  column-count: 2;
+  column-gap: var(--site-nav-gap, 24px);
+  -webkit-column-count: 2;
+  -webkit-column-gap: var(--site-nav-gap, 24px);
+  -moz-column-count: 2;
+  -moz-column-gap: var(--site-nav-gap, 24px);
+  /* evitar que los bloques se rompan dentro de una columna */
+  break-inside: avoid;
+  -webkit-column-break-inside: avoid;
+  -moz-column-break-inside: avoid;
+}
+
+/* Asegurar que cada párrafo ocupe el ancho de la columna y respete el gap */
+.cs_two_columns p {
+  display: block;
+  width: 100%;
+  margin: 0 0 12px 0;
+  box-sizing: border-box;
+}
+
+/* Responsive: una columna en pantallas pequeñas */
+@media (max-width: 900px) {
+  .cs_two_columns {
+    column-count: 1 !important;
+    -webkit-column-count: 1 !important;
+    -moz-column-count: 1 !important;
+    column-gap: 0 !important;
+    -webkit-column-gap: 0 !important;
+    -moz-column-gap: 0 !important;
+  }
+}
+
+/* Forzar dos columnas en bloques marcados con .cs_two_columns */
+.cs_text.cs_two_columns {
+  display: block !important; /* evita que display:flex (si existe) lo rompa */
+  -webkit-column-count: 2 !important;
+  -moz-column-count: 2 !important;
+  column-count: 2 !important;
+  -webkit-column-gap: var(--site-nav-gap, 24px) !important;
+  -moz-column-gap: var(--site-nav-gap, 24px) !important;
+  column-gap: var(--site-nav-gap, 24px) !important;
+  -webkit-column-break-inside: avoid !important;
+  -moz-column-break-inside: avoid !important;
+  break-inside: avoid !important;
+  hyphens: auto !important;
+  /* asegurar que el flujo interno sea compatible con columnas */
+  white-space: normal !important;
+}
+
+/* Evitar que elementos padres rompan las columnas (p. ej. display:flex) */
+.cs_section_heading,
+.cs_section_heading > * {
+  display: block !important;
+}
+
+/* Asegurar que los párrafos ocupen la columna completa y no se fraccionen */
+.cs_text.cs_two_columns p {
+  display: block !important;
+  width: 100% !important;
+  margin: 0 0 12px 0 !important;
+  box-sizing: border-box !important;
+  break-inside: avoid !important;
+  -webkit-column-break-inside: avoid !important;
+  -moz-column-break-inside: avoid !important;
+}
+
+/* Si hay un solo párrafo muy largo, permitir que el navegador divida por palabras */
+.cs_text.cs_two_columns p {
+  overflow-wrap: break-word !important;
+  word-break: break-word !important;
+}
+
+/* Fallback: una columna en pantallas pequeñas */
+@media (max-width: 900px) {
+  .cs_text.cs_two_columns {
+    -webkit-column-count: 1 !important;
+    -moz-column-count: 1 !important;
+    column-count: 1 !important;
+    -webkit-column-gap: 0 !important;
+    -moz-column-gap: 0 !important;
+    column-gap: 0 !important;
+  }
+}
+
+/* Si tras esto seguís sin ver las columnas, puedo partir el texto en dos <p> y dejar cada uno en su columna. */

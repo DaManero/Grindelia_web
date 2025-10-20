@@ -7,10 +7,8 @@ const roomPageMenu = [
 ];
 
 export default function NavBar({ setMobileToggle, mobileToggle, variant }) {
-  // Forzamos una clase uniforme para que el navbar se vea igual en todas las páginas
-  const navClass = "cs_nav cs_fs_13 cs_semibold";
   return (
-    <nav className={navClass}>
+    <nav className={variant ? variant : "cs_nav cs_fs_13 cs_semibold"}>
       <span
         className={
           mobileToggle ? "cs_menu_toggle cs_toggle_active" : "cs_menu_toggle"

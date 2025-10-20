@@ -88,6 +88,7 @@ const roomData = [
     pricePer: "/Noche",
     href: "/room/2a",
     features: ["110 m²", "8 Huéspedes", "Wi-Fi"],
+    btnText: "Ver detalles",
   },
 ];
 

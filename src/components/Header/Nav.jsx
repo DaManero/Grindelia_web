@@ -55,42 +55,8 @@ const homePageMenu = [
 ];
 
 const roomPageMenu = [
-  {
-    title: "Room Grid View",
-    linkUrl: "/rooms",
-  },
-  {
-    title: "Room List View",
-    linkUrl: "/rooms-list-view",
-  },
-  {
-    title: "Room Details V1",
-    linkUrl: "/room/room-details",
-  },
-  {
-    title: "Room Details V2",
-    linkUrl: "/room/room-details-v2",
-  },
-  {
-    title: "Room Details V3",
-    linkUrl: "/room/room-details-v3",
-  },
-  {
-    title: "Room Search Result",
-    linkUrl: "/search-result",
-  },
-  {
-    title: "Payment Page",
-    linkUrl: "/complete-reservation",
-  },
-  {
-    title: "Not Found Any Room",
-    linkUrl: "/not-found-any-room",
-  },
-  {
-    title: "Not Available Room",
-    linkUrl: "/room/not-available-room",
-  },
+  { title: "Premium 2 Ambientes", linkUrl: "/room/2a" },
+  { title: "Premium 3 Ambientes", linkUrl: "/room/3a" },
 ];
 
 const pagesMenu = [

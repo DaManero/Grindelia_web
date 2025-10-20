@@ -27,7 +27,7 @@ export default function RoomsPage() {
   return (
     <>
       <PageHeadingSection
-        title="Elegí tu Habitación"
+        title="Nuestras Habitaciones"
         bgImgUrl="/images/page_heading_bg_rooms.jpeg"
       />
       <Section

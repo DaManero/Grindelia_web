@@ -24,7 +24,7 @@ export default function RoomCardStyle7({
         <img src={imgUrl} alt="Room" />
         <span className="cs_card_btn position-absolute cs_zindex_2">
           <span className="cs_btn cs_style_2 cs_accent_btn cs_medium cs_radius_5 cs_fs_15">
-            <b>View Details</b>
+            <b>Ver Detalles</b>
             <span>
               <i>
                 <svg
