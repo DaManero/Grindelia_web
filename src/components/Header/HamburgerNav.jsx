@@ -1,6 +1,6 @@
-import React from 'react';
-import Nav from './Nav';
-import HamburgerInfo from './HamburgerInfo';
+import React, { useEffect, useRef } from "react";
+import Nav from "./Nav";
+import HamburgerInfo from "./HamburgerInfo";
 
 export default function HamburgerNav({
   setMobileToggle,
@@ -8,8 +8,30 @@ export default function HamburgerNav({
   hamburgerActive,
   setHamburgerActive,
 }) {
+  const containerRef = useRef(null);
+
+  // Mantener sincronizada la clase 'cs_active' en el ul interno del Nav
+  useEffect(() => {
+    const container = containerRef.current;
+    if (!container) return;
+    const navList = container.querySelector(".cs_nav_list");
+    if (!navList) return;
+
+    if (hamburgerActive) {
+      navList.classList.add("cs_active");
+      document.body.classList.add("menu-open"); // opcional: evita scroll del body
+    } else {
+      navList.classList.remove("cs_active");
+      document.body.classList.remove("menu-open");
+    }
+    // cleanup no necesario aquí
+  }, [hamburgerActive]);
+
   return (
-    <div className={`cs_hamburger_header ${hamburgerActive ? 'active' : ''}`}>
+    <div
+      className={`cs_hamburger_header ${hamburgerActive ? "active" : ""}`}
+      ref={containerRef}
+    >
       <div className="container-fluid cs_plr_100">
         <div className="cs_hamburger_header_top">
           <div className="cs_hamburger_brand">
@@ -40,14 +62,16 @@ export default function HamburgerNav({
       <div className="cs_hamburger_header_in">
         <div className="container">
           <div className="row">
-            <div className="col-lg-6">
+            {/* En móviles ocupar todo el ancho */}
+            <div className="col-12 col-lg-6">
               <Nav
-                setMobileToggle={setMobileToggle}
-                mobileToggle={mobileToggle}
+                // sincronizamos el estado del Nav con el hamburger overlay
+                setMobileToggle={setHamburgerActive}
+                mobileToggle={hamburgerActive}
                 variant="cs_hamburger_menu cs_fs_38 cs_primary_font cs_white_color"
               />
             </div>
-            <div className="col-lg-6">
+            <div className="col-12 col-lg-6">
               <HamburgerInfo />
             </div>
           </div>

@@ -1,0 +1,492 @@
+/* buscá .cs_btn, .cs_btn_border, .cs_btn_primary, .cs_active */
+.cs_btn { /* tamaño, padding, tipografía */ }
+.cs_btn_border { /* borde, color de fondo transparente */ }
+.cs_btn_primary { /* fondo primario, color blanco */ }
+.cs_active { /* estado activo */ }
+
+.whatsapp,
+.whatsapp-btn,
+#whatsapp,
+.cs_whatsapp,
+.float-whatsapp,
+[audio][data-whats] {
+  display: none !important;
+}
+
+/* --- Normalización global del header / nav para todas las páginas --- */
+
+/* Variables globales (ajustá valores si necesitás más/menos espacio) */
+:root {
+  --site-nav-gap: 24px;
+  --site-nav-padding-x: 24px;
+  --site-nav-link-font-size: 15px;
+  --site-header-padding-vertical: 0;
+  --site-header-height: 72px; /* prueba con 72px; ajustá si tu header es distinto */
+}
+
+/* Contenedor del nav (wrapper) */
+.cs_nav_wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-left: var(--site-nav-padding-x);
+  padding-right: var(--site-nav-padding-x);
+  box-sizing: border-box;
+}
+
+/* Lista principal del nav: una sola línea, gap uniforme */
+.cs_nav_wrapper .cs_nav_list,
+.cs_nav_list {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  gap: var(--site-nav-gap) !important;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  overflow: visible; /* evitar scrollbar interno */
+}
+
+/* Items sin quiebres de línea y ancho fijo (no crecen) */
+.cs_nav_wrapper .cs_nav_list > li,
+.cs_nav_list > li {
+  white-space: nowrap;
+  flex: 0 0 auto;
+  margin: 0;
+  padding: 0;
+}
+
+/* Links del nav: mismo tamaño en todas las páginas */
+.cs_nav_wrapper .cs_nav_list a,
+.cs_nav_list a {
+  font-size: var(--site-nav-link-font-size);
+  display: inline-block;
+  padding: 8px 10px;
+  color: inherit;
+  text-decoration: none;
+}
+
+/* Header general: mantener padding vertical uniforme */
+.cs_site_header {
+  padding-top: var(--site-header-padding-vertical);
+  padding-bottom: var(--site-header-padding-vertical);
+  height: var(--site-header-height);
+  min-height: var(--site-header-height);
+  display: flex;
+  align-items: center;
+  z-index: 1000;
+}
+
+/* Alineación consistente header / nav */
+.cs_main_header_in {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* logo izquierda, nav derecha */
+}
+
+/* Wrapper ocupa espacio y alinea el nav a la derecha */
+.cs_nav_wrapper {
+  flex: 1 1 auto;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding-left: 24px;
+  padding-right: 24px;
+  box-sizing: border-box;
+}
+
+/* Lista del nav: horizontal en desktop, sin wrap, gap uniforme */
+.cs_nav_list {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: center;
+  gap: 24px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+/* Items: no permiten quiebre de línea y no crecen */
+.cs_nav_list > li {
+  white-space: nowrap;
+  flex: 0 0 auto;
+  margin: 0;
+  padding: 0;
+}
+
+/* Enlaces del nav: padding y tamaño uniforme */
+.cs_nav_list a {
+  display: inline-block;
+  padding: 8px 10px;
+  font-size: 15px;
+  color: inherit;
+  text-decoration: none;
+}
+
+/* Dropdown: oculto por defecto y visible en hover (desktop) */
+.menu-item-has-children > .cs_dropdown,
+.menu-item-has-children > .dropdown {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  min-width: 200px;
+  z-index: 9999;
+  background: #fff;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+}
+@media (hover: hover) and (pointer: fine) {
+  .menu-item-has-children:hover > .cs_dropdown,
+  .menu-item-has-children:hover > .dropdown {
+    display: block;
+  }
+}
+
+/* Móvil: cuando .cs_active está presente, mostrar el menú en columna (full width) */
+.cs_nav_list.cs_active {
+  position: fixed !important;
+  top: var(--site-header-height);
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: calc(100vh - var(--site-header-height));
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: flex-start;
+  background: rgba(17,17,17,0.95); /* fondo oscuro semitransparente */
+  padding: 8px 0;
+  gap: 0;
+  overflow-y: auto; /* permitir scroll vertical si hay muchos items */
+  -webkit-overflow-scrolling: touch;
+  z-index: 999; /* por debajo del header toggle si es necesario */
+}
+
+/* Asegura que el toggle del menú quede por encima del overlay */
+.cs_menu_toggle {
+  z-index: 1100;
+  position: relative;
+}
+
+/* cada item ocupa todo el ancho del menú */
+.cs_nav_list.cs_active > li {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+/* los enlaces como bloques, alineados a la izquierda y con padding consistente */
+.cs_nav_list.cs_active a {
+  display: block;
+  width: 100%;
+  padding: 16px 20px;
+  text-align: left;
+  color: #fff;
+  box-sizing: border-box;
+}
+
+/* separar visualmente items si se desea (opcional) */
+.cs_nav_list.cs_active > li + li a {
+  border-top: 1px solid rgba(255,255,255,0.04);
+}
+
+/* si había iconos o subelementos, mantenerlos dentro del flujo */
+.cs_nav_list.cs_active .menu-item-has-children > .cs_dropdown,
+.cs_nav_list.cs_active .menu-item-has-children > .dropdown {
+  position: relative;
+  top: 0;
+  left: 0;
+  box-shadow: none;
+  display: none; /* el comportamiento de apertura lo controla el JS del DropDown */
+}
+
+/* Unifica paddings del header */
+.cs_site_header {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+/* Asegura logo con tamaño constante */
+.cs_site_branding img {
+  display: block;
+  height: 56px;
+  width: auto;
+  margin-left: 0;
+}
+
+/* pequeñas ajustes responsivos */
+@media (max-width: 900px) {
+  .cs_nav_wrapper { padding-left: 16px; padding-right: 16px; }
+  .cs_nav_list { gap: 16px; }
+  .cs_nav_list a { font-size: 14px; padding: 6px 8px; }
+}
+
+@media (max-width: 600px) {
+  .cs_nav_wrapper { padding-left: 12px; padding-right: 12px; }
+  .cs_nav_list { gap: 10px; }
+  .cs_nav_list a { font-size: 13px; padding: 5px 6px; }
+}
+
+/* ==== Normalización de containers / secciones para evitar variaciones por página ==== */
+/* Mantener contenedores con padding uniforme */
+.container, .container-fluid {
+  padding-left: 15px;
+  padding-right: 15px;
+  box-sizing: border-box;
+}
+
+/* Normaliza márgenes superiores/inferiores de Secciones si vienen por props inconsistentes */
+.cs_section {
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+/* Reglas finales: asegurar que el hero no empuje el header por z-index */
+.cs_hero, .cs_hero_in {
+  position: relative;
+  z-index: 1;
+}
+.cs_site_header {
+  z-index: 999;
+}
+
+/* Menú hamburguesa: listado oculto por defecto dentro del bloque del header */
+.cs_hamburger_header_in .cs_nav_list {
+  display: none;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 0;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+/* Cuando el overlay está activo, mostrar la lista en columna justo debajo de la barra superior */
+.cs_hamburger_header.active .cs_hamburger_header_in .cs_nav_list {
+  display: flex;
+  position: static; /* permanecer en el flujo, justo debajo de cs_hamburger_header_top */
+  background: transparent;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 8px 0;
+  gap: 0;
+  align-items: stretch;
+  z-index: 999;
+}
+
+/* Cada item ocupa todo el ancho y se alinea a la izquierda */
+.cs_hamburger_header.active .cs_hamburger_header_in .cs_nav_list > li {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+/* Enlaces como bloques con padding lateral coherente */
+.cs_hamburger_header.active .cs_hamburger_header_in .cs_nav_list a {
+  display: block;
+  width: 100%;
+  padding: 14px 20px;
+  text-align: left;
+  color: inherit;
+  box-sizing: border-box;
+}
+
+/* Separador sutil entre items */
+.cs_hamburger_header.active .cs_hamburger_header_in .cs_nav_list > li + li a {
+  border-top: 1px solid rgba(0,0,0,0.04);
+}
+
+/* Evitar scroll del body cuando el menú esté abierto (opcional) */
+body.menu-open {
+  overflow: hidden;
+}
+
+/* En desktop mantenemos el menú horizontal normal */
+@media (min-width: 901px) {
+  .cs_hamburger_header_in .cs_nav_list { display: flex !important; flex-direction: row !important; }
+  .cs_hamburger_header.active .cs_hamburger_header_in .cs_nav_list { position: static; background: transparent; }
+  .cs_hamburger_header.active .cs_hamburger_header_in .cs_nav_list a { padding: 8px 10px; }
+}
+
+/* ===== Corrección: forzar menú hamburguesa en columna en móviles ===== */
+/* Aplica cuando el overlay/hamburger está activo o cuando el ul tiene cs_active */
+@media (max-width: 900px) {
+  /* fuerza que la lista del nav sea un bloque vertical (sobrescribe inline si hace falta) */
+  .cs_hamburger_header.active .cs_hamburger_header_in .cs_nav_list,
+  .cs_hamburger_header.active .cs_hamburger_header_in .cs_nav_list.cs_active,
+  .cs_hamburger_header .cs_hamburger_header_in .cs_nav_list.cs_active {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: stretch !important;
+    justify-content: flex-start !important;
+    width: 100% !important;
+    position: static !important; /* mantener en flujo, debajo de la barra superior */
+    gap: 0 !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    box-sizing: border-box !important;
+    background: transparent !important;
+  }
+
+  /* cada item ocupa todo el ancho */
+  .cs_hamburger_header.active .cs_hamburger_header_in .cs_nav_list > li,
+  .cs_hamburger_header .cs_hamburger_header_in .cs_nav_list.cs_active > li {
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    box-sizing: border-box !important;
+  }
+
+  /* enlaces como bloques, alineados a la izquierda */
+  .cs_hamburger_header.active .cs_hamburger_header_in .cs_nav_list a,
+  .cs_hamburger_header .cs_hamburger_header_in .cs_nav_list.cs_active a {
+    display: block !important;
+    width: 100% !important;
+    padding: 14px 20px !important;
+    text-align: left !important;
+    color: inherit !important;
+    box-sizing: border-box !important;
+  }
+
+  /* separador sutil entre items */
+  .cs_hamburger_header.active .cs_hamburger_header_in .cs_nav_list > li + li a,
+  .cs_hamburger_header .cs_hamburger_header_in .cs_nav_list.cs_active > li + li a {
+    border-top: 1px solid rgba(0,0,0,0.04) !important;
+  }
+
+  /* si Nav aplica display:flex con nowrap inline, permitimos que los hijos hagan wrap vertical */
+  .cs_hamburger_header.active .cs_hamburger_header_in .cs_nav_list,
+  .cs_hamburger_header .cs_hamburger_header_in .cs_nav_list.cs_active {
+    flex-wrap: wrap !important;
+  }
+}
+
+/* Forzar menú hamburguesa vertical en móviles (ultima prioridad) */
+@media (max-width: 900px) {
+  .cs_hamburger_header.active .cs_hamburger_header_in .cs_nav_list,
+  .cs_hamburger_header .cs_hamburger_header_in .cs_nav_list.cs_active,
+  .cs_nav_wrapper .cs_nav_list.cs_active {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: stretch !important;
+    justify-content: flex-start !important;
+    width: 100% !important;
+    position: static !important;
+    gap: 0 !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    box-sizing: border-box !important;
+    background: transparent !important;
+    flex-wrap: wrap !important;
+  }
+
+  .cs_hamburger_header.active .cs_hamburger_header_in .cs_nav_list > li,
+  .cs_nav_wrapper .cs_nav_list.cs_active > li {
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    box-sizing: border-box !important;
+  }
+
+  .cs_hamburger_header.active .cs_hamburger_header_in .cs_nav_list a,
+  .cs_nav_wrapper .cs_nav_list.cs_active a {
+    display: block !important;
+    width: 100% !important;
+    padding: 14px 20px !important;
+    text-align: left !important;
+    color: inherit !important;
+    box-sizing: border-box !important;
+  }
+
+  .cs_hamburger_header.active .cs_hamburger_header_in .cs_nav_list > li + li a,
+  .cs_nav_wrapper .cs_nav_list.cs_active > li + li a {
+    border-top: 1px solid rgba(0,0,0,0.04) !important;
+  }
+}
+
+/* Unificar header/nav: fondo negro y texto blanco en todo el sitio */
+.cs_site_header,
+.cs_nav_wrapper,
+.cs_nav_list,
+.cs_nav_list.cs_active,
+.cs_hamburger_header,
+.cs_hamburger_header.active,
+.cs_hamburger_header_in,
+.cs_hamburger_header_top {
+  background-color: #0b0b0b !important;
+  color: #ffffff !important;
+}
+
+/* Enlaces del nav (estado normal / hover / active) */
+.cs_nav_list a,
+.cs_nav_list.cs_active a,
+.cs_nav_list a.cs_white_color,
+.cs_hamburger_header .cs_nav_list a {
+  color: #ffffff !important;
+  opacity: 1 !important;
+}
+
+.cs_nav_list a:hover,
+.cs_nav_list a:focus,
+.cs_nav_list a:active,
+.cs_hamburger_header .cs_nav_list a:hover {
+  color: #ffffff !important;
+  text-decoration: underline !important;
+}
+
+/* Dropdowns y submenús: fondo oscuro y texto claro */
+.cs_nav_list .dropdown,
+.cs_nav_list .cs_dropdown,
+.menu-item-has-children ul,
+.cs_hamburger_header .dropdown,
+.cs_hamburger_header .cs_dropdown {
+  background-color: #0b0b0b !important;
+  color: #ffffff !important;
+}
+
+/* Separadores y bordes sutiles en tono contrastante */
+.cs_nav_list > li + li a,
+.cs_hamburger_header .cs_nav_list > li + li a {
+  border-top: 1px solid rgba(255,255,255,0.04) !important;
+}
+
+/* Asegurar visibilidad del toggle / iconos */
+.cs_menu_toggle span,
+.cs_menu_toggle,
+.cs_close_hamburger,
+.cs_menu_dropdown_toggle span {
+  color: #ffffff !important;
+  fill: #ffffff !important;
+}
+
+/* Si hay elementos con fondo claro dentro del header, forzarlos también */
+.cs_site_header .btn,
+.cs_site_header .cs_btn,
+.cs_site_header .cs_btn_border {
+  background: transparent !important;
+  color: #ffffff !important;
+  border-color: rgba(255,255,255,0.12) !important;
+}
+
+/* Mantener contraste en dropdown links */
+.cs_nav_list .dropdown a,
+.menu-item-has-children ul a {
+  color: #ffffff !important;
+}
+
+/* Responsive: mantener fondo negro en móvil para overlay */
+@media (max-width: 900px) {
+  .cs_hamburger_header.active,
+  .cs_hamburger_header.active .cs_hamburger_header_in {
+    background-color: #0b0b0b !important;
+    color: #ffffff !important;
+  }
+  .cs_hamburger_header.active .cs_nav_list a {
+    color: #ffffff !important;
+  }
+}

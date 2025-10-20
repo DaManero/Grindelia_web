@@ -10,12 +10,6 @@ import { pageTitle } from "../../helpers/PageTitle";
 
 const featureData = [
   {
-    iconUrl: "/images/icons/restaurant.svg",
-    title: "Restaurante & Bar",
-    subTitle:
-      "Gastronomía de autor con vista al mar. Platos y tragos para todos los gustos. Disfrutá de un ambiente elegante y relajado, ideal para compartir en pareja, familia o amigos. Nuestro menú fusiona sabores locales e internacionales con productos frescos de estación.",
-  },
-  {
     iconUrl: "/images/icons/massage.svg",
     title: "Spa & Bienestar",
     subTitle:
@@ -29,28 +23,18 @@ const featureData = [
   },
   {
     iconUrl: "/images/icons/swimmer.svg",
-    title: "Piscina Infinita",
+    title: "Piscina ",
     subTitle:
-      "Piscina climatizada con borde infinito y solárium. Disfrutá de vistas únicas al mar y espacios de relax al aire libre. Ideal para nadar, tomar sol o compartir momentos inolvidables en familia.",
+      "Piscina climatizada y solárium. Disfrutá de un espacios de relax al aire libre. Ideal para nadar, tomar sol o compartir momentos inolvidables en familia.",
   },
-  {
-    iconUrl: "/images/icons/briefcase.svg",
-    title: "Centro de Negocios",
-    subTitle:
-      "Salas de reuniones y espacios de coworking para tu comodidad. Equipamiento audiovisual, Wi-Fi de alta velocidad y asistencia personalizada. Perfecto para eventos corporativos, workshops y encuentros profesionales.",
-  },
+
   {
     iconUrl: "/images/icons/router.svg",
     title: "Wifi & Internet",
     subTitle:
       "Wifi de alta velocidad en todo el complejo, incluido en tu estadía. Conexión estable para trabajar, estudiar o disfrutar de tus contenidos favoritos. Siempre conectado, estés donde estés en Grindelia.",
   },
-  {
-    iconUrl: "/images/icons/taxi.svg",
-    title: "Traslado al Aeropuerto",
-    subTitle:
-      "Coordinamos tu traslado para que llegues y partas sin preocupaciones. Servicio seguro y puntual, disponible las 24 horas. Consultá por traslados privados o compartidos según tu preferencia.",
-  },
+
   {
     iconUrl: "/images/icons/dryer.svg",
     title: "Lavandería",
@@ -62,18 +46,6 @@ const featureData = [
     title: "Room Service 24/7",
     subTitle:
       "Servicio a la habitación todo el día, todos los días. Pedí tu desayuno, almuerzo, cena o snacks sin moverte de tu habitación. Atención personalizada y menú variado para cualquier momento.",
-  },
-];
-
-const facilityData = [
-  {
-    title: "Seapearl: el oasis para tus reuniones y eventos",
-    subTitle: "SALÓN DE CONFERENCIAS",
-    description: `Descubrí un espacio pensado para el éxito en el Salón de Conferencias de Grindelia. Equipado para la productividad y la sofisticación, nuestro salón ofrece comodidades modernas, servicio profesional y un ambiente que fomenta la innovación.`,
-    imgUrl: "/images/feature_img_10.jpeg",
-    videoUrl: "https://www.youtube.com/embed/UJEUwEJ6gH4",
-    btnText: "Ver más",
-    btnUrl: "/restaurant",
   },
 ];
 
@@ -149,27 +121,6 @@ export default function ServicesPage() {
         />
       </Section>
       <Section
-        topSpaceLg="150"
-        topSpaceMd="80"
-        bottomSpaceLg="150"
-        bottomSpaceMd="80"
-      >
-        <FacilitySection4 data={facilityData} />
-      </Section>
-      <Section
-        topSpaceLg="150"
-        topSpaceMd="80"
-        bottomSpaceLg="150"
-        bottomSpaceMd="80"
-        className="cs_primary_bg"
-        style={{ backgroundImage: `url(/images/newsletter_bg.jpeg)` }}
-      >
-        <NewsletterSection
-          title="¡Suscribite a nuestro newsletter y recibí ofertas y novedades exclusivas de Grindelia!"
-          variant="cs_color_2"
-        />
-      </Section>
-      <Section
         topSpaceLg="141"
         topSpaceMd="75"
         bottomSpaceLg="150"
@@ -179,7 +130,7 @@ export default function ServicesPage() {
         <FaqSection
           sectionTitle="Preguntas frecuentes"
           sectionSubTitle="FAQ’S"
-          thumbUrl="/images/faq_img.jpeg"
+          thumbUrl="/images/faq_img.webp"
           data={faqData}
         />
       </Section>

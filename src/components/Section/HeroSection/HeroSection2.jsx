@@ -1,5 +1,5 @@
-import React from 'react';
-import AvailabilityForm from '../../Forms/AvailabilityForm';
+import React from "react";
+import AvailabilityForm from "../../Forms/AvailabilityForm";
 
 export default function HeroSection2({ data }) {
   const { title, subTitle, bgImgUrl, bgImgUrl2 } = data;
@@ -28,7 +28,7 @@ export default function HeroSection2({ data }) {
                   )}
                   {title && (
                     <h1
-                      className="cs_hero_title mb-0 cs_fs_89"
+                      className="cs_hero_title mb-0 cs_fs_36"
                       dangerouslySetInnerHTML={{ __html: title }}
                     />
                   )}

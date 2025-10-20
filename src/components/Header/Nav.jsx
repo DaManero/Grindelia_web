@@ -150,10 +150,14 @@ export default function Nav({ setMobileToggle, mobileToggle, variant }) {
         className={
           mobileToggle ? "cs_menu_toggle cs_toggle_active" : "cs_menu_toggle"
         }
-        onClick={() => setMobileToggle(!mobileToggle)}
+        onClick={() => {
+          if (typeof setMobileToggle === "function")
+            setMobileToggle(!mobileToggle);
+        }}
       >
         <span></span>
       </span>
+
       <ul className={`cs_nav_list ${mobileToggle ? "cs_active" : ""}`}>
         <li>
           <Link to="/" className="cs_white_color">
@@ -171,22 +175,27 @@ export default function Nav({ setMobileToggle, mobileToggle, variant }) {
           </Link>
           <DropDown>
             <ul>
-              <li>
-                <Link to="/room/2a" onClick={() => setMobileToggle(false)}>
-                  Premium 2 Ambientes
-                </Link>
-              </li>
-              <li>
-                <Link to="/room/3a" onClick={() => setMobileToggle(false)}>
-                  Premium 3 Ambientes
-                </Link>
-              </li>
+              {roomPageMenu.map((item, index) => (
+                <li key={index}>
+                  <Link
+                    to={item.linkUrl}
+                    onClick={() => setMobileToggle(false)}
+                  >
+                    {item.title}
+                  </Link>
+                </li>
+              ))}
             </ul>
           </DropDown>
         </li>
         <li>
           <Link to="/services" className="cs_white_color">
             Servicios
+          </Link>
+        </li>
+        <li>
+          <Link to="/gallery" className="cs_white_color">
+            Galería
           </Link>
         </li>
         <li>

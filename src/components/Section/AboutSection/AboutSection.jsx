@@ -223,7 +223,7 @@ export default function HomePage() {
   }, []);
   return (
     <>
-      <HeroSection data={heroData} style={{}} />
+      <HeroSection data={heroData} />
       <AboutSection data={aboutData} />
       <div
         style={{
