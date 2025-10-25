@@ -10,45 +10,46 @@ import { pageTitle } from "../../helpers/PageTitle";
 const featureData = [
   {
     iconUrl: "/images/icons/swimmer.svg",
-    title: "Family-Friendly",
-    subTitle: `From shallow wading areas for young children to exhilarating water slides and splash pads, family-friendly pool facilities ensure that guests of all.`,
+    title: "Apto para familias",
+    subTitle: `Desde áreas de poco profundidad para niños pequeños hasta emocionantes toboganes acuáticos y parques de chapoteo, las instalaciones de piscina aptas para familias aseguran que los huéspedes de todas las edades disfruten de momentos inolvidables juntos.`,
   },
   {
     iconUrl: "/images/icons/dryer.svg",
-    title: "Adults-Only",
-    subTitle: `For those seeking peace and tranquility, adults-only pool areas provide a serene escape from the hustle and bustle, complete with luxurious loungers.`,
+    title: "Solo para adultos",
+    subTitle: `Para aquellos que buscan paz y tranquilidad, las áreas de piscina solo para adultos ofrecen un escape sereno del ajetreo y el bullicio, completas con tumbonas lujosas.`,
   },
   {
     iconUrl: "/images/icons/massage.svg",
-    title: "Wellness and Fitness",
-    subTitle: `Many properties incorporate wellness elements into their pool facilities, such as lap lanes for swimming enthusiasts, hydrotherapy jets for relaxation.`,
+    title: "Bienestar y Fitness",
+    subTitle: `Muchas propiedades incorporan elementos de bienestar en sus instalaciones de piscina, como carriles de natación para entusiastas, chorros de hidromasaje para relajación y zonas de spa.`,
   },
 ];
 
 const facilityData = [
   {
     imgUrl: "/images/pool_service_thumb_1.jpeg",
-    title: "Design of a pool is paramount to its appeal, with factors",
-    subTitle: "LUXURIOUS DESIGN POOL",
-    description: `The design of a pool is paramount to its appeal, with factors such as size, shape, and surroundings playing a crucial role in creating the desired atmosphere. Whether it's a sleek infinity pool overlooking the ocean, a family-friendly lagoon with waterslides and waterfalls, or a serene adults-only retreat.`,
+    title:
+      "El diseño de una piscina es primordial para su atractivo, con factores",
+    subTitle: "DISEÑO DE PISCINA LUJOSO",
+    description: `El diseño de una piscina es primordial para su atractivo, con factores como tamaño, forma y entorno que juegan un papel crucial en la creación de la atmósfera deseada. Ya sea una elegante piscina infinita con vista al océano, una laguna apta para familias con toboganes y cascadas, o un sereno retiro solo para adultos.`,
   },
   {
     imgUrl: "/images/pool_service_thumb_2.jpeg",
-    title: "Casual poolside bar serving refreshing cocktails",
-    subTitle: "POOLSIDE DINING",
+    title: "Bar junto a la piscina que sirve cócteles refrescantes",
+    subTitle: "CENA JUNTO A LA PISCINA",
     description: `Ya sea un bar junto a la piscina con cócteles y snacks, o un espacio coworking con vistas al agua, las opciones suman confort y productividad a la experiencia.`,
   },
 ];
 
 export default function InfinityPoolPage() {
-  pageTitle("Infinity Pool");
+  pageTitle("Piscina Infinita");
   useEffect(() => {
     document.body.classList.remove("cs_dark");
   }, []);
   return (
     <>
       <PageHeadingSection
-        title="Infinity Pool"
+        title="Piscina Infinita"
         bgImgUrl="/images/page_heading_bg_infinity_pool.jpeg"
       />
       <Section
@@ -59,8 +60,8 @@ export default function InfinityPoolPage() {
         className="container-fluid p-0"
       >
         <AboutSection8
-          sectionTitle="In the realm of hospitality, the pool isn't just a recreational amenity—it's a focal point of relaxation, socialization, and luxury."
-          sectionSubTitle="ELEVATING POOL FACILITIES"
+          sectionTitle="En el ámbito de la hospitalidad, la piscina no es solo un amenidad recreativa, es un punto focal de relajación, socialización y lujo."
+          sectionSubTitle="ELEVANDO LAS INSTALACIONES DE LA PISCINA"
           marqueeText="BIENVENIDO A GRINDELIA COWORKING"
           imgUrl1="/images/pool_img_1.jpeg"
           imgUrl2="/images/pool_img_2.jpeg"
@@ -94,7 +95,7 @@ export default function InfinityPoolPage() {
         bottomSpaceLg="150"
         bottomSpaceMd="80"
       >
-        <NewsletterSection title="For Exclusive Offers and Updates Subscribe Our SeaPearl Newsletter!" />
+        <NewsletterSection title="¡Para ofertas exclusivas y actualizaciones, suscríbete a nuestro boletín de SeaPearl!" />
       </Section>
     </>
   );

@@ -196,3 +196,21 @@ textarea {
 label {
   margin-bottom: 8px;
 }
+
+/* utilidad de margen inferior */
+.cs_mb_12 { 
+  margin-bottom: 12px !important; 
+  color:#7b8775
+}
+
+/* Estilo para descripciones en feature box y utilidad para quitar margen inferior */
+.cs_feature_box_description {
+  color: var(--secondary);
+  font-size: 15px;
+  line-height: 1.6;
+  margin-bottom: 12px;
+}
+
+.cs_feature_box_description.mb-0 {
+  margin-bottom: 0 !important;
+}

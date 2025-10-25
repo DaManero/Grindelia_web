@@ -570,56 +570,63 @@ body.menu-open {
   }
 }
 
-/* Forzar dos columnas en bloques marcados con .cs_two_columns */
+/* Dos columnas - prioridad alta para asegurar que se aplique */
 .cs_text.cs_two_columns {
-  display: block !important; /* evita que display:flex (si existe) lo rompa */
+  display: block !important; /* evita que display:flex (si existe) rompa las columnas */
+  column-count: 2 !important;
   -webkit-column-count: 2 !important;
   -moz-column-count: 2 !important;
-  column-count: 2 !important;
+  column-gap: var(--site-nav-gap, 24px) !important;
   -webkit-column-gap: var(--site-nav-gap, 24px) !important;
   -moz-column-gap: var(--site-nav-gap, 24px) !important;
-  column-gap: var(--site-nav-gap, 24px) !important;
+  /* Evita que los párrafos se partan entre columnas */
+  break-inside: avoid !important;
   -webkit-column-break-inside: avoid !important;
   -moz-column-break-inside: avoid !important;
-  break-inside: avoid !important;
   hyphens: auto !important;
-  /* asegurar que el flujo interno sea compatible con columnas */
-  white-space: normal !important;
 }
 
-/* Evitar que elementos padres rompan las columnas (p. ej. display:flex) */
-.cs_section_heading,
-.cs_section_heading > * {
-  display: block !important;
-}
-
-/* Asegurar que los párrafos ocupen la columna completa y no se fraccionen */
+/* Asegurar que cada párrafo ocupe la anchura de la columna */
 .cs_text.cs_two_columns p {
   display: block !important;
   width: 100% !important;
   margin: 0 0 12px 0 !important;
   box-sizing: border-box !important;
-  break-inside: avoid !important;
-  -webkit-column-break-inside: avoid !important;
-  -moz-column-break-inside: avoid !important;
 }
 
-/* Si hay un solo párrafo muy largo, permitir que el navegador divida por palabras */
-.cs_text.cs_two_columns p {
-  overflow-wrap: break-word !important;
-  word-break: break-word !important;
-}
-
-/* Fallback: una columna en pantallas pequeñas */
+/* Responsive: una columna en pantallas pequeñas */
 @media (max-width: 900px) {
   .cs_text.cs_two_columns {
+    column-count: 1 !important;
     -webkit-column-count: 1 !important;
     -moz-column-count: 1 !important;
-    column-count: 1 !important;
+    column-gap: 0 !important;
     -webkit-column-gap: 0 !important;
     -moz-column-gap: 0 !important;
-    column-gap: 0 !important;
   }
 }
 
-/* Si tras esto seguís sin ver las columnas, puedo partir el texto en dos <p> y dejar cada uno en su columna. */
+/* Oscurecer el fondo del hero para destacar el texto */
+.cs_hero {
+  position: relative; /* asegurar contenedor para el pseudo-elemento */
+}
+.cs_hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45); /* ajustá la opacidad según prefieras */
+  pointer-events: none;
+  z-index: 2;
+}
+
+/* Asegurar que el contenido del hero esté por encima del overlay */
+.cs_hero .cs_hero_in,
+.cs_hero .cs_hero_text {
+  position: relative;
+  z-index: 3;
+}
+
+/* Si el hero usa elementos internos con imágenes de fondo, reducir brillo también (opcional) */
+.cs_hero .cs_bg_filed {
+  filter: brightness(0.9) contrast(1) saturate(0.95);
+}

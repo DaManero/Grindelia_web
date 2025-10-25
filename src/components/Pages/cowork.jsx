@@ -11,45 +11,45 @@ import { pageTitle } from "../../helpers/PageTitle";
 const featureData = [
   {
     iconUrl: "/images/icons/mug-tea.svg",
-    title: "Café y Snacks",
-    subTitle: `Disfrutá de café de especialidad y snacks saludables durante tu jornada de trabajo.`,
+    title: "Servicio de Bar",
+    subTitle: `Infusiones y jugos de cortesía. Servicio de Bar para mantenerte energizado durante tu jornada.`,
   },
   {
     iconUrl: "/images/icons/restaurant.svg",
     title: "Espacios Flexibles",
-    subTitle: `Elige entre escritorios individuales, salas de reuniones y áreas colaborativas.`,
+    subTitle: `Elige entre zonas de trabajo y espacios de esparcimiento y entretenimiento.`,
   },
   {
-    iconUrl: "/images/icons/bowl-chopsticks-noodles.svg",
-    title: "Comunidad",
-    subTitle: `Conectá con otros profesionales y participá en eventos exclusivos para miembros.`,
+    iconUrl: "/images/icons/router.svg",
+    title: "Conectividad",
+    subTitle: `Wi-Fi en todo el espacio y salas con telvisores para presentaciones y reuniones.`,
   },
 ];
 
 const facilityData = [
   {
-    imgUrl: "/images/restaurant_service_thumb_1.jpeg",
-    title: "Tu espacio de trabajo ideal en Mar de las Pampas",
-    subTitle: "COWORKING PREMIUM",
+    imgUrl: "/images/zona_trabajo_thumb_1.webp",
+    title: "Espacio de trabajo confortable y funcional",
+    subTitle: "ZONA DE TRABAJO",
     description: `Descubrí un ambiente moderno y sustentable para potenciar tu productividad y creatividad, rodeado de naturaleza.`,
   },
   {
-    imgUrl: "/images/restaurant_service_thumb_2.jpeg",
-    title: "Servicios exclusivos para tu jornada",
-    subTitle: "CONFORT Y TECNOLOGÍA",
-    description: `Acceso a WiFi de alta velocidad, impresiones, lockers y atención personalizada para que solo te ocupes de tu trabajo.`,
+    imgUrl: "/images/zona_trabajo_thumb_2.webp",
+    title: "Juegos, entretenimiento y relax",
+    subTitle: "ZONA DE ENTRETENIMIENTO",
+    description: `Area para relajarse y disfrutar de actividades recreativas.`,
   },
 ];
 
 export default function CoworkPage() {
-  pageTitle("Coworking");
+  pageTitle("Salón de usos múltiples");
   useEffect(() => {
     document.body.classList.remove("cs_dark");
   }, []);
   return (
     <>
       <PageHeadingSection
-        title="Coworking"
+        title="Salón de usos múltiples"
         bgImgUrl="/images/Page_heading_bg_restaurant.webp"
       />
       <Section
@@ -60,9 +60,9 @@ export default function CoworkPage() {
         className="container-fluid p-0"
       >
         <AboutSection8
-          sectionTitle="Un espacio pensado para profesionales, emprendedores y equipos que buscan inspiración y eficiencia en un entorno natural."
+          sectionTitle="Salón de usos múltiples diseñado para trabajo y esparcimiento: espacios flexibles para reuniones, concentración y actividades sociales en un entorno sustentable."
           sectionSubTitle="Trabajá en comunidad"
-          marqueeText="BIENVENIDO A GRINDELIA COWORKING"
+          marqueeText="ESPACIO FLEXIBLE DE USOS MULTIPLES"
           imgUrl1="/images/Dine_img_1.webp"
           imgUrl2="/images/Dine_img_2.webp"
           imgUrl3="/images/Dine_img_3.webp"
@@ -76,7 +76,7 @@ export default function CoworkPage() {
       >
         <FeatureSection7
           sectionTitle="Servicios y comodidades para tu jornada"
-          sectionSubTitle="Coworking Features"
+          sectionSubTitle="Comodidades y Ventajas"
           data={featureData}
         />
       </Section>

@@ -8,8 +8,8 @@ import AboutSection9 from "../Section/AboutSection/AboutSection9";
 import { pageTitle } from "../../helpers/PageTitle";
 
 const serviceData = {
-  imgUrl1: "/images/service_img_1.jpeg",
-  imgUrl2: "/images/service_img_2.jpeg",
+  imgUrl1: "/images/spa_img_1.webp",
+  imgUrl2: "/images/spa_img_2.webp",
   title: `Descubrí el Spa & Wellness de Grindelia Eco Apart Hotel`,
   subTitle: "BIENESTAR Y NATURALEZA",
   description: `Sumergite en un oasis de relajación y bienestar en nuestro Spa ecológico. Disfrutá de tratamientos exclusivos, masajes, faciales y circuitos de relax en un entorno sustentable, rodeado de naturaleza y tranquilidad. Nuestro equipo profesional te acompaña para renovar cuerpo y mente, cuidando el ambiente y tu salud.`,
@@ -20,8 +20,8 @@ const serviceData = {
       subTitle: "10:00 a 20:00",
     },
     {
-      iconUrl: "/images/icons/contact_icon_3.svg",
-      title: "Reservas",
+      iconUrl: "/images/icons/whatsapp-svgrepo-com.svg",
+      title: "Reservas Masajistas",
       subTitle: "+54 9 11 1234-5678",
     },
   ],
@@ -66,9 +66,9 @@ const facilityData = [
 ];
 
 const aboutData = {
-  imgUrl: "/images/about_us_3.jpeg",
+  imgUrl: "/images/about_us_3.webp",
   title: "Conocé a nuestro equipo de bienestar",
-  subTitle: "EXPERTOS EN SPA ECOLÓGICO",
+  subTitle: "EXPERTOS EN SPA & WELLNESS",
   description: `En Grindelia Eco Apart Hotel, nuestro equipo está comprometido con tu bienestar y el cuidado del ambiente. Te acompañamos con técnicas holísticas, programas personalizados y asesoría integral para que vivas una experiencia de relax y salud en armonía con la naturaleza. <br /><br /> Ya sea que busques mejorar tu estado físico, reducir el estrés o potenciar tu vitalidad, nuestros profesionales te guían con dedicación y conocimiento en cada paso de tu estadía.`,
   btnText: "Contactanos",
   btnUrl: "/contact",
@@ -83,7 +83,7 @@ export default function SpaWellnessPage() {
     <>
       <PageHeadingSection
         title="Spa & Wellness"
-        bgImgUrl="/images/page_heading_bg_spa_wellness.jpeg"
+        bgImgUrl="/images/page_heading_bg_spa_wellness.webp"
       />
       <Section
         topSpaceLg="150"

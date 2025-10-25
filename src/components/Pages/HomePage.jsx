@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import HeroSection from "../Section/HeroSection";
 import Section from "../Section";
 import AboutSection from "../Section/AboutSection";
-import RoomSection from "../Section/RoomSection";
+
 import VideoBlock from "../VideoBlock";
 import FacilitySection from "../Section/FacilitySection";
 import TestimonialSection from "../Section/TestimonialSection";
@@ -12,20 +12,25 @@ import { pageTitle } from "../../helpers/PageTitle";
 
 const heroData = [
   {
-    title: "Bienvenido a nuestro lujoso <br />Apart Hotel & Spa",
-    subTitle: "Un oasis junto al mar para la tranquilidad y el descanso",
+    title: "Bienvenido a nuestro<br />Eco Apart Hotel & Spa",
+    subTitle: "Un oasis cerca del mar para la tranquilidad y el descanso",
     bgImgUrl: "/images/Hero_bg_1.webp",
   },
   {
     title: "Amenities, elegancia y naturaleza <br />en cada espacio",
-    subTitle: "Encontrá el equilibrio perfecto entre confort y naturaleza",
+    subTitle: "Encontrá el equilibrio perfecto entre confort y paisajismo",
     bgImgUrl: "/images/Hero_bg_2.webp",
+  },
+  {
+    title: "Vive la sustentabilidad<br />con estilo y confort",
+    subTitle: "Diseño bioclimático y amenities pensados para tu bienestar",
+    bgImgUrl: "/images/Hero_bg_3.webp",
   },
 ];
 
 const aboutData = {
   title:
-    "Eco Apart Hotel & Spa de lujo, diseñado con tecnologías sustentables que reducen el impacto ambiental, fusionando confort, naturaleza y elegancia en un entorno responsable y armónico.",
+    "Eco Apart Hotel & Spa Premium, diseñado con tecnologías sustentables que reducen el impacto ambiental, fusionando confort, naturaleza y elegancia en un entorno responsable y armónico.",
   subTitle: "Porqué elegirnos",
   imgUrl: "/images/icons/cta_icon_1.svg",
   btnText: "Leer más",
@@ -75,9 +80,9 @@ const facilityData = [
   ...[
     {
       imgUrl: "/images/Feature_img_3.webp",
-      title: "Espacio de Trabajo",
+      title: "Espacio de usos múltiples",
       subTitle:
-        "Un espacio de coworking exclusivo, ideal para quienes desean trabajar con inspiración, combinando naturaleza y confort, en perfecto equilibrio entre productividad y descanso.",
+        "Salón de usos múltiples flexible para trabajo y esparcimiento: zonas de coworking, áreas para reuniones y espacios de relax, pensado para combinar productividad y ocio en un mismo ambiente.",
       btnText: "Ver más...",
       btnUrl: "/cowork",
     },
