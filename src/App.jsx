@@ -16,7 +16,7 @@ import CompleteReservationPage from "./components/Pages/CompleteReservationPage"
 import ServicesPage from "./components/Pages/ServicesPage";
 import CoworkPage from "./components/Pages/cowork";
 import SpaWellnessPage from "./components/Pages/SpaWellnessPage";
-import InfinityPoolPage from "./components/Pages/InfinityPoolPage";
+import PiletaPage from "./components/Pages/Pileta";
 import TeamPage from "./components/Pages/TeamPage";
 import GalleryPage from "./components/Pages/GalleryPage";
 import FaqPage from "./components/Pages/FaqPage";
@@ -66,7 +66,7 @@ export default function App() {
         <Route path="/services" element={<ServicesPage />} />
         <Route path="/cowork" element={<CoworkPage />} />
         <Route path="/spa-wellness" element={<SpaWellnessPage />} />
-        <Route path="/infinity-pool" element={<InfinityPoolPage />} />
+        <Route path="/pileta" element={<PiletaPage />} />
         <Route path="/team" element={<TeamPage />} />
         <Route path="/gallery" element={<GalleryPage />} />
         <Route path="/faq" element={<FaqPage />} />

@@ -96,11 +96,11 @@ const facilityData = [
     },
     {
       imgUrl: "/images/Feature_img_2.webp",
-      title: "Pileta Climatizada",
+      title: "Pileta, Quincho y Paddle",
       subTitle:
-        "Nuestra pileta cubierta y climatizada combina sofisticación y confort, ofreciendo un refugio exclusivo para disfrutar de bienestar, serenidad y distinción en un entorno de lujo incomparable.",
+        "Pileta climatizada todo el año; quincho para 30 personas y cancha de paddle, con servicios y equipamiento para eventos, actividades y celebraciones.",
       btnText: "Ver más...",
-      btnUrl: "/infinity-pool",
+      btnUrl: "/pileta",
     },
   ].map((item) => ({
     ...item,

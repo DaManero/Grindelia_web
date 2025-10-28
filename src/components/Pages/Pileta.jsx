@@ -27,30 +27,29 @@ const featureData = [
 
 const facilityData = [
   {
-    imgUrl: "/images/pool_service_thumb_1.jpeg",
-    title:
-      "El diseño de una piscina es primordial para su atractivo, con factores",
-    subTitle: "DISEÑO DE PISCINA LUJOSO",
-    description: `El diseño de una piscina es primordial para su atractivo, con factores como tamaño, forma y entorno que juegan un papel crucial en la creación de la atmósfera deseada. Ya sea una elegante piscina infinita con vista al océano, una laguna apta para familias con toboganes y cascadas, o un sereno retiro solo para adultos.`,
+    imgUrl: "/images/pool_service_thumb_1.webp",
+    title: "El diseño de una piscina es primordial para su atractivo",
+    subTitle: "DISEÑO MODERNO DE PISCINA",
+    description: `El diseño de una piscina es primordial para su atractivo, con factores como tamaño, forma y entorno que juegan un papel crucial en la creación de la atmósfera deseada. Ya sea una elegante piscina infinita con vista a la naturaleza y apta para toda la familia.`,
   },
   {
-    imgUrl: "/images/pool_service_thumb_2.jpeg",
-    title: "Bar junto a la piscina que sirve cócteles refrescantes",
-    subTitle: "CENA JUNTO A LA PISCINA",
-    description: `Ya sea un bar junto a la piscina con cócteles y snacks, o un espacio coworking con vistas al agua, las opciones suman confort y productividad a la experiencia.`,
+    imgUrl: "/images/pool_service_thumb_2.webp",
+    title: "Quincho y cancha de paddle para eventos y actividad física",
+    subTitle: "QUINCHO · CANCHA DE PADDLE",
+    description: `Contamos con un quincho equipado para hasta 30 personas, ideal para celebraciones y reuniones, y una cancha de paddle disponible para huéspedes que buscan actividad física y entretenimiento en el complejo.`,
   },
 ];
 
-export default function InfinityPoolPage() {
-  pageTitle("Piscina, Quincho y Paddle");
+export default function PiletaPage() {
+  pageTitle("Piscina Infinita");
   useEffect(() => {
     document.body.classList.remove("cs_dark");
   }, []);
   return (
     <>
       <PageHeadingSection
-        title="Piscina, Quincho y Paddle
-        bgImgUrl="/images/page_heading_bg_infinity_pool.jpeg"
+        title="Piscina, Quincho y Paddle"
+        bgImgUrl="/images/page_heading_bg_infinity_pool.webp"
       />
       <Section
         topSpaceLg="141"
@@ -60,26 +59,20 @@ export default function InfinityPoolPage() {
         className="container-fluid p-0"
       >
         <AboutSection8
-          sectionTitle="La piscina es el corazón del resort: un espacio de relajación, encuentro y lujo junto al mar."
-          sectionSubTitle="ELEVANDO LAS INSTALACIONES DE LA PISCINA"
-          marqueeText="BIENVENIDO A LA PISCINA INFINITA"
-          imgUrl1="/images/pool_img_1.jpeg"
-          imgUrl2="/images/pool_img_2.jpeg"
-          imgUrl3="/images/pool_img_3.jpeg"
+          sectionTitle="La piscina es el corazón del resort: un espacio de relajación y encuentro; dispone además de quincho y cancha de paddle"
+          sectionSubTitle="INSTALACIONES PARA TU BIENESTAR"
+          marqueeText="PISCINA, QUINCHO Y PADDLE"
+          imgUrl1="/images/pool_img_2.webp"
+          imgUrl2="/images/pool_img_1.webp"
+          imgUrl3="/images/pool_img_3.webp"
         />
       </Section>
       <Section
-        topSpaceLg="141"
-        topSpaceMd="75"
+        topSpaceLg="10"
+        topSpaceMd="55"
         bottomSpaceLg="140"
         bottomSpaceMd="70"
-      >
-        <FeatureSection7
-          sectionTitle="Gastronomía y servicios junto a la piscina <br />para tu comodidad"
-          sectionSubTitle="SERVICIOS DESTACADOS"
-          data={featureData}
-        />
-      </Section>
+      ></Section>
       <Section
         topSpaceLg="0"
         topSpaceMd="0"
@@ -88,14 +81,6 @@ export default function InfinityPoolPage() {
         className="container-fluid p-0"
       >
         <FacilitySection7 data={facilityData} />
-      </Section>
-      <Section
-        topSpaceLg="150"
-        topSpaceMd="80"
-        bottomSpaceLg="150"
-        bottomSpaceMd="80"
-      >
-        <NewsletterSection title="Suscribite para recibir ofertas exclusivas y novedades de Grindelia" />
       </Section>
     </>
   );
