@@ -10,7 +10,7 @@ export default function FeatureSection({
   return (
     <div className="container">
       <div className="row cs_gap_y_60 cs_row_gap_60">
-        <div className="col-lg-7">
+        <div className="col-lg-7
           <SectionHeading
             sectionTitle={sectionTitle}
             sectionSubTitle={sectionSubTitle}

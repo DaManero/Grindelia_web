@@ -2,7 +2,7 @@ import React from "react";
 import { Icon } from "@iconify/react";
 
 export default function Review({ reviewNumber, variant }) {
-  const starColor = "#C5A46D"; // dorado claro
+  const starColor = "#EDDCC3"; // dorado claro
   const starBgColor = "#F5F4F1"; // fondo claro para estrellas vacías
   return (
     <div className={`cs_rating ${variant ? variant : "cs_accent_color"}`}>

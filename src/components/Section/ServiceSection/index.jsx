@@ -1,7 +1,7 @@
-import React from 'react';
-import Spacing from '../../Spacing';
-import ButtonStyle2 from '../../Button/ButtonStyle2';
-import SectionHeading from '../../SectionHeading';
+import React from "react";
+import Spacing from "../../Spacing";
+import ButtonStyle2 from "../../Button/ButtonStyle2";
+import SectionHeading from "../../SectionHeading";
 
 export default function ServiceSection({ data }) {
   const {
@@ -48,6 +48,7 @@ export default function ServiceSection({ data }) {
                   viewBox="0 0 25 25"
                   fill="none"
                   xmlns="http://www.w3.org/2000/svg"
+                  style={{ color: "#B8752F" }} /* ícono en rojo */
                 >
                   <g clipPath="url(.clip0_95_13)">
                     <path

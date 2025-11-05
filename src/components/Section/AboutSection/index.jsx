@@ -24,7 +24,7 @@ export default function AboutSection({ data }) {
             {title && (
               <h2
                 className="cs_fs_67 cs_mb_45"
-                style={{ color: "#7B8775", fontWeight: 600 }}
+                style={{ color: "#798a74", fontWeight: 400 }}
               >
                 {title}
               </h2>

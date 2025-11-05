@@ -27,8 +27,9 @@
 /*--------------------------------------------------------------
 1. Typography
 ----------------------------------------------------------------*/
-// Google Fonts
-@import url('https://fonts.googleapis.com/css2?family=Libre+Caslon+Display&family=Poppins:wght@300;400;500;600;700&display=swap');
+// Google Fonts: Red Hat Text (sans) y Old Standard TT (serif)
+@import url('https://fonts.googleapis.com/css2?family=Red+Hat+Text:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Old+Standard+TT:ital,wght@0,400;0,700;1,400&display=swap');
 
 body,
 html {
@@ -213,4 +214,52 @@ label {
 
 .cs_feature_box_description.mb-0 {
   margin-bottom: 0 !important;
+}
+
+/* Fondo y estilo para la sección de testimonios */
+.cs_testimonial_bg {
+  background-color: #798a74 !important;
+  color: #ffffff !important;
+}
+
+/* Forzar color blanco en elementos internos comunes dentro de la sección */
+.cs_testimonial_bg,
+.cs_testimonial_bg .cs_text,
+.cs_testimonial_bg .cs_section_heading,
+.cs_testimonial_bg h1,
+.cs_testimonial_bg h2,
+.cs_testimonial_bg h3,
+.cs_testimonial_bg p,
+.cs_testimonial_bg a,
+.cs_testimonial_bg .cs_testimonial_item,
+.cs_testimonial_bg .cs_testimonial_item * {
+  color: #ffffff !important;
+}
+
+/* Ajustes para enlaces y separadores dentro de testimonios */
+.cs_testimonial_bg a { text-decoration: underline; color: #ffffff !important; }
+.cs_testimonial_bg .cs_testimonial_item + .cs_testimonial_item { border-top: 1px solid rgba(255,255,255,0.06); }
+
+/* Hover color de botones específicos en la Home */
+.home-page .cs_btn:hover,
+.home-page .cs_btn_primary:hover,
+.home-page .cs_btn_border:hover,
+.home-page .btn:hover,
+.home-page button:hover,
+.home-page a.button:hover {
+  background-color: #B8752F !important;
+  border-color: #B8752F !important;
+  color: #ffffff !important;
+}
+
+/* Íconos/SVG dentro de botones al hover */
+.home-page .cs_btn:hover svg,
+.home-page .btn:hover svg {
+  fill: #ffffff !important;
+}
+
+/* Si hay botones con fondo transparente, forzar solo el texto/color al hover */
+.home-page .cs_btn_border:hover,
+.home-page .cs_btn_border:hover span {
+  color: #ffffff !important;
 }

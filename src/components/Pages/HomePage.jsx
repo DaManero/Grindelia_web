@@ -80,7 +80,7 @@ const facilityData = [
   ...[
     {
       imgUrl: "/images/Feature_img_3.webp",
-      title: "Espacio de usos múltiples",
+      title: '<span style="color:#798a74">Espacio de usos múltiples</span>',
       subTitle:
         "Salón de usos múltiples flexible para trabajo y esparcimiento: zonas de coworking, áreas para reuniones y espacios de relax, pensado para combinar productividad y ocio en un mismo ambiente.",
       btnText: "Ver más...",
@@ -88,7 +88,7 @@ const facilityData = [
     },
     {
       imgUrl: "/images/Feature_img_1.webp",
-      title: "Spa & Bienestar",
+      title: '<span style="color:#798a74">Spa & Bienestar</span>',
       subTitle:
         "Nuestro spa ofrece solárium, sala de masajes, ducha escocesa, sauna seco y gimnasio completo, brindando bienestar, relajación y vitalidad en un entorno exclusivo y sofisticado.",
       btnText: "Ver más...",
@@ -96,7 +96,7 @@ const facilityData = [
     },
     {
       imgUrl: "/images/Feature_img_2.webp",
-      title: "Pileta, Quincho y Paddle",
+      title: '<span style="color:#798a74">Pileta, Quincho y Paddle</span>',
       subTitle:
         "Pileta climatizada todo el año; quincho para 30 personas y cancha de paddle, con servicios y equipamiento para eventos, actividades y celebraciones.",
       btnText: "Ver más...",
@@ -227,7 +227,7 @@ export default function HomePage() {
     document.body.classList.remove("cs_dark");
   }, []);
   return (
-    <>
+    <div className="home-page">
       <HeroSection data={heroData} style={{}} />
       <AboutSection data={aboutData} />
       <div
@@ -271,7 +271,7 @@ export default function HomePage() {
         topSpaceMd="30"
         bottomSpaceLg="60"
         bottomSpaceMd="30"
-        className="cs_gray_bg"
+        className="cs_testimonial_bg"
       >
         <TestimonialSection data={testimonialData} />
       </Section>
@@ -295,6 +295,6 @@ export default function HomePage() {
           data={galleryData}
         />
       </Section>
-    </>
+    </div>
   );
 }
