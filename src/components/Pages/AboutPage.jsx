@@ -90,6 +90,20 @@ export default function AboutPage() {
   useEffect(() => {
     document.body.classList.remove("cs_dark");
   }, []);
+
+  // seguridad: obtener el texto de datanew de forma segura
+  const aboutText = (() => {
+    try {
+      const raw =
+        datanew && datanew[0] && datanew[0].subTitle ? datanew[0].subTitle : "";
+      // normalizar saltos de línea y recortar
+      return String(raw).replace(/\r\n/g, "\n").replace(/\n+/g, " ").trim();
+    } catch (e) {
+      console.error("AboutPage: error al obtener aboutText", e);
+      return "";
+    }
+  })();
+
   return (
     <>
       <PageHeadingSection
@@ -122,9 +136,7 @@ export default function AboutPage() {
             <h3 className="cs_fs_38 cs_mb_20">Nuestro compromiso</h3>
             {/* renderizar el texto como párrafo continuo usando la clase de subtítulo */}
             <div className="cs_text cs_two_columns">
-              <p className="cs_mb_12">
-                {datanew[0].subTitle.replace(/\n+/g, " ").trim()}
-              </p>
+              <p className="cs_mb_12">{aboutText}</p>
             </div>
           </div>
         </div>

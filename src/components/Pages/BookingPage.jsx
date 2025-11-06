@@ -21,7 +21,7 @@ export default function BookingPage() {
 						display: grid;
 						grid-template-columns: 33% 67%;
 						gap: 24px;
-						background: #ffffff;
+						background: #f5f4f1;
 						border-radius: 0;
 						box-shadow: none;
 						overflow: visible;
@@ -31,7 +31,7 @@ export default function BookingPage() {
 					}
 					.booking-col-illustration {
 						min-height: 320px;
-						background-image: url('/images/Service_img_1.webp');
+						background-image: url('/images/About_us_1.webp');
 						background-size: cover;
 						background-position: center;
 						border-radius: 12px;

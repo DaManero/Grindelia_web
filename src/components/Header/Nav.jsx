@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import DropDown from "./DropDown";
 
 const homePageMenu = [
@@ -110,6 +110,22 @@ const blogMenu = [
 ];
 
 export default function Nav({ setMobileToggle, mobileToggle, variant }) {
+  const location = useLocation();
+
+  const handleHomeClick = (e) => {
+    // prevenir la navegación SPA y forzar recarga completa siempre
+    try {
+      e.preventDefault();
+    } catch (err) {
+      /* ignore if no event */
+    }
+    if (mobileToggle && typeof setMobileToggle === "function") {
+      setMobileToggle(false);
+    }
+    // navegación completa a la raíz (recarga del sitio)
+    window.location.href = "/";
+  };
+
   return (
     <nav className={variant ? variant : "cs_nav cs_fs_13 cs_semibold"}>
       <span
@@ -126,7 +142,7 @@ export default function Nav({ setMobileToggle, mobileToggle, variant }) {
 
       <ul className={`cs_nav_list ${mobileToggle ? "cs_active" : ""}`}>
         <li>
-          <Link to="/" className="cs_white_color">
+          <Link to="/" className="cs_white_color" onClick={handleHomeClick}>
             Inicio
           </Link>
         </li>
