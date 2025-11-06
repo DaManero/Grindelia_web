@@ -263,3 +263,37 @@ label {
 .home-page .cs_btn_border:hover span {
   color: #ffffff !important;
 }
+
+/* Wrapper del widget de reservas: full width + inner centrado */
+.octorate-widget-wrap {
+  width: 100%;
+  display: block;
+  background: transparent;
+}
+
+/* Inner centrado que limita el ancho del formulario */
+.octorate-widget-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  width: 100%;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Forzar que el form generado por el script se centre y no supere el ancho */
+#octorate-booking-widget,
+#octorate-booking-widget > * {
+  width: 100% !important;
+  max-width: 900px !important; /* ajuste si el formulario viene muy ancho */
+  margin-left: auto !important;
+  margin-right: auto !important;
+  box-sizing: border-box !important;
+}
+
+/* Responsivo: en móviles limitar padding */
+@media (max-width: 900px) {
+  .octorate-widget-inner { padding: 0 12px; }
+  #octorate-booking-widget, #octorate-booking-widget > * { max-width: 100% !important; }
+}

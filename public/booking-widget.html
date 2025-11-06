@@ -1,0 +1,125 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Reservas</title>
+    <style>
+        html,
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            background: #fff
+        }
+
+        .cw-wrap {
+            max-width: 1100px;
+            margin: 24px auto;
+            padding: 16px;
+            box-sizing: border-box
+        }
+    </style>
+</head>
+
+<body>
+    <div class="cw-wrap">
+        <h2 style="text-align:center;margin-bottom:12px">Reservá tu estadía</h2>
+        <div id="octorate-booking-widget-page" data-sitekey="8e3ffa8acec77e1b7347357712d940a3" style="width:100%"></div>
+        <noscript style="display:block;text-align:center;margin-top:12px">
+            <p>Por favor habilitá JavaScript para usar el formulario de reservas.</p>
+        </noscript>
+    </div>
+
+    <script type="text/javascript" src="https://resx.octorate.com/octobook/resources/widget/js/form.js"
+        data-sitekey="8e3ffa8acec77e1b7347357712d940a3"></script>
+
+    <script>
+        (function () {
+            // Observador para detectar cuando el widget inyecta su formulario/elementos
+            const CONTAINER_ID = "octorate-booking-widget-page";
+            const container = document.getElementById(CONTAINER_ID);
+
+            if (!container) return;
+
+            // Extrae valores de inputs/select dentro del contenedor
+            function collectInputData(root) {
+                const inputs = Array.from(root.querySelectorAll("input, select, textarea"));
+                const data = {};
+                inputs.forEach((el) => {
+                    const name = el.name || el.id || null;
+                    if (!name) return;
+                    if (el.type === "checkbox") {
+                        data[name] = el.checked;
+                    } else if (el.type === "radio") {
+                        if (el.checked) data[name] = el.value;
+                    } else {
+                        data[name] = el.value;
+                    }
+                });
+                return data;
+            }
+
+            // Maneja clicks en botones dentro del contenedor (delegación)
+            function onClick(e) {
+                const btn = e.target.closest("button, input[type='button'], input[type='submit']");
+                if (!btn) return;
+                // intentamos identificar acción de "buscar" según texto o type
+                const text = (btn.innerText || btn.value || "").toLowerCase();
+                const isSearch =
+                    btn.type === "submit" ||
+                    text.includes("buscar") ||
+                    text.includes("consultar") ||
+                    text.includes("ver disponibilidad") ||
+                    text.includes("check") ||
+                    text.includes("buscar disponibilidad");
+                if (!isSearch) return;
+
+                // recolectar datos y enviarlos al parent
+                const payload = collectInputData(container);
+                try {
+                    window.parent.postMessage({ type: "octorate_search", data: payload }, "*");
+                    // opcional: indicar al usuario que estamos redirigiendo/intentando conectar
+                    btn.disabled = true;
+                    const prev = btn.innerText;
+                    btn.innerText = "Procesando…";
+                    setTimeout(() => {
+                        btn.disabled = false;
+                        btn.innerText = prev;
+                    }, 2000);
+                } catch (err) {
+                    console.error("Booking widget: postMessage failed", err);
+                }
+            }
+
+            // Observador para atachar listener una vez que existan botones/inputs
+            const attachIfReady = () => {
+                // si ya hay al menos un botón o input, añadimos listener de delegación
+                const hasInteractive = container.querySelector("button, input[type='submit'], input[type='button']");
+                if (hasInteractive) {
+                    container.addEventListener("click", onClick, true);
+                    return true;
+                }
+                return false;
+            };
+
+            if (!attachIfReady()) {
+                const mo = new MutationObserver((mutations, obs) => {
+                    if (attachIfReady()) obs.disconnect();
+                });
+                mo.observe(container, { childList: true, subtree: true });
+            }
+
+            // Safety: si el widget nunca aparece, enviamos un ping al padre pasado 8s
+            setTimeout(() => {
+                const hasContent = container.children && container.children.length > 0;
+                if (!hasContent) {
+                    window.parent.postMessage({ type: "octorate_widget_empty", data: null }, "*");
+                }
+            }, 8000);
+        })();
+    </script>
+</body>
+
+</html>

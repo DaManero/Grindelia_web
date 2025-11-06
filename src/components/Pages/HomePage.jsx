@@ -9,6 +9,7 @@ import TestimonialSection from "../Section/TestimonialSection";
 import ServiceSection from "../Section/ServiceSection";
 import GallerySection from "../Section/GallerySection";
 import { pageTitle } from "../../helpers/PageTitle";
+import BookingPage from "./BookingPage"; // ahora embebemos la página de reservas en la Home
 
 const heroData = [
   {
@@ -226,34 +227,20 @@ export default function HomePage() {
   useEffect(() => {
     document.body.classList.remove("cs_dark");
   }, []);
+
   return (
-    <div className="home-page">
-      <HeroSection data={heroData} style={{}} />
-      <AboutSection data={aboutData} />
-      <div
-        style={{
-          width: "200px",
-          height: "4px",
-          background: "linear-gradient(90deg, #C5A46D 0%, #F5F4F1 100%)",
-          margin: "1px auto 32px auto",
-          borderRadius: "2px",
-          boxShadow: "0 2px 8px rgba(197,164,109,0.15)",
-        }}
-      ></div>
-      {/* Sección de consulta de disponibilidad eliminada */}
-      <Section
-        topSpaceLg="0"
-        topSpaceMd="0"
-        bottomSpaceLg="0"
-        bottomSpaceMd="0"
-      >
-        <VideoBlock
-          videoBgUrl="/images/Video_bg_1.webp"
-          videoUrl="https://www.youtube.com/embed/UJEUwEJ6gH4"
-          title=""
-          playerStyle1
-        />
+    <>
+      <HeroSection data={heroData} />
+
+      {/* Sección de reservas embebida (BookingPage) */}
+      <BookingPage />
+
+      <Section>
+        <AboutSection data={aboutData} />
       </Section>
+
+      <VideoBlock />
+
       <Section
         topSpaceLg="141"
         topSpaceMd="75"
@@ -295,6 +282,6 @@ export default function HomePage() {
           data={galleryData}
         />
       </Section>
-    </div>
+    </>
   );
 }
