@@ -87,7 +87,7 @@ export default function App() {
         </Route>
       </Routes>
       <FloatingWhatsApp
-        whatsappNumber="5491157379002"
+        whatsappNumber="5492255505626"
         whatsappMessage="Hola! Quisiera consultar disponibilidad y tarifas."
       />
     </>
