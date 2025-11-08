@@ -1,54 +1,98 @@
-import React from "react";
+import React, { useState } from "react";
 
 export default function ContactForm() {
+  const [form, setForm] = useState({ name: "", email: "", message: "" });
+  const [loading, setLoading] = useState(false);
+
+  const handleChange = (e) =>
+    setForm({ ...form, [e.target.name]: e.target.value });
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    if (!form.name || !form.email || !form.message) {
+      alert("Por favor completá todos los campos obligatorios.");
+      return;
+    }
+    setLoading(true);
+    try {
+      const res = await fetch("/api/send-email", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          name: form.name,
+          email: form.email,
+          message: form.message,
+          subject: "Consulta desde formulario web",
+        }),
+      });
+
+      // Si no fue OK mostramos texto crudo (puede ser HTML o vacío)
+      if (!res.ok) {
+        const text = await res.text().catch(() => "");
+        throw new Error(text || `Server responded with ${res.status}`);
+      }
+
+      // Intentar parsear JSON si existe, sino considerarlo éxito
+      const contentType = res.headers.get("content-type") || "";
+      let data = null;
+      if (contentType.includes("application/json")) {
+        data = await res.json().catch(() => null);
+      }
+
+      if (!data || data.ok) {
+        alert("Mensaje enviado. Gracias.");
+        setForm({ name: "", email: "", message: "" });
+      } else {
+        alert("Error al enviar: " + (data.error || "intente más tarde"));
+      }
+    } catch (err) {
+      console.error("ContactForm submit error:", err);
+      alert(
+        "Error al enviar el mensaje. Reintentá más tarde. (" +
+          (err.message || "error") +
+          ")"
+      );
+    } finally {
+      setLoading(false);
+    }
+  };
+
   return (
-    <form action="/contact" className="cs_form cs_style_2">
+    <form onSubmit={handleSubmit} className="cs_form cs_style_2">
       <label>Nombre y Apellido*</label>
-      <input type="text" className="cs_form_field_2 cs_radius_20" />
+      <input
+        name="name"
+        value={form.name}
+        onChange={handleChange}
+        type="text"
+        className="cs_form_field_2 cs_radius_20"
+      />
       <div className="cs_height_16 cs_height_lg_16" />
       <label>Email*</label>
-      <input type="text" className="cs_form_field_2 cs_radius_20" />
+      <input
+        name="email"
+        value={form.email}
+        onChange={handleChange}
+        type="email"
+        className="cs_form_field_2 cs_radius_20"
+      />
       <div className="cs_height_16 cs_height_lg_16" />
       <label>Comentarios*</label>
       <textarea
+        name="message"
+        value={form.message}
+        onChange={handleChange}
         cols={30}
         rows={6}
         className="cs_form_field_2 cs_radius_20"
-        defaultValue={""}
       />
       <div className="cs_height_25 cs_height_lg_25" />
-      <button className="cs_btn cs_style_2 cs_accent_btn cs_medium cs_radius_20 cs_fs_15">
-        <b>Enviar Mensaje</b>
-        <span>
-          <i>
-            <svg
-              width={9}
-              height={9}
-              viewBox="0 0 9 9"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M9.00431 0.872828C9.00431 0.458614 8.66852 0.122828 8.25431 0.122828L1.50431 0.122827C1.0901 0.122827 0.754309 0.458614 0.754309 0.872828C0.754309 1.28704 1.0901 1.62283 1.50431 1.62283H7.50431V7.62283C7.50431 8.03704 7.84009 8.37283 8.25431 8.37283C8.66852 8.37283 9.00431 8.03704 9.00431 7.62283L9.00431 0.872828ZM1.53033 8.65747L8.78464 1.40316L7.72398 0.342497L0.46967 7.59681L1.53033 8.65747Z"
-                fill="currentColor"
-              />
-            </svg>
-          </i>
-          <i>
-            <svg
-              width={9}
-              height={9}
-              viewBox="0 0 9 9"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M9.00431 0.872828C9.00431 0.458614 8.66852 0.122828 8.25431 0.122828L1.50431 0.122827C1.0901 0.122827 0.754309 0.458614 0.754309 0.872828C0.754309 1.28704 1.0901 1.62283 1.50431 1.62283H7.50431V7.62283C7.50431 8.03704 7.84009 8.37283 8.25431 8.37283C8.66852 8.37283 9.00431 8.03704 9.00431 7.62283L9.00431 0.872828ZM1.53033 8.65747L8.78464 1.40316L7.72398 0.342497L0.46967 7.59681L1.53033 8.65747Z"
-                fill="currentColor"
-              />
-            </svg>
-          </i>
-        </span>
+      <button
+        disabled={loading}
+        type="submit"
+        className="cs_btn cs_style_2 cs_accent_btn cs_medium cs_radius_20 cs_fs_15"
+      >
+        <b>{loading ? "Enviando..." : "Enviar Mensaje"}</b>
       </button>
     </form>
   );

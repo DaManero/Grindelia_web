@@ -8,17 +8,16 @@ import VideoBlock from "../VideoBlock";
 import { pageTitle } from "../../helpers/PageTitle";
 
 const aboutData = {
-  title:
-    "Complejo sustentable en Las Gaviotas, frente al mar. Diseño bioclimático que minimiza el impacto ambiental, reduce consumo energético y prioriza el confort en armonía con la naturaleza.",
+  title: `<span style="color:#798A74">Complejo sustentable en Las Gaviotas, frente al mar. Diseño bioclimático que minimiza el impacto ambiental, reduce consumo energético y prioriza el confort en armonía con la naturaleza.</span>`,
   subTitle: "SOBRE NOSOTROS",
   imgUrl: "/images/About_us_1.webp",
   featureList: [
     {
-      title: "Certif. de Sustentabilidad",
-      value: "Nivel ORO",
+      title: "Construcción y diseño",
+      value: "Sustentable",
     },
     {
-      title: "Construcción y diseño",
+      title: "Confort y elegancia",
       value: "1350 m2",
     },
     {
@@ -128,15 +127,68 @@ export default function AboutPage() {
         bottomSpaceMd="40"
         className="cs_custom_bg"
       >
+        {/* estilos locales: imagen izquierda (45%) + texto derecha (55%), image ocupa 100% height */}
+        <style>{`
+          .about-row {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 45% 55%;
+            gap: 28px;
+            align-items: stretch; /* importante: estira columnas para mismo alto */
+            box-sizing: border-box;
+          }
+          .about-left {
+            display: block;
+          }
+          .about-left img {
+            width: 100%;
+            height: 100%; /* ocupar toda la altura de la columna */
+            display: block;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(46,47,43,0.06);
+            object-fit: cover;
+          }
+          .about-right {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start; /* h3 al inicio, texto debajo */
+            padding: 6px 0;
+          }
+          .about-right .section-heading {
+            margin: 0 0 12px 0;
+          }
+          .about-right .cs_text {
+            font-size: 15px;
+            color: #6b6b68;
+            line-height: 1.8;
+          }
+          .about-right .cs_text p { margin: 0 0 1rem; hyphens: auto; }
+          @media (max-width: 900px) {
+            .about-row {
+              grid-template-columns: 1fr;
+              gap: 18px;
+            }
+            .about-left img { min-height: 180px; border-radius: 10px; height: auto; }
+          }
+        `}</style>
+
         <div className="container">
-          <div
-            className="cs_section_heading cs_align_left"
-            style={{ marginBottom: 24 }}
-          >
-            <h3 className="cs_fs_38 cs_mb_20">Nuestro compromiso</h3>
-            {/* renderizar el texto como párrafo continuo usando la clase de subtítulo */}
-            <div className="cs_text cs_two_columns">
-              <p className="cs_mb_12">{aboutText}</p>
+          {/* fila: imagen izquierda / texto derecha (h3 dentro de la columna derecha para alineación) */}
+          <div className="about-row">
+            <div className="about-left">
+              <img
+                src="/images/About_us_1.webp"
+                alt="Nuestro compromiso - Grindelia"
+              />
+            </div>
+            <div className="about-right">
+              <div className="section-heading">
+                <h3 className="cs_fs_38">Nuestro compromiso</h3>
+              </div>
+              <div className="cs_text">
+                <p className="cs_mb_12">{aboutText}</p>
+              </div>
             </div>
           </div>
         </div>

@@ -20,5 +20,13 @@ export default defineConfig({
     mimeTypes: {
       "application/javascript": ["js", "mjs"],
     },
+    proxy: {
+      // redirige /api/* a tu servidor backend local
+      "/api": {
+        target: "http://localhost:4000",
+        changeOrigin: true,
+        secure: false,
+      },
+    },
   },
 });
