@@ -37,6 +37,7 @@ import Layout10 from "./components/Layout/Layout10";
 import NotAvailableRoom from "./components/Pages/NotAvailableRoom";
 import NoSearchResult from "./components/Pages/NoSearchResult";
 import BookingPage from "./components/Pages/BookingPage";
+import FloatingWhatsApp from "./components/Global/FloatingWhatsApp";
 
 export default function App() {
   const { pathname } = useLocation();
@@ -44,42 +45,51 @@ export default function App() {
     window.scrollTo(0, 0);
   }, [pathname]);
   return (
-    <Routes>
-      <Route path="/" element={<Layout />}>
-        <Route index element={<HomePage />} />
-      </Route>
-      <Route path="/" element={<Layout7 />}>
-        <Route path="/about" element={<AboutPage />} />
-        <Route path="/rooms" element={<RoomsPage />} />
-        <Route path="/rooms-list-view" element={<RoomsListViewPage />} />
-        <Route path="/room/room-details" element={<RoomDetailsPage />} />
-        <Route path="/room/room-details-v2" element={<RoomDetailsPageV2 />} />
-        <Route path="/room/room-details-v3" element={<RoomDetailsPageV3 />} />
-        <Route path="/room/3a" element={<Room3aPage />} />
-        <Route path="/room/2a" element={<Room2aPage />} />
-        <Route path="/room/not-available-room" element={<NotAvailableRoom />} />
-        <Route path="/search-result" element={<SearchResultPage />} />
-        <Route path="/not-found-any-room" element={<NoSearchResult />} />
-        <Route
-          path="/complete-reservation"
-          element={<CompleteReservationPage />}
-        />
-        <Route path="/services" element={<ServicesPage />} />
-        <Route path="/cowork" element={<CoworkPage />} />
-        <Route path="/spa-wellness" element={<SpaWellnessPage />} />
-        <Route path="/pileta" element={<PiletaPage />} />
-        <Route path="/team" element={<TeamPage />} />
-        <Route path="/gallery" element={<GalleryPage />} />
-        <Route path="/faq" element={<FaqPage />} />
-        <Route path="/blog" element={<BlogPage />} />
-        <Route path="/blog-grid" element={<BlogGridPage />} />
-        <Route path="/blog-list" element={<BlogList />} />
-        <Route path="/blog/blog-details" element={<BlogDetailsPage />} />
-        <Route path="/contact" element={<ContactPage />} />
-        <Route path="/404" element={<NotFound />} />
-        <Route path="/reservas" element={<BookingPage />} />
-        <Route path="*" element={<NotFound />} />
-      </Route>
-    </Routes>
+    <>
+      <Routes>
+        <Route path="/" element={<Layout />}>
+          <Route index element={<HomePage />} />
+        </Route>
+        <Route path="/" element={<Layout7 />}>
+          <Route path="/about" element={<AboutPage />} />
+          <Route path="/rooms" element={<RoomsPage />} />
+          <Route path="/rooms-list-view" element={<RoomsListViewPage />} />
+          <Route path="/room/room-details" element={<RoomDetailsPage />} />
+          <Route path="/room/room-details-v2" element={<RoomDetailsPageV2 />} />
+          <Route path="/room/room-details-v3" element={<RoomDetailsPageV3 />} />
+          <Route path="/room/3a" element={<Room3aPage />} />
+          <Route path="/room/2a" element={<Room2aPage />} />
+          <Route
+            path="/room/not-available-room"
+            element={<NotAvailableRoom />}
+          />
+          <Route path="/search-result" element={<SearchResultPage />} />
+          <Route path="/not-found-any-room" element={<NoSearchResult />} />
+          <Route
+            path="/complete-reservation"
+            element={<CompleteReservationPage />}
+          />
+          <Route path="/services" element={<ServicesPage />} />
+          <Route path="/cowork" element={<CoworkPage />} />
+          <Route path="/spa-wellness" element={<SpaWellnessPage />} />
+          <Route path="/pileta" element={<PiletaPage />} />
+          <Route path="/team" element={<TeamPage />} />
+          <Route path="/gallery" element={<GalleryPage />} />
+          <Route path="/faq" element={<FaqPage />} />
+          <Route path="/blog" element={<BlogPage />} />
+          <Route path="/blog-grid" element={<BlogGridPage />} />
+          <Route path="/blog-list" element={<BlogList />} />
+          <Route path="/blog/blog-details" element={<BlogDetailsPage />} />
+          <Route path="/contact" element={<ContactPage />} />
+          <Route path="/404" element={<NotFound />} />
+          <Route path="/reservas" element={<BookingPage />} />
+          <Route path="*" element={<NotFound />} />
+        </Route>
+      </Routes>
+      <FloatingWhatsApp
+        whatsappNumber="5491157379002"
+        whatsappMessage="Hola! Quisiera consultar disponibilidad y tarifas."
+      />
+    </>
   );
 }
