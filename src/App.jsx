@@ -38,6 +38,7 @@ import NotAvailableRoom from "./components/Pages/NotAvailableRoom";
 import NoSearchResult from "./components/Pages/NoSearchResult";
 import BookingPage from "./components/Pages/BookingPage";
 import FloatingWhatsApp from "./components/Global/FloatingWhatsApp";
+import MetaPixel from "./components/MetaPixel"; // 👈 NUEVO: Importar MetaPixel
 
 export default function App() {
   const { pathname } = useLocation();
@@ -46,6 +47,7 @@ export default function App() {
   }, [pathname]);
   return (
     <>
+      <MetaPixel /> {/* 👈 NUEVO: Agregar MetaPixel aquí */}
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<HomePage />} />

@@ -9,7 +9,7 @@ import TestimonialSection from "../Section/TestimonialSection";
 import ServiceSection from "../Section/ServiceSection";
 import GallerySection from "../Section/GallerySection";
 import { pageTitle } from "../../helpers/PageTitle";
-import BookingPage from "./BookingPage"; // ahora embebemos la página de reservas en la Home
+import BookingPage from "./BookingPage"; // asegurarse de usar únicamente la página completa
 
 const heroData = [
   {
@@ -232,7 +232,7 @@ export default function HomePage() {
     <>
       <HeroSection data={heroData} />
 
-      {/* Sección de reservas embebida (BookingPage) */}
+      {/* Sección de reservas embebida (solo UNA vez) */}
       <BookingPage />
 
       <Section>
