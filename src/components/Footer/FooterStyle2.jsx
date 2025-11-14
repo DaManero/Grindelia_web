@@ -16,7 +16,7 @@ const menuData = [
 ];
 const menuData2 = [{ title: "Política de Privacidad y Cookies", href: "/" }];
 const contactInfoData = {
-  mobile: 'Call : <a href="tel:+00(244)14-50-774">+54 9 11 5698741</a>',
+  mobile: 'Call : <a href="tel:+54 9 2255505626">+54 9 2255 505626</a>',
   email:
     'Email : <a href="mailto:info@grindela.com.ar">info@grindela.com.ar</a>',
   openingHour: "We are open 24/7",

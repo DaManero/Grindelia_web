@@ -232,8 +232,8 @@ export default function HomePage() {
     <>
       <HeroSection data={heroData} />
 
-      {/* Sección de reservas embebida (solo UNA vez) */}
-      <BookingPage />
+      {/* Sección de reservas dentro de Home */}
+      <BookingPage standalone={false} />
 
       <Section>
         <AboutSection data={aboutData} />

@@ -42,9 +42,37 @@ import MetaPixel from "./components/MetaPixel"; // 👈 NUEVO: Importar MetaPixe
 
 export default function App() {
   const { pathname } = useLocation();
+
   useEffect(() => {
     window.scrollTo(0, 0);
   }, [pathname]);
+
+  // Limpieza de widgets duplicados fuera del contenedor principal
+  useEffect(() => {
+    try {
+      const isInsideMain = (el) =>
+        !!(
+          el.closest &&
+          (el.closest(".booking-widget-area") || el.closest(".booking-card"))
+        );
+
+      // contenedores con id del widget fuera del bloque principal
+      document
+        .querySelectorAll('[id^="octorate-booking-widget"]')
+        .forEach((el) => {
+          if (!isInsideMain(el)) el.remove();
+        });
+      // iframes fallback fuera del bloque principal
+      document
+        .querySelectorAll('iframe[src*="booking-widget"]')
+        .forEach((ifr) => {
+          if (!isInsideMain(ifr)) ifr.remove();
+        });
+    } catch {
+      // silencioso
+    }
+  }, [pathname]);
+
   return (
     <>
       <MetaPixel /> {/* 👈 NUEVO: Agregar MetaPixel aquí */}
@@ -52,7 +80,7 @@ export default function App() {
         <Route path="/" element={<Layout />}>
           <Route index element={<HomePage />} />
         </Route>
-        <Route path="/" element={<Layout7 />}>
+        <Route element={<Layout7 />}>
           <Route path="/about" element={<AboutPage />} />
           <Route path="/rooms" element={<RoomsPage />} />
           <Route path="/rooms-list-view" element={<RoomsListViewPage />} />
