@@ -15,7 +15,7 @@ const heroData = [
   {
     title: "Bienvenido a nuestro<br />Eco Apart Hotel & Spa",
     subTitle: "Un oasis cerca del mar para la tranquilidad y el descanso",
-    bgImgUrl: "/images/Hero_bg_1.webp",
+    bgImgUrl: "/images/Hero_bg_1.jpg",
   },
   {
     title: "Amenities, elegancia y naturaleza <br />en cada espacio",

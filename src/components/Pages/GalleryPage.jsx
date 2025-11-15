@@ -6,7 +6,7 @@ import { pageTitle } from "../../helpers/PageTitle";
 
 const galleryData = [
   {
-    imgUrl: "/images/gallery_9.jpeg",
+    imgUrl: "/images/gallery_9.jpg",
     title: "Vista al mar",
     category: "Pileta",
   },
