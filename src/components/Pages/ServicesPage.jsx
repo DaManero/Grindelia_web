@@ -43,16 +43,16 @@ const featureData = [
   },
   {
     iconUrl: "/images/icons/room-service.svg",
-    title: "Room Service 24/7",
+    title: "Room Service",
     subTitle:
-      "Servicio a la habitación todo el día, todos los días. Pedí tu desayuno, almuerzo, cena o snacks sin moverte de tu habitación. Atención personalizada y menú variado para cualquier momento.",
+      "Atención en la habitación para tu comodidad, con servicio personalizado y opciones sujetas a disponibilidad.",
   },
 ];
 
 const faqData = [
   {
     title: "¿Cuáles son los horarios de check-in y check-out?",
-    content: "El check-in es a las 15:00 hs y el check-out es a las 11:00 hs.",
+    content: "El check-in es a las 14:00 hs y el check-out es a las 11:00 hs.",
   },
   {
     title: "¿Hay estacionamiento disponible y tiene costo?",
@@ -61,7 +61,7 @@ const faqData = [
   },
   {
     title: "¿Se permiten mascotas?",
-    content: "No se permiten mascotas en el establecimiento.",
+    content: "El hotel acepta mascotas bajo ciertas condiciones (consultar)",
   },
   {
     title: "¿Hay código de vestimenta para el restaurante?",
@@ -78,8 +78,10 @@ const faqData = [
       "Sí, contamos con salones equipados para reuniones y eventos empresariales.",
   },
   {
-    title: "¿Hay acceso directo a la playa desde el hotel?",
-    content: "Sí, el hotel cuenta con acceso directo a la playa.",
+    title:
+      "¿A qué distancia se encuentra la playa y el centro de Mar de las Pampas?",
+    content:
+      "El Apart se encuentra a 300 mts de la playa y a 650 mts del centro de la ciudad.",
   },
 ];
 

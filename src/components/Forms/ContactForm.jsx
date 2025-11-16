@@ -4,6 +4,13 @@ export default function ContactForm() {
   const [form, setForm] = useState({ name: "", email: "", message: "" });
   const [loading, setLoading] = useState(false);
 
+  // Base de API: VITE_API_BASE_URL o localhost:4000 en dev
+  const API_BASE =
+    (import.meta.env && import.meta.env.VITE_API_BASE_URL) ||
+    (typeof window !== "undefined" && window.location.hostname === "localhost"
+      ? "http://localhost:4000"
+      : "");
+
   const handleChange = (e) =>
     setForm({ ...form, [e.target.name]: e.target.value });
 
@@ -14,10 +21,13 @@ export default function ContactForm() {
       return;
     }
     setLoading(true);
+    const controller = new AbortController();
+    const timeout = setTimeout(() => controller.abort(), 12000); // 12s
     try {
-      const res = await fetch("/api/send-email", {
+      const res = await fetch(`${API_BASE}/api/send-email`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
+        signal: controller.signal,
         body: JSON.stringify({
           name: form.name,
           email: form.email,
@@ -26,13 +36,11 @@ export default function ContactForm() {
         }),
       });
 
-      // Si no fue OK mostramos texto crudo (puede ser HTML o vacío)
       if (!res.ok) {
         const text = await res.text().catch(() => "");
         throw new Error(text || `Server responded with ${res.status}`);
       }
 
-      // Intentar parsear JSON si existe, sino considerarlo éxito
       const contentType = res.headers.get("content-type") || "";
       let data = null;
       if (contentType.includes("application/json")) {
@@ -47,12 +55,21 @@ export default function ContactForm() {
       }
     } catch (err) {
       console.error("ContactForm submit error:", err);
-      alert(
-        "Error al enviar el mensaje. Reintentá más tarde. (" +
-          (err.message || "error") +
-          ")"
-      );
+      if (err.name === "AbortError") {
+        alert("El servidor no responde. Reintentá más tarde.");
+      } else if (/ECONNREFUSED/i.test(err.message || "")) {
+        alert(
+          "No se pudo conectar con el servidor. Verificá que el backend esté corriendo."
+        );
+      } else {
+        alert(
+          "Error al enviar el mensaje. Reintentá más tarde. (" +
+            (err.message || "error") +
+            ")"
+        );
+      }
     } finally {
+      clearTimeout(timeout);
       setLoading(false);
     }
   };
