@@ -150,7 +150,7 @@ const testimonialData = [
 ];
 
 const serviceData = {
-  imgUrl1: "/images/Service_img_1.webp",
+  imgUrl1: "/images/Service_img_1.jpg",
   imgStyle1: {
     position: "relative",
     filter: "contrast(1.15) brightness(1.08) saturate(1.12)",
@@ -158,7 +158,7 @@ const serviceData = {
     borderRadius: "18px",
     overflow: "hidden",
   },
-  imgUrl2: "/images/Service_img_2.webp",
+  imgUrl2: "/images/Service_img_2.jpg",
   imgStyle2: {
     position: "relative",
     filter: "contrast(1.15) brightness(1.08) saturate(1.12)",
@@ -262,7 +262,11 @@ export default function HomePage() {
         </div>
       </div>
       <style>{`
-        /* Imagen recomendada (archivo principal): /images/home_parallax_2400.jpg */
+        /* Parallax Home:
+           - Nombre: /images/home_parallax_2400.jpg
+           - Tamaño recomendado: 2400x1350 px (16:9)
+           - Mínimo aceptable: 1920x1080 px
+           - Opcional: variantes 1920, 1280, 960, 640 y .webp */
         .home_parallax_wrapper { width: 100%; }
         .home_parallax {
           position: relative;
