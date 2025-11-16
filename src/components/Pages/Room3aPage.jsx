@@ -38,7 +38,7 @@ Atención al huésped disponible para resolver cualquier necesidad durante tu es
 
     {
       iconUrl: "/images/icons/facility_icon_12.svg",
-      title: "Servicio a la habitación 24/7",
+      title: "Servicio a la habitación",
     },
   ],
   roomCapacityTitle: "Capacidad",
@@ -75,8 +75,8 @@ const featureData = [
   },
   {
     iconUrl: "/images/icons/room-service.svg",
-    title: "Room Service 24/7",
-    subTitle: "Servicio a la habitación todo el día, todos los días.",
+    title: "Room Service",
+    subTitle: "Servicio a la habitación todo el día.",
   },
 ];
 

@@ -6,16 +6,16 @@ import { pageTitle } from "../../helpers/PageTitle";
 
 const roomData = [
   {
-    imgUrl: "/images/Room_4.webp",
+    imgUrl: "/images/Room_4.jpg",
     title: "Premium 3 Ambientes",
     href: "/room/3a", // link único
-    features: ["110 m²", "4 Huéspedes", "Wi-Fi"],
+    features: ["78 m²", "5 Huéspedes", "Wi-Fi"],
   },
   {
-    imgUrl: "/images/Room_5.webp",
+    imgUrl: "/images/Room_5.jpg",
     title: "Premium 2 Ambientes",
     href: "/room/2a", // link único
-    features: ["110 m²", "8 Huéspedes", "Wi-Fi"],
+    features: ["78 m²", "3 Huéspedes", "Wi-Fi"],
   },
 ];
 
@@ -28,7 +28,7 @@ export default function RoomsPage() {
     <>
       <PageHeadingSection
         title="Nuestras Habitaciones"
-        bgImgUrl="/images/page_heading_bg_rooms.jpeg"
+        bgImgUrl="/images/page_heading_bg_rooms.jpg"
       />
       <Section
         topSpaceLg="141"

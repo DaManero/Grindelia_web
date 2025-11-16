@@ -1,6 +1,5 @@
 import { useEffect } from "react";
 import Section from "../Section";
-
 import ProductBanner from "../Section/ProductBanner";
 import { pageTitle } from "../../helpers/PageTitle";
 
@@ -28,10 +27,9 @@ const roomDetailsData = {
     { iconUrl: "/images/icons/facility_icon_8.svg", title: "Televisión" },
     { iconUrl: "/images/icons/facility_icon_9.svg", title: "Wi-Fi" },
     { iconUrl: "/images/icons/facility_icon_10.svg", title: "Bañera" },
-
     {
       iconUrl: "/images/icons/facility_icon_12.svg",
-      title: "Servicio a la habitación 24/7",
+      title: "Servicio a la habitación",
     },
   ],
   roomCapacityTitle: "Capacidad",
@@ -81,7 +79,7 @@ const roomData = [
     price: 350,
     pricePer: "/Noche",
     href: "/room/2a",
-    features: ["110 m²", "4 Huéspedes", "Wi-Fi"],
+    features: ["110 m²", "3 Huéspedes", "Wi-Fi"],
   },
 ];
 
@@ -118,46 +116,68 @@ export default function RoomDetailsPageV2() {
         topSpaceMd="80"
         bottomSpaceLg="0"
         bottomSpaceMd="0"
+        className="room2a-standardize"
       >
-        {/* Estilos locales para separación, color y normalización de íconos */}
+        {/* Estilos alineados a Room3aPage y íconos en negro */}
         <style>{`
-          @media (min-width: 992px) {
-            .room2a-row { column-gap: 32px; flex-wrap: nowrap; }
-            .room2a-right { padding-left: 32px; }
+          .room2a-standardize .cs_room_details h3 {
+            margin-bottom:26px;
+            color:#2e2f2b;
           }
-          @media (min-width: 1200px) {
-            .room2a-row { column-gap: 40px; }
-            .room2a-right { padding-left: 40px; }
+          .room2a-standardize .cs_room_details p {
+            color:#6b6b68;
+            line-height:1.65;
+            font-size:15px;
+            margin-bottom:42px;
           }
-          /* Compactar bullets de Comodidades */
-          .room2a-right .cs_list.cs_style_3 li {
-            margin-bottom: 6px;
-            line-height: 1.35;
-            padding-top: 0;
-            padding-bottom: 0;
+          .room2a-standardize .cs_list.cs_style_3 {
+            margin:0;
+            padding:0;
           }
-          /* Unificar tamaño/alineación y color (gris oscuro) de todos los íconos */
-          .room2a-right .cs_list.cs_style_3 li img {
-            width: 20px;
-            height: 20px;
-            margin-right: 8px;
-            vertical-align: middle;
-            object-fit: contain;
-            filter: grayscale(1) brightness(0.35) contrast(1.1); /* unifica color */
+          .room2a-standardize .cs_list.cs_style_3 li {
+            display:flex;
+            align-items:center;
+            gap:12px;
+            margin:0 0 12px 0;
+            line-height:1.5;
+            color:#6b6b68;
+            font-size:15px;
           }
-          /* Color más oscuro para textos */
-          .room2a-left .cs_room_details p {
-            color: #4b4b49;
+          .room2a-standardize .cs_list.cs_style_3 li:last-child {
+            margin-bottom:0;
           }
-          .room2a-right .cs_list.cs_style_3,
-          .room2a-right .cs_list.cs_style_3 li,
-          .room2a-right .cs_list.cs_style_3 li span {
-            color: #4b4b49;
+          .room2a-standardize .cs_list.cs_style_3 li img,
+          .room2a-standardize .cs_list.cs_style_3 li svg {
+            width:22px;
+            height:22px;
+            flex:0 0 22px;
+            object-fit:contain;
+            filter:brightness(0) saturate(100%);
+          }
+          /* Más separación lateral entre columnas */
+          .room2a-standardize .room2a-bullets-pad {
+            padding-left:46px;
+          }
+          @media (min-width:1200px){
+            .room2a-standardize .room2a-bullets-pad {
+              padding-left:60px;
+            }
+          }
+          @media (max-width:991px){
+            .room2a-standardize .room2a-bullets-pad {
+              padding-left:0;
+              margin-top:10px;
+            }
+          }
+          @media (max-width:991px){
+            .room2a-standardize .cs_room_details p { margin-bottom:30px; }
+            .room2a-standardize .cs_room_details h3 { margin-bottom:20px; }
+            .room2a-standardize .cs_list.cs_style_3 li { margin-bottom:10px; }
           }
         `}</style>
         <div className="container">
-          <div className="row cs_gap_y_40 align-items-start room2a-row">
-            <div className="col-lg-6 room2a-left">
+          <div className="row cs_gap_y_40 align-items-start">
+            <div className="col-lg-6">
               <div className="cs_room_details">
                 <h3 className="cs_fs_38 cs_mb_29 cs_mb_lg_20">
                   Sobre el Alojamiento
@@ -174,32 +194,29 @@ export default function RoomDetailsPageV2() {
                 </p>
               </div>
             </div>
-            <div className="col-lg-6 room2a-right">
+            <div className="col-lg-6 room2a-bullets-pad">
               <div className="cs_room_details">
                 <h3 className="cs_fs_31 cs_mb_29 cs_mb_lg_20">Comodidades</h3>
                 <ul className="cs_list cs_style_3 cs_mp_0">
-                  {/* Huéspedes (unificado al mismo estilo que el resto) */}
                   <li>
                     <img src="/images/icons/review.svg" alt="Huéspedes" />
                     hasta 4 huéspedes
                   </li>
-                  {/* ...existing code... */}
                   {roomDetailsData.roomFacilities
-                    ?.filter((item) => {
-                      const t = (item.title || "").toLowerCase();
+                    .filter((item) => {
+                      const t = item.title.toLowerCase();
                       return !(
                         t.includes("locker") ||
                         t.includes("escritorio") ||
                         t.includes("lavander")
                       );
                     })
-                    .map((item, index) => (
-                      <li key={index}>
-                        <img src={item.iconUrl} alt="Icon" />
+                    .map((item, i) => (
+                      <li key={i}>
+                        <img src={item.iconUrl} alt={item.title} />
                         {item.title}
                       </li>
                     ))}
-                  {/* Servicio de Playa (unificado al mismo estilo) */}
                   <li>
                     <img
                       src="/images/icons/swimmer.svg"
