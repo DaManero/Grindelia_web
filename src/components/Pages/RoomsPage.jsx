@@ -6,13 +6,13 @@ import { pageTitle } from "../../helpers/PageTitle";
 
 const roomData = [
   {
-    imgUrl: "/images/Room_4.jpg",
+    imgUrl: "/images/Room_4.webp",
     title: "Premium 3 Ambientes",
     href: "/room/3a", // link único
     features: ["78 m²", "5 Huéspedes", "Wi-Fi"],
   },
   {
-    imgUrl: "/images/Room_5.jpg",
+    imgUrl: "/images/Room_5.webp",
     title: "Premium 2 Ambientes",
     href: "/room/2a", // link único
     features: ["78 m²", "3 Huéspedes", "Wi-Fi"],

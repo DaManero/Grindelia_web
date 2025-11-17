@@ -1,108 +1,108 @@
-import { useEffect } from 'react';
-import Section from '../Section';
-import SearchSection from '../Section/SearchSection';
-import Spacing from '../Spacing';
-import RoomSection10 from '../Section/RoomSection/RoomSection10';
-import RoomSection11 from '../Section/RoomSection/RoomSection11';
-import { pageTitle } from '../../helpers/PageTitle';
+import { useEffect } from "react";
+import Section from "../Section";
+import SearchSection from "../Section/SearchSection";
+import Spacing from "../Spacing";
+import RoomSection10 from "../Section/RoomSection/RoomSection10";
+import RoomSection11 from "../Section/RoomSection/RoomSection11";
+import { pageTitle } from "../../helpers/PageTitle";
 
 const roomData = [
   {
-    imgUrl: '/images/room_4.jpeg',
-    title: 'Deluxe Room',
+    imgUrl: "/images/room_4.webp",
+    title: "Deluxe Room",
     subTitle: `Enjoy a cozy and well-appointed room, complete with breakfast and unlimited access to our thermal pools, Spa & Wellness facilities. Please note that extra beds are not available in this room category`,
-    currency: '$',
+    currency: "$",
     price: 320,
-    pricePer: '/Night',
-    btnText: 'View Details',
-    btnUrl: '/room/room-details',
-    features: ['110 Sq', '3-5 Guests', 'Free Wi-Fi'],
+    pricePer: "/Night",
+    btnText: "View Details",
+    btnUrl: "/room/room-details",
+    features: ["110 Sq", "3-5 Guests", "Free Wi-Fi"],
   },
   {
-    imgUrl: '/images/room_5.jpeg',
-    title: 'Standard Room',
+    imgUrl: "/images/room_5.jpeg",
+    title: "Standard Room",
     subTitle: `Enjoy a cozy and well-appointed room, complete with breakfast and unlimited access to our thermal pools, Spa & Wellness facilities. Please note that extra beds are not available in this room category`,
-    currency: '$',
+    currency: "$",
     price: 450,
-    pricePer: '/Night',
-    btnText: 'View Details',
-    btnUrl: '/room/room-details',
-    features: ['110 Sq', '3-5 Guests', 'Free Wi-Fi'],
+    pricePer: "/Night",
+    btnText: "View Details",
+    btnUrl: "/room/room-details",
+    features: ["110 Sq", "3-5 Guests", "Free Wi-Fi"],
   },
   {
-    imgUrl: '/images/room_6.jpeg',
-    title: 'Superior Room',
+    imgUrl: "/images/room_6.jpeg",
+    title: "Superior Room",
     subTitle: `Enjoy a cozy and well-appointed room, complete with breakfast and unlimited access to our thermal pools, Spa & Wellness facilities. Please note that extra beds are not available in this room category`,
-    currency: '$',
+    currency: "$",
     price: 520,
-    pricePer: '/Night',
-    btnText: 'View Details',
-    btnUrl: '/room/room-details',
-    features: ['110 Sq', '3-5 Guests', 'Free Wi-Fi'],
+    pricePer: "/Night",
+    btnText: "View Details",
+    btnUrl: "/room/room-details",
+    features: ["110 Sq", "3-5 Guests", "Free Wi-Fi"],
   },
 
   {
-    imgUrl: '/images/room_22.jpeg',
-    title: 'Pearl Suite',
+    imgUrl: "/images/room_22.jpeg",
+    title: "Pearl Suite",
     subTitle: `Enjoy a cozy and well-appointed room, complete with breakfast and unlimited access to our thermal pools, Spa & Wellness facilities. Please note that extra beds are not available in this room category`,
-    currency: '$',
+    currency: "$",
     price: 590,
-    pricePer: '/Night',
-    btnText: 'View Details',
-    btnUrl: '/room/room-details',
-    features: ['110 Sq', '3-5 Guests', 'Free Wi-Fi'],
+    pricePer: "/Night",
+    btnText: "View Details",
+    btnUrl: "/room/room-details",
+    features: ["110 Sq", "3-5 Guests", "Free Wi-Fi"],
   },
   {
-    imgUrl: '/images/room_23.jpeg',
-    title: 'Sunrise Villa',
+    imgUrl: "/images/room_23.jpeg",
+    title: "Sunrise Villa",
     subTitle: `Enjoy a cozy and well-appointed room, complete with breakfast and unlimited access to our thermal pools, Spa & Wellness facilities. Please note that extra beds are not available in this room category`,
-    currency: '$',
+    currency: "$",
     price: 780,
-    pricePer: '/Night',
-    btnText: 'View Details',
-    btnUrl: '/room/room-details',
-    features: ['110 Sq', '3-5 Guests', 'Free Wi-Fi'],
+    pricePer: "/Night",
+    btnText: "View Details",
+    btnUrl: "/room/room-details",
+    features: ["110 Sq", "3-5 Guests", "Free Wi-Fi"],
   },
   {
-    imgUrl: '/images/room_24.jpeg',
-    title: 'Sea View',
+    imgUrl: "/images/room_24.jpeg",
+    title: "Sea View",
     subTitle: `Enjoy a cozy and well-appointed room, complete with breakfast and unlimited access to our thermal pools, Spa & Wellness facilities. Please note that extra beds are not available in this room category`,
-    currency: '$',
+    currency: "$",
     price: 690,
-    pricePer: '/Night',
-    btnText: 'View Details',
-    btnUrl: '/room/room-details',
-    features: ['110 Sq', '3-5 Guests', 'Free Wi-Fi'],
+    pricePer: "/Night",
+    btnText: "View Details",
+    btnUrl: "/room/room-details",
+    features: ["110 Sq", "3-5 Guests", "Free Wi-Fi"],
   },
 ];
 
 const roomData2 = [
   {
-    imgUrl: '/images/room_25.jpeg',
-    title: 'Corporate Center',
-    currency: '$',
+    imgUrl: "/images/room_25.jpeg",
+    title: "Corporate Center",
+    currency: "$",
     price: 900,
-    pricePer: '/Day',
-    href: '/room/room-details',
-    btnText: 'Discover More',
-    features: ['1200 Sq', '120-300 Guests', 'Free Wi-Fi'],
+    pricePer: "/Day",
+    href: "/room/room-details",
+    btnText: "Discover More",
+    features: ["1200 Sq", "120-300 Guests", "Free Wi-Fi"],
   },
   {
-    imgUrl: '/images/room_26.jpeg',
-    title: 'Party Center',
-    currency: '$',
+    imgUrl: "/images/room_26.jpeg",
+    title: "Party Center",
+    currency: "$",
     price: 1000,
-    pricePer: '/Day',
-    href: '/room/room-details',
-    btnText: 'Discover More',
-    features: ['1500 Sq', '300-350 Guests', 'Free Wi-Fi'],
+    pricePer: "/Day",
+    href: "/room/room-details",
+    btnText: "Discover More",
+    features: ["1500 Sq", "300-350 Guests", "Free Wi-Fi"],
   },
 ];
 
 export default function RoomsListViewPage() {
-  pageTitle('Room List View');
+  pageTitle("Room List View");
   useEffect(() => {
-    document.body.classList.remove('cs_dark');
+    document.body.classList.remove("cs_dark");
   }, []);
   return (
     <>

@@ -86,7 +86,7 @@ const featureData = [
 
 const roomData = [
   {
-    imgUrl: "/images/room_4.jpeg",
+    imgUrl: "/images/Room_4-1.webp",
     title: "Deluxe Room",
     currency: "$",
     price: 320,
@@ -95,7 +95,7 @@ const roomData = [
     features: ["110 Sq", "3-5 Guests", "Free Wi-Fi"],
   },
   {
-    imgUrl: "/images/room_5.jpeg",
+    imgUrl: "/images/room_5.webp",
     title: "Standard Room",
     currency: "$",
     price: 450,

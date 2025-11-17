@@ -144,7 +144,7 @@ export default function AboutPage() {
       <div className="about-page">
         <PageHeadingSection
           title=""
-          bgImgUrl="/images/Page_heading_bg_about.jpg"
+          bgImgUrl="/images/Page_heading_bg_about-1.webp"
         />
         <Section
           topSpaceLg="10"
@@ -165,7 +165,7 @@ export default function AboutPage() {
             style={{
               backgroundImage: `url(${
                 import.meta.env.BASE_URL || "/"
-              }images/about_parallax_2400.jpg)`,
+              }images/about_parallax_2400.webp)`,
             }}
           >
             <div className="about_parallax_overlay" />
@@ -317,7 +317,7 @@ export default function AboutPage() {
               {/* Imagen a la izquierda */}
               <div className="proposal-left">
                 <img
-                  src="/images/Feature_img_1.jpg"
+                  src="/images/Feature_img_1.webp"
                   alt="Propuesta integral - Grindelia"
                 />
               </div>

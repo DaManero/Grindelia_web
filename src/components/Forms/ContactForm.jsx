@@ -4,12 +4,10 @@ export default function ContactForm() {
   const [form, setForm] = useState({ name: "", email: "", message: "" });
   const [loading, setLoading] = useState(false);
 
-  // Base de API: VITE_API_BASE_URL o localhost:4000 en dev
+  // Base de API: VITE_API_BASE_URL o la URL de Vercel
   const API_BASE =
     (import.meta.env && import.meta.env.VITE_API_BASE_URL) ||
-    (typeof window !== "undefined" && window.location.hostname === "localhost"
-      ? "http://localhost:4000"
-      : "");
+    "https://grindelia-email-api.vercel.app";
 
   const handleChange = (e) =>
     setForm({ ...form, [e.target.name]: e.target.value });

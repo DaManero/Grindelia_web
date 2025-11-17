@@ -14,12 +14,12 @@ const heroData = [
   {
     title: "Bienvenido a nuestro<br />Eco Apart Hotel & Spa",
     subTitle: "Un oasis cerca del mar para la tranquilidad y el descanso",
-    bgImgUrl: "/images/Hero_bg_1.jpg",
+    bgImgUrl: "/images/Hero_bg_1.webp",
   },
   {
     title: "Amenities, elegancia y naturaleza <br />en cada espacio",
     subTitle: "Encontrá el equilibrio perfecto entre confort y paisajismo",
-    bgImgUrl: "/images/Hero_bg_2.jpg",
+    bgImgUrl: "/images/Hero_bg_2.webp",
   },
   {
     title: "Vive la sustentabilidad<br />con estilo y confort",
@@ -87,7 +87,7 @@ const facilityData = [
       btnUrl: "/cowork",
     },
     {
-      imgUrl: "/images/Feature_img_1.jpg",
+      imgUrl: "/images/Feature_img_1.webp",
       title: '<span style="color:#798a74">Spa &<br/>Bienestar</span>',
       subTitle:
         "Spa con solárium, masajes, ducha escocesa, sauna seco y gimnasio completo; pensado para brindar bienestar, relajación y vitalidad en un entorno exclusivo, sereno, natural y sofisticado.",
@@ -95,7 +95,7 @@ const facilityData = [
       btnUrl: "/spa-wellness",
     },
     {
-      imgUrl: "/images/Feature_img_2.jpg",
+      imgUrl: "/images/Feature_img_2a.webp",
       title: '<span style="color:#798a74">Pileta, Quincho<br/>y Paddle</span>',
       subTitle:
         "Pileta climatizada todo el año, quincho para 30 personas y cancha de paddle, con equipamiento para eventos, actividades y celebraciones en un entorno seguro y agradable.",
@@ -150,7 +150,7 @@ const testimonialData = [
 ];
 
 const serviceData = {
-  imgUrl1: "/images/Service_img_1.jpg",
+  imgUrl1: "/images/Service_img_1.webp",
   imgStyle1: {
     position: "relative",
     filter: "contrast(1.15) brightness(1.08) saturate(1.12)",
@@ -158,7 +158,7 @@ const serviceData = {
     borderRadius: "18px",
     overflow: "hidden",
   },
-  imgUrl2: "/images/Service_img_2.jpg",
+  imgUrl2: "/images/Service_img_2.webp",
   imgStyle2: {
     position: "relative",
     filter: "contrast(1.15) brightness(1.08) saturate(1.12)",
@@ -257,13 +257,18 @@ export default function HomePage() {
           className="home_parallax"
           role="img"
           aria-label="Vista destacada del Eco Apart Hotel & Spa"
+          style={{
+            backgroundImage: `url(${
+              import.meta.env.BASE_URL
+            }images/home_parallax_2400.webp)`,
+          }}
         >
           <div className="home_parallax_overlay" />
         </div>
       </div>
       <style>{`
         /* Parallax Home:
-           - Nombre: /images/home_parallax_2400.jpg
+           - Nombre: /images/home_parallax_2400.webp
            - Tamaño recomendado: 2400x1350 px (16:9)
            - Mínimo aceptable: 1920x1080 px
            - Opcional: variantes 1920, 1280, 960, 640 y .webp */
@@ -277,13 +282,10 @@ export default function HomePage() {
           margin-right: -50vw;
           height: 62vh;
           min-height: 440px;
-         /* Fondo con zoom extra para cubrir al hacer parallax */
-         background-image: url('${
-           import.meta.env.BASE_URL
-         }images/home_parallax_2400.jpg');
-         background-repeat: no-repeat;
-         background-position: center;
-         background-size: 120% auto; /* zoom para evitar franjas vacías */
+         /* Fondo con zoom extra para cubrir al hacer parallax (imagen seteada inline) */
+          background-repeat: no-repeat;
+          background-position: center;
+          background-size: 120% auto; /* zoom para evitar franjas vacías */
           background-attachment: fixed;
           display: flex;
           align-items: center;
