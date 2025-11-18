@@ -1,0 +1,44 @@
+name: Build and publish dist to deploy branch
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  build-and-publish:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 18
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build
+        env:
+          NODE_ENV: production
+        run: npm run build
+
+      - name: Prepare deploy branch and push
+        env:
+          REPO: ${{ github.repository }}
+          PAT: ${{ secrets.GRINDELIADEPLOY }}
+        run: |
+          set -e
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          rm -rf _deploy_tmp
+          mkdir _deploy_tmp
+          cp -r dist/* _deploy_tmp/ || true
+          cd _deploy_tmp
+          git init
+          git add -A
+          git commit -m "Publish site from workflow: $GITHUB_SHA"
+          git push --force "https://x-access-token:${PAT}@github.com/${REPO}.git" master:deploy
+        shell: bash
