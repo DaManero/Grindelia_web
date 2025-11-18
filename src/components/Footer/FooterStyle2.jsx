@@ -17,11 +17,11 @@ const menuData2 = [{ title: "Política de Privacidad y Cookies", href: "/" }];
 const contactInfoData = {
   mobile: 'Call : <a href="tel:+54 9 2255505626">+54 9 2255 505626</a>',
   email:
-    'Email : <a href="mailto:info@grindela.com.ar">info@grindela.com.ar</a>',
+    'Email : <a href="mailto:reservas@grindela.com.ar">reservas@grindela.com.ar</a>',
 };
 const contactInfoData2 = {
   address:
-    "Calle 28 y Punta del Este, Mar de las Pampas, Buenos Aires, Argentina",
+    "Calle 28 385 (Esq. Copacabana), Mar de las Pampas, Buenos Aires, Argentina",
 };
 
 export default function FooterStyle2() {

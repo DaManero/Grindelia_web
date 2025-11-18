@@ -93,12 +93,12 @@ const roomData = [
 ];
 
 const galleryData = [
-  { imgUrlLg: "/images/room_lg_7.jpg", imgUrlSm: "/images/room_sm_7.jpg" },
-  { imgUrlLg: "/images/room_lg_8.jpg", imgUrlSm: "/images/room_sm_8.jpg" },
-  { imgUrlLg: "/images/room_lg_9.jpg", imgUrlSm: "/images/room_sm_9.jpg" },
-  { imgUrlLg: "/images/room_lg_10.jpg", imgUrlSm: "/images/room_sm_10.jpg" },
-  { imgUrlLg: "/images/room_lg_11.jpg", imgUrlSm: "/images/room_sm_11.jpg" },
-  { imgUrlLg: "/images/room_lg_12.jpg", imgUrlSm: "/images/room_sm_12.jpg" },
+  { imgUrlLg: "/images/room_lg_7.webp", imgUrlSm: "/images/room_sm_7.webp" },
+  { imgUrlLg: "/images/room_lg_8.webp", imgUrlSm: "/images/room_sm_8.webp" },
+  { imgUrlLg: "/images/room_lg_9.webp", imgUrlSm: "/images/room_sm_9.webp" },
+  { imgUrlLg: "/images/room_lg_10.webp", imgUrlSm: "/images/room_sm_10.webp" },
+  { imgUrlLg: "/images/room_lg_11.webp", imgUrlSm: "/images/room_sm_11.webp" },
+  { imgUrlLg: "/images/room_lg_12.webp", imgUrlSm: "/images/room_sm_12.webp" },
 ];
 
 export default function RoomDetailsPageV2() {

@@ -28,7 +28,7 @@ export default function RoomsPage() {
     <>
       <PageHeadingSection
         title="Nuestras Habitaciones"
-        bgImgUrl="/images/page_heading_bg_rooms.jpg"
+        bgImgUrl="/images/page_heading_bg_rooms.webp"
       />
       <Section
         topSpaceLg="141"

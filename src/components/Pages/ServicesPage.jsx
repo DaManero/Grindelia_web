@@ -94,7 +94,7 @@ export default function ServicesPage() {
     <>
       <PageHeadingSection
         title="Servicios"
-        bgImgUrl="/images/page_heading_bg_services.jpeg"
+        bgImgUrl="/images/page_heading_bg_services.webp"
       />
       <Section
         topSpaceLg="141"

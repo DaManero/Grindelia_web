@@ -7,92 +7,92 @@ import { pageTitle } from "../../helpers/PageTitle";
 const galleryData = [
   // Todas las imágenes deben existir en /public/images con tamaño 832x930
   {
-    imgUrl: "/images/gallery_01.jpg",
+    imgUrl: "/images/gallery_01.webp",
     title: "Suites",
     category: "Pileta",
   },
   {
-    imgUrl: "/images/gallery_02.jpg",
+    imgUrl: "/images/gallery_02.webp",
     title: "Suites",
     category: "Cowork",
   },
   {
-    imgUrl: "/images/gallery_03.jpg",
+    imgUrl: "/images/gallery_03.webp",
     title: "Suites",
     category: "Spa",
   },
   {
-    imgUrl: "/images/gallery_04.jpg",
+    imgUrl: "/images/gallery_04.webp",
     title: "Suites",
     category: "Habitaciones",
   },
   {
-    imgUrl: "/images/gallery_05.jpg",
+    imgUrl: "/images/gallery_05.webp",
     title: "Suites",
     category: "Pileta",
   },
   {
-    imgUrl: "/images/gallery_06.jpg",
+    imgUrl: "/images/gallery_06.webp",
     title: "Suites",
     category: "Espacios Verdes",
   },
   {
-    imgUrl: "/images/gallery_07.jpg",
+    imgUrl: "/images/gallery_07.webp",
     title: "Suites",
     category: "Cowork",
   },
   {
-    imgUrl: "/images/gallery_08.jpg",
+    imgUrl: "/images/gallery_08.webp",
     title: "Suites",
     category: "Spa",
   },
   {
-    imgUrl: "/images/gallery_09.jpg",
+    imgUrl: "/images/gallery_09.webp",
     title: "Suites",
     category: "Habitaciones",
   },
   {
-    imgUrl: "/images/gallery_10.jpg",
+    imgUrl: "/images/gallery_10.webp",
     title: "Suites",
     category: "Pileta",
   },
   {
-    imgUrl: "/images/gallery_11.jpg",
+    imgUrl: "/images/gallery_11.webp",
     title: "Suites",
     category: "Espacios Verdes",
   },
   {
-    imgUrl: "/images/gallery_12.jpg",
+    imgUrl: "/images/gallery_12.webp",
     title: "Suites",
     category: "Cowork",
   },
   {
-    imgUrl: "/images/gallery_13.jpg",
+    imgUrl: "/images/gallery_13.webp",
     title: "Suites",
     category: "Spa",
   },
   {
-    imgUrl: "/images/gallery_14.jpg",
+    imgUrl: "/images/gallery_14.webp",
     title: "Suites",
     category: "Habitaciones",
   },
   {
-    imgUrl: "/images/gallery_15.jpg",
+    imgUrl: "/images/gallery_15.webp",
     title: "Suites",
     category: "Pileta",
   },
   {
-    imgUrl: "/images/gallery_16.jpg",
+    imgUrl: "/images/gallery_16.webp",
     title: "Balcones Suites",
     category: "Espacios Verdes",
   },
   {
-    imgUrl: "/images/gallery_17.jpg",
+    imgUrl: "/images/gallery_17.webp",
     title: "Espacios de trabajo y relax",
     category: "Cowork",
   },
   {
-    imgUrl: "/images/gallery_18.jpg",
+    imgUrl: "/images/gallery_18.webp",
     title: "Spa & Bienestar",
     category: "Spa",
   },
@@ -126,7 +126,7 @@ export default function GalleryPage() {
     <>
       <PageHeadingSection
         title="Galería Grindelia"
-        bgImgUrl="/images/page_heading_gallery_bg.jpg"
+        bgImgUrl="/images/page_heading_gallery_bg.webp"
       />
       <Section
         topSpaceLg="141"

@@ -10,17 +10,18 @@ const contactData = [
     iconUrl: "/images/icons/contact_icon_1.svg",
     title: "Dirección",
     subTitle:
-      "Punta del Este y calle 28, B7165 Mar Azul, Provincia de Buenos Aires",
+      "Calle 28 385 (Esq. Copacabana), B7165 Mar Azul, Provincia de Buenos Aires",
   },
   {
     iconUrl: "/images/icons/contact_icon_2.svg",
     title: "Email",
-    subTitle: '<a href="mailto:info@grindelia.com">info@grindelia.com</a>',
+    subTitle:
+      '<a href="mailto:reservas@grindelia.com">reservas@grindelia.com</a>',
   },
   {
     iconUrl: "/images/icons/contact_icon_3.svg",
     title: "Reservas y consultas",
-    subTitle: '<a href="tel:+214544512009">+21 454 451 2009</a>',
+    subTitle: '<a href="tel:+54 9 2255 505626">+54 9 2255 505626</a>',
   },
 ];
 
@@ -32,8 +33,8 @@ export default function ContactPage() {
   return (
     <>
       <PageHeadingSection
-        title="Contact us"
-        bgImgUrl="/images/Page_heading_bg_gallery.webp"
+        title="Contacto"
+        bgImgUrl="/images/Page_heading_bg_contact.webp"
       />
       <Section
         topSpaceLg="150"
@@ -42,7 +43,7 @@ export default function ContactPage() {
         bottomSpaceMd="80"
       >
         <ContactSection3
-          sectionTitle="Contactactate con Grindelia Eco Apart"
+          sectionTitle="Contactate con Grindelia Eco Apart"
           sectionSubTitle="CONTACTO"
           sectionDescription="Comunícate con nosotros por teléfono, correo electrónico o mediante nuestro formulario online. Esperamos tu consulta y queremos ayudarte a planificar una experiencia inolvidable en Grindelia Resort."
           data={contactData}
