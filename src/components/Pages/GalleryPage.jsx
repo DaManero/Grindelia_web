@@ -96,6 +96,16 @@ const galleryData = [
     title: "Spa & Bienestar",
     category: "Spa",
   },
+  {
+    imgUrl: "/images/gallery_19.webp",
+    title: "Spa & Bienestar",
+    category: "Spa",
+  },
+  {
+    imgUrl: "/images/gallery_20.webp",
+    title: "Espacios de trabajo y relax",
+    category: "Spa",
+  },
 ];
 
 export default function GalleryPage() {
