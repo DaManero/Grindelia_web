@@ -11,7 +11,7 @@ const menuData = [
   { title: "Sobre Nosotros", href: "/about" },
   { title: "Habitaciones", href: "/rooms" },
   { title: "SPA & Bienestar", href: "/spa-wellness" },
-  { title: "Usos múltiplessssssssssssssssssss", href: "/cowork" },
+  { title: "Usos múltiplesssssssss", href: "/cowork" },
 ];
 const menuData2 = [{ title: "Política de Privacidad y Cookies", href: "/" }];
 const contactInfoData = {
