@@ -13,7 +13,7 @@ const featureData = [
     iconUrl: "/images/icons/massage.svg",
     title: "Spa & Bienestar",
     subTitle:
-      "Relajate en nuestro spa con tratamientos exclusivos y zona de relax. Contamos con sauna seco y húmedo, masajes personalizados y circuitos de bienestar. Un espacio pensado para tu descanso y renovación física y mental.",
+      "Relajate en nuestro spa con tratamientos exclusivos y zona de relax. Contamos con sauna seco, masajes personalizados y circuitos de bienestar. Un espacio pensado para tu descanso y renovación física y mental.",
   },
   {
     iconUrl: "/images/icons/gym.svg",
@@ -27,25 +27,23 @@ const featureData = [
     subTitle:
       "Piscina climatizada y solárium. Disfrutá de un espacios de relax al aire libre. Ideal para nadar, tomar sol o compartir momentos inolvidables en familia.",
   },
-
   {
     iconUrl: "/images/icons/router.svg",
     title: "Wifi & Internet",
     subTitle:
       "Wifi de alta velocidad en todo el complejo, incluido en tu estadía. Conexión estable para trabajar, estudiar o disfrutar de tus contenidos favoritos. Siempre conectado, estés donde estés en Grindelia.",
   },
-
   {
-    iconUrl: "/images/icons/dryer.svg",
-    title: "Lavandería",
+    iconUrl: "/images/icons/restaurant.svg",
+    title: "Bar/snacks",
     subTitle:
-      "Servicio de lavandería disponible para tu comodidad. Entrega rápida y cuidado profesional de tus prendas. Consultá por servicios exprés y planchado.",
+      "Disfrutá de bebidas, snacks y comidas ligeras en nuestro bar. Abierto de 8 a 22 hs para que puedas disfrutar en cualquier momento del día. Ambiente relajado con opciones para todos los gustos.",
   },
   {
-    iconUrl: "/images/icons/room-service.svg",
-    title: "Room Service",
+    iconUrl: "/images/icons/briefcase.svg",
+    title: "Quincho, SUM & Área Deportiva",
     subTitle:
-      "Atención en la habitación para tu comodidad, con servicio personalizado y opciones sujetas a disponibilidad.",
+      "Espacios versátiles para eventos particulares o de huéspedes, con reserva previa. Quincho con parrilla, SUM equipado y área deportiva completa. Ideal para reuniones, celebraciones y actividades recreativas en un entorno confortable.",
   },
 ];
 

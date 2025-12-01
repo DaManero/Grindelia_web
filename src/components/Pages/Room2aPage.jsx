@@ -11,7 +11,12 @@ const roomDetailsData = {
     "Unidades de 2 ambientes con terraza privada tipo deck y parrilla (adatpadas para personas con discapacidad), ideales para disfrutar al aire libre. El living-comedor se integra con la terraza, aportando luminosidad y vistas despejadas. Cocina completa y equipada con electrodomésticos modernos para mayor comodidad y autonomía. Dormitorio en suite con jacuzzi y vestidor; además dos dormitorios amplios con placares empotrados y ropa de cama premium para un descanso reparador. Baño completo con hidromasaje y amenities de alta calidad. Superficie cubierta de 60 m² y descubierta de 18 m², diseñada para confort y funcionalidad. Incluye servicio Grindelia: desayuno diario, limpieza y acceso a piscina y spa; atención al huésped disponible para resolver cualquier necesidad durante tu estadía.",
   roomFacilitiesTitle: "Comodidades",
   roomFacilities: [
-    { iconUrl: "/images/icons/facility_icon_1.svg", title: "Cama king size" },
+    { iconUrl: "/images/icons/facility_icon_1.svg", title: "Cama Queen size" },
+    {
+      iconUrl: "/images/icons/facility_icon_1.svg", // Usar el mismo que "Cama Queen"
+      title: "Practicuna sin costo",
+    },
+
     { iconUrl: "/images/icons/facility_icon_2.svg", title: "Locker personal" },
     { iconUrl: "/images/icons/facility_icon_3.svg", title: "Escritorio" },
     { iconUrl: "/images/icons/facility_icon_4.svg", title: "Locker personal" },
@@ -222,7 +227,8 @@ export default function RoomDetailsPageV2() {
                       src="/images/icons/swimmer.svg"
                       alt="Servicio de Playa"
                     />
-                    Servicio de Playa (en temporada)
+                    Servicio de Playa en tempoarada (reposeras y equipos de
+                    playa)
                   </li>
                 </ul>
               </div>

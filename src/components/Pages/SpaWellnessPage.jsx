@@ -36,13 +36,6 @@ const facilityData = [
     href: "/spa-wellness",
   },
   {
-    title: "Ducha escocesa",
-    subTitle: "",
-    price: "",
-    imgUrl: "/images/Spa_facility_2.webp",
-    href: "/spa-wellness",
-  },
-  {
     title: "Sala de masajes",
     subTitle: "",
     price: "",

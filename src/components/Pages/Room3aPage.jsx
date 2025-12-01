@@ -19,7 +19,11 @@ Atención al huésped disponible para resolver cualquier necesidad durante tu es
 
   roomFacilitiesTitle: "Comodidades",
   roomFacilities: [
-    { iconUrl: "/images/icons/facility_icon_1.svg", title: "Cama king size" },
+    { iconUrl: "/images/icons/facility_icon_1.svg", title: "Cama Queen size" },
+    {
+      iconUrl: "/images/icons/facility_icon_1.svg", // Usar el mismo que "Cama Queen"
+      title: "Practicuna sin costo",
+    },
     { iconUrl: "/images/icons/facility_icon_2.svg", title: "Locker personal" },
     { iconUrl: "/images/icons/facility_icon_3.svg", title: "Escritorio" },
     { iconUrl: "/images/icons/facility_icon_4.svg", title: "Locker personal" },
@@ -35,7 +39,6 @@ Atención al huésped disponible para resolver cualquier necesidad durante tu es
     { iconUrl: "/images/icons/facility_icon_8.svg", title: "Televisión" },
     { iconUrl: "/images/icons/facility_icon_9.svg", title: "Wi-Fi" },
     { iconUrl: "/images/icons/facility_icon_10.svg", title: "Bañera" },
-
     {
       iconUrl: "/images/icons/facility_icon_12.svg",
       title: "Servicio a la habitación",
@@ -212,7 +215,8 @@ export default function RoomDetailsPageV2() {
                       src="/images/icons/swimmer.svg"
                       alt="Servicio de Playa"
                     />
-                    Servicio de Playa (en temporada)
+                    Servicio de Playa en tempoarada (reposeras y equipos de
+                    playa)
                   </li>
                 </ul>
               </div>
