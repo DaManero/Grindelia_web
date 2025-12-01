@@ -2,13 +2,12 @@ import { useEffect } from "react";
 import HeroSection from "../Section/HeroSection";
 import Section from "../Section";
 import AboutSection from "../Section/AboutSection";
-
 import FacilitySection from "../Section/FacilitySection";
-import TestimonialSection from "../Section/TestimonialSection";
+import FacilitySection5 from "../Section/FacilitySection/FacilitySection5";
 import ServiceSection from "../Section/ServiceSection";
 import GallerySection from "../Section/GallerySection";
 import { pageTitle } from "../../helpers/PageTitle";
-import BookingPage from "./BookingPage"; // asegurarse de usar únicamente la página completa
+import Slider from "react-slick";
 
 const heroData = [
   {
@@ -36,6 +35,64 @@ const aboutData = {
   btnText: "Leer más",
   btnUrl: "/about",
 };
+
+// NUEVO: Datos de Diferenciales para FacilitySection5
+const diferencialesData = [
+  {
+    title: "Gym Completo",
+    subTitle: "Equipamiento profesional de última generación",
+    imgUrl: "/images/diferencial_gym.webp",
+    href: "#",
+  },
+  {
+    title: "Ascensor",
+    subTitle: "Accesibilidad en todos los pisos",
+    imgUrl: "/images/diferencial_ascensor.webp",
+    href: "#",
+  },
+  {
+    title: "Cancha de Pádel",
+    subTitle: "Cancha profesional para disfrutar",
+    imgUrl: "/images/diferencial_padel.webp",
+    href: "#",
+  },
+  {
+    title: "Beach Vóley",
+    subTitle: "Cancha de arena para toda la familia",
+    imgUrl: "/images/diferencial_beach.webp",
+    href: "#",
+  },
+  {
+    title: "Parque Aéreo",
+    subTitle: "Juegos y diversión para los más chicos",
+    imgUrl: "/images/diferencial_kids.webp",
+    href: "#",
+  },
+  {
+    title: "Pileta Climatizada",
+    subTitle: "Disfrute todo el año, invierno y verano",
+    imgUrl: "/images/diferencial_pileta.webp",
+    href: "#",
+  },
+  {
+    title: "Spa & Wellness",
+    subTitle: "Masajes, sauna y circuitos de bienestar",
+    imgUrl: "/images/diferencial_spa.webp",
+    href: "#",
+  },
+  {
+    title: "SUM & Cowork",
+    subTitle: "Espacio versátil para trabajo y eventos",
+    imgUrl: "/images/diferencial_cowork.webp",
+    href: "#",
+  },
+  {
+    title: "Quincho & Fogón",
+    subTitle: "Eventos al aire libre con parrilla",
+    imgUrl: "/images/diferencial_quincho.webp",
+    href: "#",
+  },
+];
 
 const roomData = [
   {
@@ -243,13 +300,143 @@ export default function HomePage() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
+  // Configuración del carousel
+  const carouselSettings = {
+    dots: true,
+    infinite: true,
+    speed: 600,
+    slidesToShow: 4,
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 3000,
+    pauseOnHover: true,
+    arrows: true,
+    responsive: [
+      {
+        breakpoint: 1200,
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 1,
+        },
+      },
+      {
+        breakpoint: 768,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 1,
+          arrows: false,
+        },
+      },
+      {
+        breakpoint: 480,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          arrows: false,
+        },
+      },
+    ],
+  };
+
   return (
     <>
       <HeroSection data={heroData} />
-      <BookingPage standalone={false} />
+
       <Section>
         <AboutSection data={aboutData} />
       </Section>
+
+      {/* NUEVA SECCIÓN: Diferenciales con FacilitySection5 */}
+      <Section
+        topSpaceLg="100"
+        topSpaceMd="60"
+        bottomSpaceLg="100"
+        bottomSpaceMd="60"
+        className="cs_diferenciales_section"
+      >
+        <FacilitySection5
+          sectionTitle="Diferenciales de Grindelia"
+          sectionSubTitle="LO QUE NOS HACE ÚNICOS"
+          data={diferencialesData}
+          sectionTitleClass="diferencial-title-white"
+        />
+      </Section>
+
+      <style>{`
+        /* Background verde para sección Diferenciales */
+        .cs_diferenciales_section {
+          background: #798a74;
+          position: relative;
+        }
+        
+        .cs_diferenciales_section::before {
+          content: '';
+          position: absolute;
+          top: 0;
+          left: 0;
+          right: 0;
+          height: 1px;
+          background: linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.2) 50%, transparent 100%);
+        }
+        
+        .cs_diferenciales_section::after {
+          content: '';
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          right: 0;
+          height: 1px;
+          background: linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.2) 50%, transparent 100%);
+        }
+
+        /* Estilos para títulos blancos */
+        .cs_diferenciales_section .cs_section_heading h3 {
+          color: #C5A46D !important;
+        }
+
+        .cs_diferenciales_section .cs_section_heading h2,
+        .diferencial-title-white {
+          color: white !important;
+        }
+
+        /* Ocultar overlay de texto al hover - FacilitySliderStyle2 */
+        .cs_diferenciales_section .cs_card_overlay,
+        .cs_diferenciales_section .slick-slide .cs_card_overlay {
+          transition: opacity 0.4s ease !important;
+          opacity: 1 !important;
+        }
+
+        .cs_diferenciales_section .cs_card:hover .cs_card_overlay,
+        .cs_diferenciales_section .slick-slide:hover .cs_card_overlay {
+          opacity: 0 !important;
+        }
+
+        /* Ocultar textos h3 y p al hover */
+        .cs_diferenciales_section .cs_card h3,
+        .cs_diferenciales_section .cs_card p {
+          transition: opacity 0.4s ease !important;
+        }
+
+        .cs_diferenciales_section .cs_card:hover h3,
+        .cs_diferenciales_section .cs_card:hover p {
+          opacity: 0 !important;
+        }
+
+        /* Zoom en imagen */
+        .cs_diferenciales_section .cs_card img {
+          transition: transform 0.6s ease !important;
+        }
+
+        .cs_diferenciales_section .cs_card:hover img {
+          transform: scale(1.08) !important;
+        }
+
+        /* Border radius */
+        .cs_diferenciales_section .cs_card {
+          border-radius: 12px;
+          overflow: hidden;
+        }
+      `}</style>
 
       {/* Parallax full width */}
       <div className="home_parallax_wrapper">
@@ -307,27 +494,14 @@ export default function HomePage() {
         }
       `}</style>
 
-      <Section
-        topSpaceLg="141"
-        topSpaceMd="75"
-        bottomSpaceLg="150"
-        bottomSpaceMd="80"
-      >
+      <Section>
         <FacilitySection
           sectionTitle="Explora Nuestras Exclusivas Instalaciones del Resort"
           sectionSubTitle="INSTALACIONES DE LUJO"
           data={facilityData}
         />
       </Section>
-      <Section
-        topSpaceLg="60"
-        topSpaceMd="30"
-        bottomSpaceLg="60"
-        bottomSpaceMd="30"
-        className="cs_testimonial_bg"
-      >
-        <TestimonialSection data={testimonialData} />
-      </Section>
+
       <Section
         topSpaceLg="150"
         topSpaceMd="80"
@@ -336,6 +510,7 @@ export default function HomePage() {
       >
         <ServiceSection data={serviceData} />
       </Section>
+
       <Section
         topSpaceLg="141"
         topSpaceMd="75"

@@ -3,25 +3,32 @@ import react from "@vitejs/plugin-react";
 
 export default defineConfig({
   plugins: [react()],
-  base: "/", // Asegúrate de que la base sea correcta
+  base: "/",
   build: {
-    // Genera archivos con nombres consistentes
     rollupOptions: {
       output: {
         entryFileNames: "assets/[name]-[hash].js",
         chunkFileNames: "assets/[name]-[hash].js",
         assetFileNames: "assets/[name]-[hash].[ext]",
+        manualChunks: {
+          vendor: ["react", "react-dom", "react-router-dom"],
+          ui: ["bootstrap", "react-bootstrap", "rsuite"],
+        },
       },
     },
-    // Desactiva source maps en producción si no los necesitas
     sourcemap: false,
   },
+  css: {
+    devSourcemap: false,
+  },
   server: {
+    fs: {
+      allow: [".."],
+    },
     mimeTypes: {
       "application/javascript": ["js", "mjs"],
     },
     proxy: {
-      // redirige /api/* a tu servidor backend local
       "/api": {
         target: "http://localhost:4000",
         changeOrigin: true,

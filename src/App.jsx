@@ -36,7 +36,7 @@ import Layout9 from "./components/Layout/Layout9";
 import Layout10 from "./components/Layout/Layout10";
 import NotAvailableRoom from "./components/Pages/NotAvailableRoom";
 import NoSearchResult from "./components/Pages/NoSearchResult";
-import BookingPage from "./components/Pages/BookingPage";
+//import BookingPage from "./components/Pages/BookingPage";
 import FloatingWhatsApp from "./components/Global/FloatingWhatsApp";
 import MetaPixel from "./components/MetaPixel"; // 👈 NUEVO: Importar MetaPixel
 
@@ -112,7 +112,6 @@ export default function App() {
           <Route path="/blog/blog-details" element={<BlogDetailsPage />} />
           <Route path="/contact" element={<ContactPage />} />
           <Route path="/404" element={<NotFound />} />
-          <Route path="/reservas" element={<BookingPage />} />
           <Route path="*" element={<NotFound />} />
         </Route>
       </Routes>

@@ -108,7 +108,7 @@ export default function ServicesPage() {
           data={featureData}
         />
       </Section>
-      <Section
+      {/* <Section
         topSpaceLg="0"
         topSpaceMd="0"
         bottomSpaceLg="0"
@@ -121,7 +121,7 @@ export default function ServicesPage() {
           variant="cs_color_1"
           playerStyle1
         />
-      </Section>
+      </Section> */}
       <Section
         topSpaceLg="141"
         topSpaceMd="75"
