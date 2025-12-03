@@ -41,7 +41,7 @@ const diferencialesData = [
   {
     title: "Gym Completo",
     subTitle: "Equipamiento profesional de última generación",
-    imgUrl: "/images/diferencial_gym.webp",
+    imgUrl: "/images/Spa_facility_5.webp",
     href: "#",
   },
   {

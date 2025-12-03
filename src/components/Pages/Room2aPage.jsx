@@ -38,7 +38,7 @@ const roomDetailsData = {
     },
   ],
   roomCapacityTitle: "Capacidad",
-  roomCapacity: "Hasta 4 huéspedes",
+  roomCapacity: "Hasta 3 huéspedes",
 };
 
 const featureData = [
@@ -205,7 +205,7 @@ export default function RoomDetailsPageV2() {
                 <ul className="cs_list cs_style_3 cs_mp_0">
                   <li>
                     <img src="/images/icons/review.svg" alt="Huéspedes" />
-                    hasta 4 huéspedes
+                    hasta 3 huéspedes
                   </li>
                   {roomDetailsData.roomFacilities
                     .filter((item) => {

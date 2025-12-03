@@ -11,13 +11,13 @@ const menuData = [
   { title: "Sobre Nosotros", href: "/about" },
   { title: "Habitaciones", href: "/rooms" },
   { title: "SPA & Bienestar", href: "/spa-wellness" },
-  { title: "Usos múltiplesssssssss", href: "/cowork" },
+  { title: "Usos múltiples", href: "/cowork" },
 ];
 const menuData2 = [{ title: "Política de Privacidad y Cookies", href: "/" }];
 const contactInfoData = {
   mobile: 'Call : <a href="tel:+54 9 2255505626">+54 9 2255 505626</a>',
   email:
-    'Email : <a href="mailto:reservas@grindela.com.ar">reservas@grindela.com.ar</a>',
+    'Email : <a href="mailto:reservas@grindelia.com.ar">reservas@grindelia.com.ar</a>',
 };
 const contactInfoData2 = {
   address:
